@@ -10,18 +10,18 @@ add_library(dipacus-components STATIC
         src/Transform.cpp)
 
 set_target_properties(dipacus-components PROPERTIES
-        COMPILE_FEATURES "cxx_auto_type;cxx_lambdas;cxx_generic_lambdas"
+        COMPILE_FEATURES cxx_generic_lambdas
         COMPILE_FLAGS -fext-numeric-literals)
 
 target_include_directories(dipacus-components PRIVATE
         include
         ../base/include
-        ${MAGICK++_INCLUDE_DIR})
+        ${DGTAL_INCLUDE_DIRS})
 
 target_link_libraries(dipacus-components
         -lbase
         ${DGTAL_LIBRARIES}
-        ${OPENCV_LIBRS})
+        ${OpenCV_LIBS})
 
 install(DIRECTORY include
         DESTINATION ${CMAKE_INSTALL_PREFIX})

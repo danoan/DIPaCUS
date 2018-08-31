@@ -9,7 +9,7 @@ add_executable(testDerivates testDerivates.cpp src/testMisc.cpp)
 target_compile_definitions(testDerivates PRIVATE -DPROJECT_DIR=\"${PROJECT_SOURCE_DIR}\")
 
 target_include_directories(testDerivates PRIVATE
-        ${MAGICK++_INCLUDE_DIR}
+        ${DGTAL_INCLUDE_DIRS}
         include
         ../include
         ../../base/include

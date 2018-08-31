@@ -5,13 +5,17 @@ find_package(DGtal REQUIRED)
 find_package(OpenCV REQUIRED)
 
 add_library(dipacus-base STATIC src/Representation.cpp src/Objects.cpp)
+
 target_include_directories(dipacus-base PRIVATE
         include
-        ${MAGICK++_INCLUDE_DIR})
+        ${DGTAL_INCLUDE_DIRS})
 
 target_link_libraries(dipacus-base
         ${DGTAL_LIBRARIES}
         ${OpenCV_LIBS})
+
+set_target_properties(dipacus-base PROPERTIES COMPILE_FEATURES "cxx_generic_lambdas")
+set_target_properties(dipacus-base PROPERTIES COMPILE_FLAGS -fext-numeric-literals)
 
 install(DIRECTORY include
         DESTINATION ${CMAKE_INSTALL_PREFIX})

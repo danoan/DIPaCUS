@@ -10,14 +10,18 @@ target_include_directories(dipacus-derivates PRIVATE
         include
         ../base/include
         ../components/include
-        ${MAGICK++_INCLUDE_DIR}
+        ${DGTAL_INCLUDE_DIRS}
         )
 
 target_link_libraries(dipacus-derivates
         -ldipacus-base
         -ldipacus-components
         ${DGTAL_LIBRARIES}
-        ${OPENCV_LIBRS})
+        ${OpenCV_LIBS})
+
+set_target_properties(dipacus-derivates PROPERTIES
+        COMPILE_FEATURES cxx_generic_lambdas
+        COMPILE_FLAGS -fext-numeric-literals)
 
 install(DIRECTORY include
         DESTINATION ${CMAKE_INSTALL_PREFIX})
