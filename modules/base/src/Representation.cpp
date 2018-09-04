@@ -54,7 +54,7 @@ DigitalSetToCVMat::DigitalSetToCVMat(cv::Mat &cvImg,
                                      const DigitalSet &dgtalSet)
 {
     cvImg = cvImg.zeros(cvImg.rows, cvImg.cols, cvImg.type());
-    int ubY = dgtalSet.domain().upperBound()[1] - 1;
+    int ubY = dgtalSet.domain().upperBound()[1];
 
     for (auto it = dgtalSet.begin(); it != dgtalSet.end(); ++it) {
         Point p = *it;

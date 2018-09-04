@@ -1,7 +1,11 @@
 cmake_minimum_required(VERSION 3.0)
 project(DIPaCUS)
 
-#It expects variables CMAKE_PREFIX_PATH EXTRA_LINK_DIR BUILD_PATH
+#It expects variables
+#CMAKE_PREFIX_PATH: find_[package] macro directories
+#CMAKE_INSTALL_PREFIX: install location
+#EXTRA_LINK_DIR: extra link directories
+#BUILD_PATH: location of build files
 
 link_directories(${EXTRA_LINK_DIR}
         ${BUILD_PATH}/modules/base

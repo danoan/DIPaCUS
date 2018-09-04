@@ -137,6 +137,18 @@ namespace DIPaCUS
                                  SCell imageBel);
         };
 
+        struct InvertCurve
+        {
+            typedef DGtal::Z2i::KSpace KSpace;
+            typedef DGtal::Z2i::Curve Curve;
+            typedef DGtal::Z2i::Curve::SCell SCell;
+
+            InvertCurve(const KSpace& KImage,
+                        Curve::ConstIterator begin,
+                        Curve::ConstIterator end,
+                        Curve& c2);
+        };
+
     }
 }
 
