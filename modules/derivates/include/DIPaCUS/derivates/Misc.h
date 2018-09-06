@@ -137,6 +137,7 @@ namespace DIPaCUS
                                  SCell imageBel);
         };
 
+        template<typename TIterator>
         struct InvertCurve
         {
             typedef DGtal::Z2i::KSpace KSpace;
@@ -144,8 +145,8 @@ namespace DIPaCUS
             typedef DGtal::Z2i::Curve::SCell SCell;
 
             InvertCurve(const KSpace& KImage,
-                        Curve::ConstIterator begin,
-                        Curve::ConstIterator end,
+                        TIterator begin,
+                        TIterator end,
                         Curve& c2);
         };
 

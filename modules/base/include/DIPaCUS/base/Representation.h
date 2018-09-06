@@ -61,6 +61,26 @@ namespace DIPaCUS {
         };
 
         /**
+         *  \brief Conversion between DigitalSet and Image2D representations
+         *
+         */
+        struct DigitalSetToImage {
+            typedef DGtal::Z2i::Point Point;
+            typedef DGtal::Z2i::DigitalSet DigitalSet;
+            typedef DGtal::Z2i::Domain Domain;
+
+            typedef DGtal::ImageContainerBySTLVector<Domain, unsigned char> Image2D;
+
+            /**
+             * \brief Creates Image2D representation from DigitalSet representation.
+             * @param img Created Image2D.
+             * @param dgtalSet DigitalSet representation.
+             */
+            DigitalSetToImage(Image2D &img,
+                              const DigitalSet &dgtalSet);
+        };
+
+        /**
          *  \brief Conversion between Image2D and cv::Mat representations
          *
          */

@@ -20,6 +20,19 @@ ImageAsDigitalSet::ImageAsDigitalSet(DigitalSet &digitalSet,
     DGtal::setFromImage(image, inserter, threshValue, 255);
 }
 
+DigitalSetToImage::DigitalSetToImage(Image2D &img,
+                                     const DigitalSet &dgtalSet)
+{
+    int ubY = dgtalSet.domain().upperBound()[1];
+
+    for (auto it = dgtalSet.begin(); it != dgtalSet.end(); ++it) {
+        Point p = *it;
+        unsigned char v = (unsigned char) (dgtalSet(*it)) ? 255 : 0;
+        img.setValue(*it,v);
+    }
+}
+
+
 
 
 ImageToCVMat::ImageToCVMat(cv::Mat &cvImg,

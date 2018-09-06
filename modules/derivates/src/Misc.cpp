@@ -138,30 +138,3 @@ ComputeBoundaryCurve::ComputeBoundaryCurve(const Image2D& image,
     boundCurve.initFromSCellsVector(boundarySCells);
 
 }
-
-InvertCurve::InvertCurve(const KSpace& KImage,
-                         Curve::ConstIterator begin,
-                         Curve::ConstIterator end,
-                         Curve& c2)
-{
-    std::vector<SCell> SCells;
-    auto it=begin;
-    do{
-        SCells.push_back(*it);
-        ++it;
-    }while(it!=end);
-
-    std::vector<SCell> newSCells;
-    {
-        auto it = SCells.rbegin();
-        do{
-            SCell newLinel = KImage.sCell( *it);
-            KImage.sSetSign(newLinel,!KImage.sSign(*it));
-
-            newSCells.push_back(newLinel);
-            ++it;
-        }while(it!=SCells.rend());
-    }
-
-    c2.initFromSCellsVector(newSCells);
-}
