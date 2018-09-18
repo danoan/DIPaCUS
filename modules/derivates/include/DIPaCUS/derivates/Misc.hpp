@@ -39,3 +39,34 @@ InvertCurve<TIterator>::InvertCurve(const KSpace& KImage,
 
     c2.initFromSCellsVector(newSCells);
 }
+
+template<class TSCellIterator>
+CompactSetFromClosedCurve<TSCellIterator>::CompactSetFromClosedCurve(DigitalSet& ds,
+                                                                     TSCellIterator itb,
+                                                                     TSCellIterator ite,
+                                                                     bool ccw)
+{
+    KSpace KImage;
+    KImage.init(ds.domain().lowerBound(),ds.domain().upperBound(),true);
+    const Domain& domain = ds.domain();
+
+    KSpace::SCell boundaryPixel;
+    if(ccw)
+        boundaryPixel = KImage.sDirectIncident(*itb, KImage.sOrthDir(*itb));
+    else
+        boundaryPixel = KImage.sIndirectIncident(*itb, KImage.sOrthDir(*itb));
+
+    DigitalSet fakeBoundary(domain);
+    TSCellIterator it = itb;
+    do{
+        if(ccw)
+            fakeBoundary.insert( KImage.sCoords( KImage.sIndirectIncident(*it,KImage.sOrthDir(*it)) ) );
+        else
+            fakeBoundary.insert( KImage.sCoords( KImage.sDirectIncident(*it,KImage.sOrthDir(*it)) ) );
+        ++it;
+    }while(it!=ite);
+
+    DIPaCUS::Misc::FillInterior(ds,KImage.sCoords(boundaryPixel),fakeBoundary);
+    for(auto it=fakeBoundary.begin();it!=fakeBoundary.end();++it)
+        ds.erase(*it);
+}

@@ -8,7 +8,8 @@ find_package(OpenCV REQUIRED)
 add_library(dipacus-components-st STATIC
         src/Morphology.cpp
         src/SetOperations.cpp
-        src/Transform.cpp)
+        src/Transform.cpp
+        src/Properties.cpp)
 
 set_target_properties(dipacus-components-st PROPERTIES
         COMPILE_FEATURES cxx_generic_lambdas
@@ -29,7 +30,8 @@ target_link_libraries(dipacus-components-st
 add_library(dipacus-components SHARED
         src/Morphology.cpp
         src/SetOperations.cpp
-        src/Transform.cpp)
+        src/Transform.cpp
+        src/Properties.cpp)
 
 set_target_properties(dipacus-components PROPERTIES
         COMPILE_FEATURES cxx_generic_lambdas

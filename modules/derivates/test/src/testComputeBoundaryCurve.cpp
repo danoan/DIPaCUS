@@ -1,7 +1,7 @@
 #include <DGtal/io/readers/GenericReader.h>
-#include "testMisc.h"
+#include "testComputeBoundaryCurve.h"
 
-using namespace Test;
+using namespace DIPaCUS::Test::Derivates;
 
 void TestComputeBoundaryCurve::createCurve(Curve& curve,
                                            const Image2D& image)

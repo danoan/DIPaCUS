@@ -12,7 +12,6 @@ link_directories(${EXTRA_LINK_DIR}
         ${BUILD_PATH}/modules/components
         ${BUILD_PATH}/modules/derivates)
 
-
 set(DIPACUS_BUILD_TEST ON CACHE BOOL "Build tests.")
 
 

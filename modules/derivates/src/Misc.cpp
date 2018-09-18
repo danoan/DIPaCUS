@@ -1,3 +1,4 @@
+#include <DIPaCUS/components/Properties.h>
 #include "DIPaCUS/derivates/Misc.h"
 
 using  namespace DIPaCUS::Misc;
@@ -138,3 +139,4 @@ ComputeBoundaryCurve::ComputeBoundaryCurve(const Image2D& image,
     boundCurve.initFromSCellsVector(boundarySCells);
 
 }
+

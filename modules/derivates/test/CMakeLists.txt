@@ -4,7 +4,7 @@ project(test-dipacus-derivates)
 find_package(DGtal REQUIRED)
 find_package(OpenCV REQUIRED)
 
-add_executable(testDerivates testDerivates.cpp src/testMisc.cpp)
+add_executable(testDerivates testDerivates.cpp src/testComputeBoundaryCurve.cpp src/testCompactSetFromClosedCurve.cpp)
 
 target_compile_definitions(testDerivates PRIVATE -DPROJECT_DIR=\"${PROJECT_SOURCE_DIR}\")
 

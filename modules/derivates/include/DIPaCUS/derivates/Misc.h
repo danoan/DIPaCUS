@@ -11,6 +11,7 @@
 
 #include "DIPaCUS/components/SetOperations.h"
 #include "DIPaCUS/components/Neighborhood.h"
+#include "DIPaCUS/components/Properties.h"
 #include "DIPaCUS/components/Morphology.h"
 #include "DIPaCUS/components/Transform.h"
 
@@ -148,6 +149,18 @@ namespace DIPaCUS
                         TIterator begin,
                         TIterator end,
                         Curve& c2);
+        };
+
+        template<class TSCellIterator>
+        struct CompactSetFromClosedCurve
+        {
+            typedef DGtal::Z2i::KSpace KSpace;
+            typedef DGtal::Z2i::Domain Domain;
+            typedef DGtal::Z2i::DigitalSet DigitalSet;
+
+            typedef typename DIPaCUS::Properties::CurveBoundingBox<TSCellIterator>::BoundingBox BoundingBox;
+
+            CompactSetFromClosedCurve(DigitalSet& ds, TSCellIterator itb, TSCellIterator ite,bool ccw=true);
         };
 
     }
