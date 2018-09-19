@@ -40,10 +40,25 @@ namespace DIPaCUS
                 typedef DGtal::Z2i::Curve Curve;
                 typedef Curve::SCell SCell;
                 typedef Curve::Point Point;
+            private:
+                
+                struct CurveAndDS
+                {
+                    CurveAndDS(Curve c, DigitalSet ds):curve(c),digitalSet(ds){}
+                    
+                    Curve curve;
+                    DigitalSet digitalSet;
+                };
 
 
-
+            public:
                 TestCompactSetFromClosedCurve();
+
+            private:
+                void creationTest();
+
+                CurveAndDS ball(double radius);
+                DigitalSet digitalSetFromDigitizer(const DigitalBall& db);
             };
         }
     }
