@@ -90,20 +90,27 @@ EliminateLoops::EliminateLoops(Curve &curveOut,
     curveOut.initFromSCellsVector(vectorOfSCell);
 }
 
-DGtal::Z2i::DigitalSet CenterDigitalSetAtOrigin(const DGtal::Z2i::DigitalSet& ds)
+namespace DIPaCUS
 {
-    using namespace DGtal::Z2i;
-    Point lb,ub;
-    ds.computeBoundingBox(lb,ub);
-
-    Point diff = lb;
-    Domain newDomain( Point(-1,-1),ub - diff + Point(1,1) );
-    DigitalSet newDS(newDomain);
-    for(auto it=ds.begin();it!=ds.end();++it)
+    namespace Transform
     {
-        newDS.insert(*it - diff);
+        DGtal::Z2i::DigitalSet CenterDigitalSetAtOrigin(const DGtal::Z2i::DigitalSet& ds)
+        {
+            using namespace DGtal::Z2i;
+            assert(ds.size()>0);
+            Point lb,ub;
+            ds.computeBoundingBox(lb,ub);
+
+            Point diff = lb;
+            Domain newDomain( Point(-1,-1),ub - diff + Point(1,1) );
+            DigitalSet newDS(newDomain);
+            for(auto it=ds.begin();it!=ds.end();++it)
+            {
+                newDS.insert(*it - diff);
+            }
+
+            return newDS;
+
+        }
     }
-
-    return newDS;
-
 }

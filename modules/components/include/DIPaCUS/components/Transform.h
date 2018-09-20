@@ -57,8 +57,9 @@ namespace DIPaCUS
                            KSpace &KImage,
                            Curve &curveIn);
         };
-        
-        static DGtal::Z2i::DigitalSet CenterDigitalSetAtOrigin(const DGtal::Z2i::DigitalSet& ds);
+
+
+        DGtal::Z2i::DigitalSet CenterDigitalSetAtOrigin(const DGtal::Z2i::DigitalSet& ds);
 
     }
 }

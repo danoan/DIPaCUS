@@ -21,7 +21,7 @@ namespace DIPaCUS
         };
     }
 
-#include "Properties.hpp"
 }
 
+#include "Properties.hpp"
 #endif //DIPACUS_PROPERTIES_H
