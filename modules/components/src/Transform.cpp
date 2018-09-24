@@ -102,7 +102,7 @@ namespace DIPaCUS
             ds.computeBoundingBox(lb,ub);
 
             Point diff = lb;
-            Domain newDomain( Point(-1,-1),ub - diff + Point(1,1) );
+            Domain newDomain( Point(-2,-2),ub - diff + Point(2,2) );
             DigitalSet newDS(newDomain);
             for(auto it=ds.begin();it!=ds.end();++it)
             {
