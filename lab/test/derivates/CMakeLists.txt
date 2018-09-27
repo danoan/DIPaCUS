@@ -11,9 +11,9 @@ target_compile_definitions(testDerivates PRIVATE -DPROJECT_DIR=\"${PROJECT_SOURC
 target_include_directories(testDerivates PRIVATE
         ${DGTAL_INCLUDE_DIRS}
         include
-        ../include
-        ../../base/include
-        ../../components/include)
+        ../../../modules/derivates/include
+        ../../../modules/base/include
+        ../../../modules/components/include)
 
 target_link_libraries(testDerivates
         -ldipacus-derivates

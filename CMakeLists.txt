@@ -12,9 +12,13 @@ link_directories(${EXTRA_LINK_DIR}
         ${BUILD_PATH}/modules/components
         ${BUILD_PATH}/modules/derivates)
 
-set(DIPACUS_BUILD_TEST ON CACHE BOOL "Build tests.")
+set(BUILD_TEST ON CACHE BOOL "Build tests.")
 
 
 add_subdirectory(modules/base)
 add_subdirectory(modules/components)
 add_subdirectory(modules/derivates)
+
+if (${BUILD_TEST})
+    add_subdirectory(lab/test)
+endif ()
