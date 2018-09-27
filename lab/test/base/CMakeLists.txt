@@ -1,18 +1,20 @@
 cmake_minimum_required(VERSION 3.0)
 project(test-dipacus-base)
 
-add_executable(main testBase.cpp src/testRepresentation.cpp)
+add_executable(test-base testBase.cpp src/testRepresentation.cpp)
 
-set_target_properties(main PROPERTIES COMPILE_FEATURES "cxx_generic_lambdas" COMPILE_FLAGS -fext-numeric-literals)
+add_dependencies(test-base dipacus-base)
 
-target_compile_definitions(main PRIVATE -DPROJECT_DIR=\"${PROJECT_SOURCE_DIR}\")
+set_target_properties(test-base PROPERTIES COMPILE_FEATURES "cxx_generic_lambdas" COMPILE_FLAGS -fext-numeric-literals)
 
-target_include_directories(main PRIVATE
+target_compile_definitions(test-base PRIVATE -DPROJECT_DIR=\"${PROJECT_SOURCE_DIR}\")
+
+target_include_directories(test-base PRIVATE
 		include
 		../../../modules/base/include
         ${DGTAL_INCLUDE_DIRS})
 
-target_link_libraries(main
+target_link_libraries(test-base
         -lboost_system
         -lboost_filesystem
         -ldipacus-base

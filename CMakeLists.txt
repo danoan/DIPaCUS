@@ -12,7 +12,7 @@ link_directories(${EXTRA_LINK_DIR}
         ${BUILD_PATH}/modules/components
         ${BUILD_PATH}/modules/derivates)
 
-set(BUILD_TEST ON CACHE BOOL "Build tests.")
+set(BUILD_TEST OFF CACHE BOOL "Build tests.")
 
 
 add_subdirectory(modules/base)

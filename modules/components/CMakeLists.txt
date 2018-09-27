@@ -11,6 +11,8 @@ add_library(dipacus-components SHARED
         src/Transform.cpp
         src/Properties.cpp)
 
+add_dependencies(dipacus-components dipacus-base)
+
 set_target_properties(dipacus-components PROPERTIES
         COMPILE_FEATURES cxx_generic_lambdas
         COMPILE_FLAGS -fext-numeric-literals)
@@ -30,5 +32,3 @@ install(DIRECTORY include
 
 install(TARGETS dipacus-components
         DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
-
-

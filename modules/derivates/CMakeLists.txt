@@ -8,6 +8,8 @@ find_package(OpenCV REQUIRED)
 #SHARED LIBRARY
 add_library(dipacus-derivates SHARED src/Misc.cpp)
 
+add_dependencies(dipacus-derivates dipacus-base dipacus-components)
+
 target_include_directories(dipacus-derivates PRIVATE
         include
         ../base/include
