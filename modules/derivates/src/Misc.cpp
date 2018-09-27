@@ -20,7 +20,7 @@ void DigitalBallIntersection::digitalBall(DigitalSet &db,
                                           Point center,
                                           int radius)
 {
-    EuclideanBall eb(center, _r);
+    EuclideanBall eb(center, radius);
     DGtal::Shapes<Domain>::euclideanShaper(db, eb, 1);
 }
 

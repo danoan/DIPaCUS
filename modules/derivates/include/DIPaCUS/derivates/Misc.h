@@ -38,9 +38,9 @@ namespace DIPaCUS
             void operator()(DigitalSet &intersectionSet,
                             Point center);
 
-            void digitalBall(DigitalSet &db,
-                             Point center,
-                             int radius);
+            static void digitalBall(DigitalSet &db,
+                                    Point center,
+                                    int radius);
 
         private:
             Radius _r;
