@@ -1,24 +1,28 @@
 cmake_minimum_required(VERSION 3.0)
 project(DIPaCUS)
 
-#It expects variables
-#CMAKE_PREFIX_PATH: find_[package] macro directories
 #CMAKE_INSTALL_PREFIX: install location
-#EXTRA_LINK_DIR: extra link directories
-#BUILD_PATH: location of build files
 
-link_directories(${EXTRA_LINK_DIR}
-        ${BUILD_PATH}/modules/base
-        ${BUILD_PATH}/modules/components
-        ${BUILD_PATH}/modules/derivates)
+message("Project Root Dir: ${CMAKE_SOURCE_DIR}")
+message("Build files at: ${CMAKE_BINARY_DIR}")
+message("Installation at: ${CMAKE_INSTALL_PREFIX}")
 
-set(BUILD_TEST OFF CACHE BOOL "Build tests.")
+find_package(DGtal REQUIRED)
+find_package(OpenCV REQUIRED)
+
+set(BOOST_INCLUDE_DIRS /usr/local/include/boost CACHE PATH "Boost include location path." )
+set(BUILD_TESTS OFF CACHE BOOL "Build tests.")
+
+
+link_directories(${CMAKE_BINARY_DIR}/modules/base 
+        ${CMAKE_BINARY_DIR}/modules/components
+        ${CMAKE_BINARY_DIR}/modules/derivates)
 
 
 add_subdirectory(modules/base)
 add_subdirectory(modules/components)
 add_subdirectory(modules/derivates)
 
-if (${BUILD_TEST})
+if (${BUILD_TESTS})
     add_subdirectory(lab/test)
 endif ()

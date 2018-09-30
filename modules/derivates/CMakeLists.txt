@@ -1,9 +1,5 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.2)
 project(lib-dipacus-derivates)
-
-find_package(DGtal REQUIRED)
-find_package(OpenCV REQUIRED)
-
 
 #SHARED LIBRARY
 add_library(dipacus-derivates SHARED src/Misc.cpp)
@@ -12,9 +8,10 @@ add_dependencies(dipacus-derivates dipacus-base dipacus-components)
 
 target_include_directories(dipacus-derivates PRIVATE
         include
-        ../base/include
-        ../components/include
+        ${CMAKE_SOURCE_DIR}/modules/base/include
+        ${CMAKE_SOURCE_DIR}/modules/components/include
         ${DGTAL_INCLUDE_DIRS}
+        ${BOOST_INCLUDE_DIRS}
         )
 
 target_link_libraries(dipacus-derivates

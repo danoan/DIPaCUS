@@ -1,15 +1,13 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.2)
 project(lib-dipacus-base)
-
-find_package(DGtal REQUIRED)
-find_package(OpenCV REQUIRED)
 
 #SHARED LIBRARY
 add_library(dipacus-base SHARED src/Representation.cpp src/Objects.cpp)
 
 target_include_directories(dipacus-base PRIVATE
         include
-        ${DGTAL_INCLUDE_DIRS})
+        ${DGTAL_INCLUDE_DIRS}
+        ${BOOST_INCLUDE_DIRS})
 
 target_link_libraries(dipacus-base
         ${DGTAL_LIBRARIES}

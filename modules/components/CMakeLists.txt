@@ -1,8 +1,5 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.2)
 project(lib-dipacus-components)
-
-find_package(DGtal REQUIRED)
-find_package(OpenCV REQUIRED)
 
 #SHARED LIBRARY
 add_library(dipacus-components SHARED
@@ -19,8 +16,9 @@ set_target_properties(dipacus-components PROPERTIES
 
 target_include_directories(dipacus-components PRIVATE
         include
-        ../base/include
-        ${DGTAL_INCLUDE_DIRS})
+        ${CMAKE_SOURCE_DIR}/modules/base/include
+        ${DGTAL_INCLUDE_DIRS}
+        ${BOOST_INCLUDE_DIRS})
 
 target_link_libraries(dipacus-components
         -ldipacus-base

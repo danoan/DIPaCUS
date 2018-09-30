@@ -11,7 +11,7 @@ target_compile_definitions(test-base PRIVATE -DPROJECT_DIR=\"${PROJECT_SOURCE_DI
 
 target_include_directories(test-base PRIVATE
 		include
-		../../../modules/base/include
+		${CMAKE_SOURCE_DIR}/modules/base/include
         ${DGTAL_INCLUDE_DIRS})
 
 target_link_libraries(test-base
