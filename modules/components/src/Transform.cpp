@@ -94,7 +94,7 @@ namespace DIPaCUS
 {
     namespace Transform
     {
-        DGtal::Z2i::DigitalSet CenterDigitalSetAtOrigin(const DGtal::Z2i::DigitalSet& ds, Point border)
+        DGtal::Z2i::DigitalSet CenterDigitalSetAtOrigin(const DGtal::Z2i::DigitalSet& ds, DGtal::Z2i::Point border)
         {
             using namespace DGtal::Z2i;
             assert(ds.size()>0);
