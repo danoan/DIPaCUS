@@ -94,7 +94,7 @@ namespace DIPaCUS
 {
     namespace Transform
     {
-        DGtal::Z2i::DigitalSet CenterDigitalSetAtOrigin(const DGtal::Z2i::DigitalSet& ds)
+        DGtal::Z2i::DigitalSet CenterDigitalSetAtOrigin(const DGtal::Z2i::DigitalSet& ds, Point border)
         {
             using namespace DGtal::Z2i;
             assert(ds.size()>0);
@@ -102,7 +102,7 @@ namespace DIPaCUS
             ds.computeBoundingBox(lb,ub);
 
             Point diff = lb;
-            Domain newDomain( Point(-2,-2),ub - diff + Point(2,2) );
+            Domain newDomain( -border,ub - diff + border );
             DigitalSet newDS(newDomain);
             for(auto it=ds.begin();it!=ds.end();++it)
             {

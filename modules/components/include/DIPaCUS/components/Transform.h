@@ -59,7 +59,8 @@ namespace DIPaCUS
         };
 
 
-        DGtal::Z2i::DigitalSet CenterDigitalSetAtOrigin(const DGtal::Z2i::DigitalSet& ds);
+        DGtal::Z2i::DigitalSet CenterDigitalSetAtOrigin(const DGtal::Z2i::DigitalSet& ds,
+                                                        DGtal::Z2i::Point border=DGtal::Z2i::Point(2,2));
 
     }
 }
