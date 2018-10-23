@@ -80,17 +80,13 @@ DigitalSetToCVMat::DigitalSetToCVMat(cv::Mat &cvImg,
 
 CVMatToDigitalSet::CVMatToDigitalSet(DigitalSet &dgtalSet,
                                      const cv::Mat &cvImg,
-                                     int threshValue)
+                                     int threshValue, int shiftx, int shifty)
 {
-    Domain domain(Point(0, 0), Point(cvImg.cols - 1, cvImg.rows - 1));
-
-    Image2D temp(domain);
     int ubY = cvImg.rows - 1;
     for (int i = 0; i < cvImg.rows; i++) {
         for (int j = 0; j < cvImg.cols; j++) {
             unsigned char v(cvImg.at<unsigned char>(i, j));
-            temp.setValue(Point(j, ubY - i), v);
+            if(v>threshValue) dgtalSet.insert( Point(j+shiftx, ubY - i + shifty) );
         }
     }
-    ImageAsDigitalSet(dgtalSet, temp, threshValue);
 }

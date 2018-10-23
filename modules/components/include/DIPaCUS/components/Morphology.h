@@ -27,12 +27,14 @@ namespace DIPaCUS {
             Dilate(Image2D &imgOut,
                    const DigitalSet &dsIn,
                    StructuringElement se,
-                   int size = 1);
+                   int size = 1,
+                   int iterations=1);
 
             Dilate(DigitalSet &dgtalSetOut,
                    const DigitalSet &dsIn,
                    StructuringElement se,
-                   int size = 1);
+                   int size = 1,
+                   int iterations=1);
 
         };
 
@@ -41,12 +43,14 @@ namespace DIPaCUS {
             Erode(Image2D &imgOut,
                   const DigitalSet &dsIn,
                   StructuringElement se,
-                  int size = 1);
+                  int size = 1,
+                  int iterations=1);
 
             Erode(DigitalSet &dgtalSetOut,
                   const DigitalSet &dsIn,
                   StructuringElement se,
-                  int size = 1);
+                  int size = 1,
+                  int iterations=1);
 
         };
 

@@ -156,7 +156,7 @@ namespace DIPaCUS {
              */
             CVMatToDigitalSet(DigitalSet &dgtalSet,
                               const cv::Mat &cvImg,
-                              int threshValue=100);
+                              int threshValue=100,int shiftx=0, int shifty=0);
         };
     }
 }

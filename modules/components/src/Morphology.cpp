@@ -7,7 +7,8 @@ Dilate::Dilate(Image2D &imgOut,
                const DigitalSet
                &dsIn,
                StructuringElement se,
-               int size)
+               int size,
+               int iterations)
 {
     int r = dsIn.domain().upperBound()[1] + 1;
     int c = dsIn.domain().upperBound()[0] + 1;
@@ -24,38 +25,41 @@ Dilate::Dilate(Image2D &imgOut,
                                                 cv::Size(2 * size + 1, 2 * size + 1),
                                                 cv::Point(size, size));
 
-    cv::dilate(cvSrc, dilation_dst, element);
+    cv::dilate(cvSrc, dilation_dst, element,cv::Point(-1,-1),iterations);
     DIPaCUS::Representation::CVMatToImage(imgOut, dilation_dst);
 }
 
 Dilate::Dilate(DigitalSet &dgtalSetOut,
                const DigitalSet &dsIn,
                StructuringElement se,
-               int size)
+               int size,
+               int iterations)
 {
     int r = dsIn.domain().upperBound()[1] + 1;
     int c = dsIn.domain().upperBound()[0] + 1;
 
     cv::Mat cvSrc(r, c, IMG_TYPE);
+    cvSrc = 0;
+
     cv::Mat dilation_dst(r, c, IMG_TYPE);
     dilation_dst = 0;
-    cvSrc = 0;
 
     DIPaCUS::Representation::DigitalSetToCVMat(cvSrc, dsIn);
 
-
     cv::Mat element = cv::getStructuringElement(se,
-                                                cv::Size(2 * size + 1, 2 * size + 1),
-                                                cv::Point(size, size));
+                                                cv::Size(2 * size +1, 2 * size+1 ),
+                                                cv::Point(size,size)
+    );
 
-    cv::dilate(cvSrc, dilation_dst, element);
+    cv::dilate(cvSrc, dilation_dst, element,cv::Point(-1,-1),iterations);
     DIPaCUS::Representation::CVMatToDigitalSet(dgtalSetOut, dilation_dst);
 }
 
 Erode::Erode(Image2D &imgOut,
              const DigitalSet &dsIn,
              StructuringElement se,
-             int size)
+             int size,
+             int iterations)
 {
     int r = dsIn.domain().upperBound()[1] + 1;
     int c = dsIn.domain().upperBound()[0] + 1;
@@ -72,14 +76,15 @@ Erode::Erode(Image2D &imgOut,
                                                 cv::Size(2 * size + 1, 2 * size + 1),
                                                 cv::Point(size, size));
 
-    cv::erode(cvSrc, dilation_dst, element);
+    cv::erode(cvSrc, dilation_dst, element, cv::Point(-1,-1),iterations);
     DIPaCUS::Representation::CVMatToImage(imgOut, dilation_dst);
 }
 
 Erode::Erode(DigitalSet &dgtalSetOut,
              const DigitalSet &dsIn,
              StructuringElement se,
-             int size)
+             int size,
+             int iterations)
 {
     int r = dsIn.domain().upperBound()[1] + 1;
     int c = dsIn.domain().upperBound()[0] + 1;
@@ -90,13 +95,11 @@ Erode::Erode(DigitalSet &dgtalSetOut,
     cvSrc = 0;
 
     DIPaCUS::Representation::DigitalSetToCVMat(cvSrc, dsIn);
-
-
     cv::Mat element = cv::getStructuringElement(se,
                                                 cv::Size(2 * size + 1, 2 * size + 1),
                                                 cv::Point(size, size));
 
-    cv::erode(cvSrc, dilation_dst, element);
+    cv::erode(cvSrc, dilation_dst, element, cv::Point(-1,-1), iterations);
     DIPaCUS::Representation::CVMatToDigitalSet(dgtalSetOut, dilation_dst);
 }
 
