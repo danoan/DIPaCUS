@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['radius',['Radius',['../classDIPaCUS_1_1Misc_1_1DigitalBallIntersection.html#a8c17265617201b52046579d379b3e269',1,'DIPaCUS::Misc::DigitalBallIntersection']]],
-  ['rect',['RECT',['../namespaceDIPaCUS_1_1Morphology.html#a60b552d68432e7992f09717070d9c4e7a5ba2c6c1635185268d1540bd2075da3c',1,'DIPaCUS::Morphology']]],
-  ['representation_2eh',['Representation.h',['../Representation_8h.html',1,'']]],
-  ['resize',['Resize',['../structDIPaCUS_1_1Transform_1_1Resize.html',1,'DIPaCUS::Transform::Resize'],['../structDIPaCUS_1_1Transform_1_1Resize.html#abb9e745e06fbbbf8cda3c0a0e56dfb41',1,'DIPaCUS::Transform::Resize::Resize()']]]
+  ['neighborhood_2eh',['Neighborhood.h',['../Neighborhood_8h.html',1,'']]],
+  ['neighborhood_2ehpp',['Neighborhood.hpp',['../Neighborhood_8hpp.html',1,'']]],
+  ['neighborhoodpredicate',['NeighborhoodPredicate',['../structDIPaCUS_1_1Misc_1_1DigitalBoundary.html#a66b2b672db2006130bd100902d4d8684',1,'DIPaCUS::Misc::DigitalBoundary']]],
+  ['noholes',['NoHoles',['../structDIPaCUS_1_1Misc_1_1NoHoles.html',1,'DIPaCUS::Misc::NoHoles'],['../structDIPaCUS_1_1Misc_1_1NoHoles.html#ac100d4aa947d8acc9ae59739184ea488',1,'DIPaCUS::Misc::NoHoles::NoHoles()']]],
+  ['numberiterations',['NumberIterations',['../namespaceDIPaCUS_1_1Morphology.html#a8ffa7d1c2023be8b21bc87a4b7df7cca',1,'DIPaCUS::Morphology']]]
 ];

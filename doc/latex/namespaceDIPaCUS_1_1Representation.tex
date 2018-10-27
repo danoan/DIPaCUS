@@ -2,26 +2,46 @@
 \label{namespaceDIPaCUS_1_1Representation}\index{D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}}
 
 
-Data representation conversions between Digital\+Set and grayscale images.  
+Groups conversion between image models in D\+Gtal and open\+CV libraries and D\+Gtal Digital\+Sets.  
 
 
-\subsection*{Classes}
+\subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet}{C\+V\+Mat\+To\+Digital\+Set}}
-\begin{DoxyCompactList}\small\item\em Conversion between cv\+::\+Mat and Digital\+Set representations. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1CVMatToImage}{C\+V\+Mat\+To\+Image}}
-\begin{DoxyCompactList}\small\item\em Conversion between cv\+::\+Mat and Image2D representations. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1DigitalSetToCVMat}{Digital\+Set\+To\+C\+V\+Mat}}
-\begin{DoxyCompactList}\small\item\em Conversion between Digital\+Set and cv\+::\+Mat representations. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet}{Image\+As\+Digital\+Set}}
-\begin{DoxyCompactList}\small\item\em Conversion between Image2D and Digital\+Set representations. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1ImageToCVMat}{Image\+To\+C\+V\+Mat}}
-\begin{DoxyCompactList}\small\item\em Conversion between Image2D and cv\+::\+Mat representations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+typedef unsigned char \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a85996f90f0c4186ddae15b4f372bf875}{Threshold\+Value}}
+\item 
+typedef unsigned int \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a66bd167c31ee02704986500ddb462df8}{Shift\+Value}}
+\item 
+typedef D\+Gtal\+::\+Image\+Container\+By\+S\+T\+L\+Vector$<$ D\+Gtal\+::\+Z2i\+::\+Domain, unsigned char $>$ \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_ae97917e89f57298fda1626daad9f1733}{Image2D}}
+\item 
+typedef D\+Gtal\+::\+Z2i\+::\+Digital\+Set \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a6eca0b4fa262f2d600f11d82ee10b5a6}{Digital\+Set}}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a2b07e44f7c61b0a3b971cbda49aa0d88}{image\+As\+Digital\+Set}} (\mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a6eca0b4fa262f2d600f11d82ee10b5a6}{Digital\+Set}} \&ds\+Out, const std\+::string \&img\+Path, const \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a85996f90f0c4186ddae15b4f372bf875}{Threshold\+Value}} tv=100)
+\begin{DoxyCompactList}\small\item\em Creates the Digital\+Set model of grayscale image located at image\+Path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a7ec92a29e6c9a4b581c086f4be6185de}{image\+As\+Digital\+Set}} (\mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a6eca0b4fa262f2d600f11d82ee10b5a6}{Digital\+Set}} \&ds\+Out, const \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_ae97917e89f57298fda1626daad9f1733}{Image2D}} \&img\+In, const \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a85996f90f0c4186ddae15b4f372bf875}{Threshold\+Value}} tv=100)
+\begin{DoxyCompactList}\small\item\em Creates the Digital\+Set model from D\+Gtal grayscale image model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a41889947a0233ac7c4433140f2d8886a}{digital\+Set\+To\+Image}} (\mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_ae97917e89f57298fda1626daad9f1733}{Image2D}} \&img\+Out, const \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a6eca0b4fa262f2d600f11d82ee10b5a6}{Digital\+Set}} \&ds\+In)
+\begin{DoxyCompactList}\small\item\em Creates grasycale D\+Gtal Image model from Digital\+Set model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a790f8a0a301e25de1fd7371e9b1ccada}{image\+To\+C\+V\+Mat}} (cv\+::\+Mat \&cv\+Img\+Out, const \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_ae97917e89f57298fda1626daad9f1733}{Image2D}} \&img\+In)
+\begin{DoxyCompactList}\small\item\em Creates grayscale open\+CV image model from grayscale D\+Gtal image representation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a21b3320f4db6e9be9b4ef3dc09c98afa}{C\+V\+Mat\+To\+Image}} (\mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_ae97917e89f57298fda1626daad9f1733}{Image2D}} \&img\+Out, const cv\+::\+Mat \&cv\+Img\+In)
+\begin{DoxyCompactList}\small\item\em Creates grayscale D\+Gtal image model from grayscale open\+CV image model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_ad8ad6c44d5f4a4f7033fac84899bb3fa}{digital\+Set\+To\+C\+V\+Mat}} (cv\+::\+Mat \&cv\+Img\+Out, const \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a6eca0b4fa262f2d600f11d82ee10b5a6}{Digital\+Set}} \&ds\+In)
+\begin{DoxyCompactList}\small\item\em Creates grayscale open\+CV image model from Digital\+Set model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a30987a074b773f7b4091b133a806618d}{C\+V\+Mat\+To\+Digital\+Set}} (\mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a6eca0b4fa262f2d600f11d82ee10b5a6}{Digital\+Set}} \&ds\+Out, const cv\+::\+Mat \&cv\+Img\+In, const \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a85996f90f0c4186ddae15b4f372bf875}{Threshold\+Value}} tv=100, \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a66bd167c31ee02704986500ddb462df8}{Shift\+Value}} sx=0, \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a66bd167c31ee02704986500ddb462df8}{Shift\+Value}} sy=0)
+\begin{DoxyCompactList}\small\item\em Creates Digital\+Set model from grayscale open\+CV image model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_ad86d37ae840297d40c79295d1c7e6e52}{G\+R\+A\+Y\+S\+C\+A\+L\+E\+\_\+\+I\+M\+G\+\_\+\+T\+Y\+PE}} = C\+V\+\_\+8\+U\+C1
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Data representation conversions between Digital\+Set and grayscale images. 
+Groups conversion between image models in D\+Gtal and open\+CV libraries and D\+Gtal Digital\+Sets. 
 
 \begin{DoxyAuthor}{Author}
 Daniel Martins Antunes 
@@ -33,5 +53,175 @@ Daniel Martins Antunes
 2018/08/27 
 \end{DoxyDate}
 \begin{DoxyNote}{Note}
-Implementation is limited to grayscale images. A proposal to incorporate color images is described at 
+Implementation is limited to grayscale images. 
+
+A better design might be the use of free functions instead of structs. 
 \end{DoxyNote}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Representation_a6eca0b4fa262f2d600f11d82ee10b5a6}\label{namespaceDIPaCUS_1_1Representation_a6eca0b4fa262f2d600f11d82ee10b5a6}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}!Digital\+Set@{Digital\+Set}}
+\index{Digital\+Set@{Digital\+Set}!D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}}
+\subsubsection{\texorpdfstring{Digital\+Set}{DigitalSet}}
+{\footnotesize\ttfamily typedef D\+Gtal\+::\+Z2i\+::\+Digital\+Set \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a6eca0b4fa262f2d600f11d82ee10b5a6}{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+Digital\+Set}}}
+
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Representation_ae97917e89f57298fda1626daad9f1733}\label{namespaceDIPaCUS_1_1Representation_ae97917e89f57298fda1626daad9f1733}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}!Image2D@{Image2D}}
+\index{Image2D@{Image2D}!D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}}
+\subsubsection{\texorpdfstring{Image2D}{Image2D}}
+{\footnotesize\ttfamily typedef D\+Gtal\+::\+Image\+Container\+By\+S\+T\+L\+Vector$<$D\+Gtal\+::\+Z2i\+::\+Domain, unsigned char$>$ \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_ae97917e89f57298fda1626daad9f1733}{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+Image2D}}}
+
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Representation_a66bd167c31ee02704986500ddb462df8}\label{namespaceDIPaCUS_1_1Representation_a66bd167c31ee02704986500ddb462df8}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}!Shift\+Value@{Shift\+Value}}
+\index{Shift\+Value@{Shift\+Value}!D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}}
+\subsubsection{\texorpdfstring{Shift\+Value}{ShiftValue}}
+{\footnotesize\ttfamily typedef unsigned int \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a66bd167c31ee02704986500ddb462df8}{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+Shift\+Value}}}
+
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Representation_a85996f90f0c4186ddae15b4f372bf875}\label{namespaceDIPaCUS_1_1Representation_a85996f90f0c4186ddae15b4f372bf875}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}!Threshold\+Value@{Threshold\+Value}}
+\index{Threshold\+Value@{Threshold\+Value}!D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}}
+\subsubsection{\texorpdfstring{Threshold\+Value}{ThresholdValue}}
+{\footnotesize\ttfamily typedef unsigned char \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a85996f90f0c4186ddae15b4f372bf875}{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+Threshold\+Value}}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Representation_a30987a074b773f7b4091b133a806618d}\label{namespaceDIPaCUS_1_1Representation_a30987a074b773f7b4091b133a806618d}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}!C\+V\+Mat\+To\+Digital\+Set@{C\+V\+Mat\+To\+Digital\+Set}}
+\index{C\+V\+Mat\+To\+Digital\+Set@{C\+V\+Mat\+To\+Digital\+Set}!D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}}
+\subsubsection{\texorpdfstring{C\+V\+Mat\+To\+Digital\+Set()}{CVMatToDigitalSet()}}
+{\footnotesize\ttfamily void D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Digital\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a6eca0b4fa262f2d600f11d82ee10b5a6}{Digital\+Set}} \&}]{ds\+Out,  }\item[{const cv\+::\+Mat \&}]{cv\+Img\+In,  }\item[{const \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a85996f90f0c4186ddae15b4f372bf875}{Threshold\+Value}}}]{tv = {\ttfamily 100},  }\item[{\mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a66bd167c31ee02704986500ddb462df8}{Shift\+Value}}}]{sx = {\ttfamily 0},  }\item[{\mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a66bd167c31ee02704986500ddb462df8}{Shift\+Value}}}]{sy = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Creates Digital\+Set model from grayscale open\+CV image model. 
+
+Only those pixels with value greater or equal the threshold will belong to the digital set. Extra shift parameters allows to translate the points in the digital set domain. 
+\begin{DoxyParams}{Parameters}
+{\em ds\+Out} & Digital\+Set model output. \\
+\hline
+{\em cv\+Img\+In} & Grayscale open\+CV image model input. \\
+\hline
+{\em tv} & Threshold value. \\
+\hline
+{\em sx} & Axis x translation. \\
+\hline
+{\em sy} & Axis y translation. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Representation_a21b3320f4db6e9be9b4ef3dc09c98afa}\label{namespaceDIPaCUS_1_1Representation_a21b3320f4db6e9be9b4ef3dc09c98afa}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}!C\+V\+Mat\+To\+Image@{C\+V\+Mat\+To\+Image}}
+\index{C\+V\+Mat\+To\+Image@{C\+V\+Mat\+To\+Image}!D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}}
+\subsubsection{\texorpdfstring{C\+V\+Mat\+To\+Image()}{CVMatToImage()}}
+{\footnotesize\ttfamily void D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_ae97917e89f57298fda1626daad9f1733}{Image2D}} \&}]{img\+Out,  }\item[{const cv\+::\+Mat \&}]{cv\+Img\+In }\end{DoxyParamCaption})}
+
+
+
+Creates grayscale D\+Gtal image model from grayscale open\+CV image model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img\+Out} & Grayscale D\+Gtal image model output. \\
+\hline
+{\em cv\+Img\+In} & Grayscale open\+CV image model input. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Representation_ad8ad6c44d5f4a4f7033fac84899bb3fa}\label{namespaceDIPaCUS_1_1Representation_ad8ad6c44d5f4a4f7033fac84899bb3fa}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}!digital\+Set\+To\+C\+V\+Mat@{digital\+Set\+To\+C\+V\+Mat}}
+\index{digital\+Set\+To\+C\+V\+Mat@{digital\+Set\+To\+C\+V\+Mat}!D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}}
+\subsubsection{\texorpdfstring{digital\+Set\+To\+C\+V\+Mat()}{digitalSetToCVMat()}}
+{\footnotesize\ttfamily void D\+I\+Pa\+C\+U\+S\+::\+Representation\+::digital\+Set\+To\+C\+V\+Mat (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{cv\+Img\+Out,  }\item[{const \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a6eca0b4fa262f2d600f11d82ee10b5a6}{Digital\+Set}} \&}]{ds\+In }\end{DoxyParamCaption})}
+
+
+
+Creates grayscale open\+CV image model from Digital\+Set model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cv\+Img\+Out} & Grayscale open\+CV image model output. \\
+\hline
+{\em ds\+In} & Digital\+Set model input. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Representation_a41889947a0233ac7c4433140f2d8886a}\label{namespaceDIPaCUS_1_1Representation_a41889947a0233ac7c4433140f2d8886a}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}!digital\+Set\+To\+Image@{digital\+Set\+To\+Image}}
+\index{digital\+Set\+To\+Image@{digital\+Set\+To\+Image}!D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}}
+\subsubsection{\texorpdfstring{digital\+Set\+To\+Image()}{digitalSetToImage()}}
+{\footnotesize\ttfamily void D\+I\+Pa\+C\+U\+S\+::\+Representation\+::digital\+Set\+To\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_ae97917e89f57298fda1626daad9f1733}{Image2D}} \&}]{img\+Out,  }\item[{const \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a6eca0b4fa262f2d600f11d82ee10b5a6}{Digital\+Set}} \&}]{ds\+In }\end{DoxyParamCaption})}
+
+
+
+Creates grasycale D\+Gtal Image model from Digital\+Set model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img\+Out} & Grayscale D\+Gtal image model output. \\
+\hline
+{\em ds\+In} & Digital\+Set model input. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Representation_a2b07e44f7c61b0a3b971cbda49aa0d88}\label{namespaceDIPaCUS_1_1Representation_a2b07e44f7c61b0a3b971cbda49aa0d88}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}!image\+As\+Digital\+Set@{image\+As\+Digital\+Set}}
+\index{image\+As\+Digital\+Set@{image\+As\+Digital\+Set}!D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}}
+\subsubsection{\texorpdfstring{image\+As\+Digital\+Set()}{imageAsDigitalSet()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void D\+I\+Pa\+C\+U\+S\+::\+Representation\+::image\+As\+Digital\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a6eca0b4fa262f2d600f11d82ee10b5a6}{Digital\+Set}} \&}]{ds\+Out,  }\item[{const std\+::string \&}]{img\+Path,  }\item[{const \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a85996f90f0c4186ddae15b4f372bf875}{Threshold\+Value}}}]{tv = {\ttfamily 100} }\end{DoxyParamCaption})}
+
+
+
+Creates the Digital\+Set model of grayscale image located at image\+Path. 
+
+Only those pixels with value greater or equal the threshold will belong to the digital set. 
+\begin{DoxyParams}{Parameters}
+{\em ds\+Out} & Digital\+Set model output. \\
+\hline
+{\em img\+Path} & Path to grayscale image input. \\
+\hline
+{\em tv} & Threshold value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Representation_a7ec92a29e6c9a4b581c086f4be6185de}\label{namespaceDIPaCUS_1_1Representation_a7ec92a29e6c9a4b581c086f4be6185de}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}!image\+As\+Digital\+Set@{image\+As\+Digital\+Set}}
+\index{image\+As\+Digital\+Set@{image\+As\+Digital\+Set}!D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}}
+\subsubsection{\texorpdfstring{image\+As\+Digital\+Set()}{imageAsDigitalSet()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void D\+I\+Pa\+C\+U\+S\+::\+Representation\+::image\+As\+Digital\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a6eca0b4fa262f2d600f11d82ee10b5a6}{Digital\+Set}} \&}]{ds\+Out,  }\item[{const \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_ae97917e89f57298fda1626daad9f1733}{Image2D}} \&}]{img\+In,  }\item[{const \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_a85996f90f0c4186ddae15b4f372bf875}{Threshold\+Value}}}]{tv = {\ttfamily 100} }\end{DoxyParamCaption})}
+
+
+
+Creates the Digital\+Set model from D\+Gtal grayscale image model. 
+
+Only those pixels with value greater or equal the threshold will belong to the digital set. 
+\begin{DoxyParams}{Parameters}
+{\em ds\+Out} & Digital\+Set model output. \\
+\hline
+{\em img\+In} & Grayscale D\+Gtal Image model input. \\
+\hline
+{\em tv} & Threshold value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Representation_a790f8a0a301e25de1fd7371e9b1ccada}\label{namespaceDIPaCUS_1_1Representation_a790f8a0a301e25de1fd7371e9b1ccada}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}!image\+To\+C\+V\+Mat@{image\+To\+C\+V\+Mat}}
+\index{image\+To\+C\+V\+Mat@{image\+To\+C\+V\+Mat}!D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}}
+\subsubsection{\texorpdfstring{image\+To\+C\+V\+Mat()}{imageToCVMat()}}
+{\footnotesize\ttfamily void D\+I\+Pa\+C\+U\+S\+::\+Representation\+::image\+To\+C\+V\+Mat (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{cv\+Img\+Out,  }\item[{const \mbox{\hyperlink{namespaceDIPaCUS_1_1Representation_ae97917e89f57298fda1626daad9f1733}{Image2D}} \&}]{img\+In }\end{DoxyParamCaption})}
+
+
+
+Creates grayscale open\+CV image model from grayscale D\+Gtal image representation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cv\+Img\+Out} & Grayscale open\+CV image model output. \\
+\hline
+{\em img\+In} & Grayscale D\+Gtal image model input. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Representation_ad86d37ae840297d40c79295d1c7e6e52}\label{namespaceDIPaCUS_1_1Representation_ad86d37ae840297d40c79295d1c7e6e52}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}!G\+R\+A\+Y\+S\+C\+A\+L\+E\+\_\+\+I\+M\+G\+\_\+\+T\+Y\+PE@{G\+R\+A\+Y\+S\+C\+A\+L\+E\+\_\+\+I\+M\+G\+\_\+\+T\+Y\+PE}}
+\index{G\+R\+A\+Y\+S\+C\+A\+L\+E\+\_\+\+I\+M\+G\+\_\+\+T\+Y\+PE@{G\+R\+A\+Y\+S\+C\+A\+L\+E\+\_\+\+I\+M\+G\+\_\+\+T\+Y\+PE}!D\+I\+Pa\+C\+U\+S\+::\+Representation@{D\+I\+Pa\+C\+U\+S\+::\+Representation}}
+\subsubsection{\texorpdfstring{G\+R\+A\+Y\+S\+C\+A\+L\+E\+\_\+\+I\+M\+G\+\_\+\+T\+Y\+PE}{GRAYSCALE\_IMG\_TYPE}}
+{\footnotesize\ttfamily const int D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+G\+R\+A\+Y\+S\+C\+A\+L\+E\+\_\+\+I\+M\+G\+\_\+\+T\+Y\+PE = C\+V\+\_\+8\+U\+C1}
+

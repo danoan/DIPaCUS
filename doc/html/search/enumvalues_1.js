@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rect',['RECT',['../namespaceDIPaCUS_1_1Morphology.html#a60b552d68432e7992f09717070d9c4e7a5ba2c6c1635185268d1540bd2075da3c',1,'DIPaCUS::Morphology']]]
+  ['rect',['RECT',['../structDIPaCUS_1_1Morphology_1_1StructuringElement.html#a266d1fadc80f8b6ead0b9a38046db1a9a7d76512707b30d60a60d7a4e4aebab6b',1,'DIPaCUS::Morphology::StructuringElement']]]
 ];

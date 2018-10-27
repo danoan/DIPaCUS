@@ -12,152 +12,113 @@
 
 namespace DIPaCUS {
     /**
-    * \brief Data representation conversions between DigitalSet and grayscale images.
+    * \brief Conversion between image models in DGtal and openCV libraries and
+     * DGtal DigitalSets
      *
     * \author Daniel Martins Antunes
     * \version 0.1
     * \date 2018/08/27
-    * \note Implementation is limited to grayscale images. A proposal to incorporate
-    *      color images is described at
+    * \note Implementation is limited to grayscale images.
+    * \note A better design might be the use of free functions
+     * instead of structs.
     *
     */
     namespace Representation {
 
-        /**
-         *  \brief Conversion between Image2D and DigitalSet representations
-         *
-         */
-        struct ImageAsDigitalSet {
-            typedef DGtal::Z2i::KSpace KImage;
-            typedef DGtal::Z2i::Domain Domain;
-            typedef DGtal::Z2i::Point Point;
+        typedef unsigned char ThresholdValue;
+        typedef unsigned int ShiftValue;
+        typedef DGtal::ImageContainerBySTLVector<DGtal::Z2i::Domain, unsigned char> Image2D;
+        typedef DGtal::Z2i::DigitalSet DigitalSet;
 
-            typedef DGtal::ImageContainerBySTLVector<Domain, unsigned char> Image2D;
-            typedef DGtal::Z2i::DigitalSet DigitalSet;
-            typedef DGtal::DigitalSetInserter<DigitalSet> DigitalSetInserter;
-
-            /**
-            *  \brief Creates the DigitalSet representation of grayscale image located at imagePath.
-            *  \param digitalSet DigitalSet representation output.
-            *  \param imagePath Path to grayscale image.
-            *  \param threshValue Pixel intensity thresholding for digital set belonginess.
-            */
-            ImageAsDigitalSet(DigitalSet &digitalSet,
-                              const std::string imagePath,
-                              int threshValue=100);
-
-
-            /**
-            *  \brief Creates the DigitalSet representation of grayscale image image.
-            *  \param digitalSet Created DigitalSet.
-            *  \param image Image2D representation of image.
-            *  \param threshValue Pixel intensity thresholding for digital set belonginess.
-            */
-            ImageAsDigitalSet(DigitalSet &digitalSet,
-                              const Image2D &image,
-                              int threshValue=100);
-
-
-        };
+        const int GRAYSCALE_IMG_TYPE = CV_8UC1;   //Limited to grayscale images only.
 
         /**
-         *  \brief Conversion between DigitalSet and Image2D representations
+        *  \brief Creates the DigitalSet model of grayscale image located at imagePath.
          *
-         */
-        struct DigitalSetToImage {
-            typedef DGtal::Z2i::Point Point;
-            typedef DGtal::Z2i::DigitalSet DigitalSet;
-            typedef DGtal::Z2i::Domain Domain;
-
-            typedef DGtal::ImageContainerBySTLVector<Domain, unsigned char> Image2D;
-
-            /**
-             * \brief Creates Image2D representation from DigitalSet representation.
-             * @param img Created Image2D.
-             * @param dgtalSet DigitalSet representation.
-             */
-            DigitalSetToImage(Image2D &img,
-                              const DigitalSet &dgtalSet);
-        };
-
-        /**
-         *  \brief Conversion between Image2D and cv::Mat representations
-         *
-         */
-        struct ImageToCVMat {
-            typedef DGtal::Z2i::Domain Domain;
-            typedef DGtal::Z2i::Point Point;
-            typedef DGtal::ImageContainerBySTLVector<Domain, unsigned char> Image2D;
-
-            /**
-             * \brief Creates cv::Mat representation from Image2D representation.
-             *
-             * @param cvImg Created cv::Mat.
-             * @param image Image2D representation.
-             */
-            ImageToCVMat(cv::Mat &cvImg,
-                         const Image2D &image);
-        };
+         *  Only those pixels with value greater or equal the threshold will belong to the digital
+         *  set.
+        *  \param dsOut DigitalSet model output.
+        *  \param imgPath Path to grayscale image input.
+        *  \param tv Threshold value.
+        */
+        void imageAsDigitalSet(DigitalSet &dsOut,
+                               const std::string& imgPath,
+                               const ThresholdValue tv=100);
 
 
         /**
-         *  \brief Conversion between cv::Mat and Image2D representations
+        *  \brief Creates the DigitalSet model from DGtal grayscale image model.
          *
-         */
-        struct CVMatToImage {
-            typedef DGtal::Z2i::Domain Domain;
-            typedef DGtal::Z2i::Point Point;
-            typedef DGtal::ImageContainerBySTLVector<Domain, unsigned char> Image2D;
+         *  Only those pixels with value greater or equal the threshold will belong to the digital
+         *  set.
+        *  \param dsOut DigitalSet model output.
+        *  \param imgIn Grayscale DGtal Image model input.
+        *  \param tv Threshold value.
+        */
+        void imageAsDigitalSet(DigitalSet &dsOut,
+                               const Image2D &imgIn,
+                               const ThresholdValue tv=100);
 
-            /**
-             * \brief Creates Image2D representation from cv::Mat representation.
-             *
-             * @param image Created Image2D.
-             * @param cvImg cv::Mat representation.
-             */
-            CVMatToImage(Image2D &image,
-                         const cv::Mat &cvImg);
-        };
 
 
         /**
-         *  \brief Conversion between DigitalSet and cv::Mat representations
-         *
+         * \brief Creates grasycale DGtal Image model from DigitalSet model.
+         * @param imgOut Grayscale DGtal image model output.
+         * @param dsIn DigitalSet model input.
          */
-        struct DigitalSetToCVMat {
-            typedef DGtal::Z2i::Point Point;
-            typedef DGtal::Z2i::DigitalSet DigitalSet;
+        void digitalSetToImage(Image2D &imgOut,
+                               const DigitalSet &dsIn);
 
-            /**
-             * \brief Creates cv::Mat representation from DigitalSet representation.
-             * @param cvImg Created cv::Mat.
-             * @param dgtalSet DigitalSet representation.
-             */
-            DigitalSetToCVMat(cv::Mat &cvImg,
-                              const DigitalSet &dgtalSet);
-        };
 
 
         /**
-         *  \brief Conversion between cv::Mat and DigitalSet representations
+         * \brief Creates grayscale openCV image model from grayscale DGtal image representation.
          *
+         * @param cvImgOut Grayscale openCV image model output.
+         * @param imgIn Grayscale DGtal image model input.
          */
-        struct CVMatToDigitalSet {
-            typedef DGtal::Z2i::Domain Domain;
-            typedef DGtal::Z2i::Point Point;
-            typedef DGtal::Z2i::DigitalSet DigitalSet;
-            typedef DGtal::ImageContainerBySTLVector<Domain, unsigned char> Image2D;
+        void imageToCVMat(cv::Mat &cvImgOut,
+                          const Image2D &imgIn);
 
-            /**
-             * \brief Creates DigitalSet representation from cv::Mat representation.
-             * @param dgtalSet Created DigitalSet.
-             * @param cvImg cv::Mat representation.
-             * @param threshValue Pixel intensity thresholding for digital set belonginess.
-             */
-            CVMatToDigitalSet(DigitalSet &dgtalSet,
-                              const cv::Mat &cvImg,
-                              int threshValue=100,int shiftx=0, int shifty=0);
-        };
+
+
+        /**
+         * \brief Creates grayscale DGtal image model from grayscale openCV image model.
+         *
+         * @param imgOut Grayscale DGtal image model output.
+         * @param cvImgIn Grayscale openCV image model input.
+         */
+        void CVMatToImage(Image2D &imgOut,
+                          const cv::Mat &cvImgIn);
+
+
+
+        /**
+         * \brief Creates grayscale openCV image model from DigitalSet model.
+         * @param cvImgOut Grayscale openCV image model output.
+         * @param dsIn DigitalSet model input.
+         */
+        void digitalSetToCVMat(cv::Mat &cvImgOut,
+                               const DigitalSet &dsIn);
+
+
+
+        /**
+         * \brief Creates DigitalSet model from grayscale openCV image model.
+         *
+         *  Only those pixels with value greater or equal the threshold will belong to the digital
+         *  set. Extra shift parameters allows to translate the points in the digital set domain.
+         * @param dsOut DigitalSet model output.
+         * @param cvImgIn Grayscale openCV image model input.
+         * @param tv Threshold value.
+         * @param sx Axis x translation.
+         * @param sy Axis y translation.
+         */
+        void CVMatToDigitalSet(DigitalSet &dsOut,
+                               const cv::Mat &cvImgIn,
+                               const ThresholdValue tv=100,
+                               ShiftValue sx=0,
+                               ShiftValue sy=0);
     }
 }
 

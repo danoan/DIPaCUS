@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['closing',['Closing',['../structDIPaCUS_1_1Morphology_1_1Closing.html',1,'DIPaCUS::Morphology']]],
-  ['cvmattodigitalset',['CVMatToDigitalSet',['../structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet.html',1,'DIPaCUS::Representation']]],
-  ['cvmattoimage',['CVMatToImage',['../structDIPaCUS_1_1Representation_1_1CVMatToImage.html',1,'DIPaCUS::Representation']]]
+  ['boundingbox',['BoundingBox',['../structDIPaCUS_1_1Properties_1_1CurveBoundingBox_1_1BoundingBox.html',1,'DIPaCUS::Properties::CurveBoundingBox']]]
 ];

@@ -1,15 +1,14 @@
 \hypertarget{namespaceDIPaCUS_1_1Morphology}{}\section{D\+I\+Pa\+C\+US\+:\+:Morphology Namespace Reference}
 \label{namespaceDIPaCUS_1_1Morphology}\index{D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}}
+
+
+\mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology}{Morphology}} basic operations on D\+Gtal digital set models.  
+
+
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{structDIPaCUS_1_1Morphology_1_1Closing}{Closing}}
-\item 
-struct \mbox{\hyperlink{structDIPaCUS_1_1Morphology_1_1Dilate}{Dilate}}
-\item 
-struct \mbox{\hyperlink{structDIPaCUS_1_1Morphology_1_1Erode}{Erode}}
-\item 
-struct \mbox{\hyperlink{structDIPaCUS_1_1Morphology_1_1Opening}{Opening}}
+struct \mbox{\hyperlink{structDIPaCUS_1_1Morphology_1_1StructuringElement}{Structuring\+Element}}
 \end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
@@ -19,19 +18,47 @@ typedef D\+Gtal\+::\+Z2i\+::\+Domain \mbox{\hyperlink{namespaceDIPaCUS_1_1Morpho
 typedef D\+Gtal\+::\+Z2i\+::\+Digital\+Set \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}}
 \item 
 typedef D\+Gtal\+::\+Image\+Container\+By\+S\+T\+L\+Vector$<$ \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab9f5fc1118b80b969855f77bee7d9914}{Domain}}, unsigned char $>$ \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a9aff9edf28d681accfc54435fbefcbee}{Image2D}}
+\item 
+typedef unsigned int \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a8ffa7d1c2023be8b21bc87a4b7df7cca}{Number\+Iterations}}
 \end{DoxyCompactItemize}
-\subsection*{Enumerations}
+\subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a60b552d68432e7992f09717070d9c4e7}{Structuring\+Element}} \{ \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a60b552d68432e7992f09717070d9c4e7a5ba2c6c1635185268d1540bd2075da3c}{R\+E\+CT}} = cv\+:\+:M\+O\+R\+P\+H\+\_\+\+R\+E\+CT, 
-\mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a60b552d68432e7992f09717070d9c4e7a7269c26cd97a608362be8ecdda8280e5}{C\+R\+O\+SS}} = cv\+:\+:M\+O\+R\+P\+H\+\_\+\+C\+R\+O\+SS
- \}
+void \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a94b7121d637a835ba0982b2578ba142b}{dilate}} (\mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a9aff9edf28d681accfc54435fbefcbee}{Image2D}} \&img\+Out, const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&ds\+In, const \mbox{\hyperlink{structDIPaCUS_1_1Morphology_1_1StructuringElement}{Structuring\+Element}} se, const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a8ffa7d1c2023be8b21bc87a4b7df7cca}{Number\+Iterations}} it=1)
+\item 
+void \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a2748662dcc9ecb081156aaa599a535d8}{dilate}} (\mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&ds\+Out, const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&ds\+In, const \mbox{\hyperlink{structDIPaCUS_1_1Morphology_1_1StructuringElement}{Structuring\+Element}} se, const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a8ffa7d1c2023be8b21bc87a4b7df7cca}{Number\+Iterations}} it=1)
+\item 
+void \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a3c3fd0423507cf0d21084b434039689e}{erode}} (\mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a9aff9edf28d681accfc54435fbefcbee}{Image2D}} \&img\+Out, const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&ds\+In, const \mbox{\hyperlink{structDIPaCUS_1_1Morphology_1_1StructuringElement}{Structuring\+Element}} se, const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a8ffa7d1c2023be8b21bc87a4b7df7cca}{Number\+Iterations}} it=1)
+\item 
+void \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a592a651d48216270bfd75bcebe63eec7}{erode}} (\mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&ds\+Out, const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&ds\+In, const \mbox{\hyperlink{structDIPaCUS_1_1Morphology_1_1StructuringElement}{Structuring\+Element}} se, const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a8ffa7d1c2023be8b21bc87a4b7df7cca}{Number\+Iterations}} iterations=1)
+\item 
+void \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a3ee880acb47a35ab065d52ce51a0c99c}{opening}} (\mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a9aff9edf28d681accfc54435fbefcbee}{Image2D}} \&img\+Out, const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&ds\+In, const \mbox{\hyperlink{structDIPaCUS_1_1Morphology_1_1StructuringElement}{Structuring\+Element}} se, const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a8ffa7d1c2023be8b21bc87a4b7df7cca}{Number\+Iterations}} it=1)
+\item 
+void \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ae3b5ddf7edad964159147df450c23783}{opening}} (\mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&ds\+Out, const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&ds\+In, const \mbox{\hyperlink{structDIPaCUS_1_1Morphology_1_1StructuringElement}{Structuring\+Element}} se, const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a8ffa7d1c2023be8b21bc87a4b7df7cca}{Number\+Iterations}} it=1)
+\item 
+void \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a5855de805a41a85c6e932fe291f3cbed}{closing}} (\mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a9aff9edf28d681accfc54435fbefcbee}{Image2D}} \&img\+Out, const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&ds\+In, const \mbox{\hyperlink{structDIPaCUS_1_1Morphology_1_1StructuringElement}{Structuring\+Element}} se, \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a8ffa7d1c2023be8b21bc87a4b7df7cca}{Number\+Iterations}} it=1)
+\item 
+void \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a99255bc91198ef5b6a75a08775d06374}{closing}} (\mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&dgtal\+Set\+Out, const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&ds\+In, const \mbox{\hyperlink{structDIPaCUS_1_1Morphology_1_1StructuringElement}{Structuring\+Element}} se, \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a8ffa7d1c2023be8b21bc87a4b7df7cca}{Number\+Iterations}} it=1)
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 const int \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ae40d30ec8ea7661ab5ab1c36795837d0}{I\+M\+G\+\_\+\+T\+Y\+PE}} = C\+V\+\_\+8\+U\+C1
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology}{Morphology}} basic operations on D\+Gtal digital set models. 
+
+It operates on grayscale images only. \begin{DoxyAuthor}{Author}
+Daniel Martins Antunes 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2018/08/27 
+\end{DoxyDate}
 
 
 \subsection{Typedef Documentation}
@@ -53,25 +80,151 @@ const int \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ae40d30ec8ea7661ab5ab1
 \subsubsection{\texorpdfstring{Image2D}{Image2D}}
 {\footnotesize\ttfamily typedef D\+Gtal\+::\+Image\+Container\+By\+S\+T\+L\+Vector$<$\mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab9f5fc1118b80b969855f77bee7d9914}{Domain}}, unsigned char$>$ \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a9aff9edf28d681accfc54435fbefcbee}{D\+I\+Pa\+C\+U\+S\+::\+Morphology\+::\+Image2D}}}
 
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Morphology_a8ffa7d1c2023be8b21bc87a4b7df7cca}\label{namespaceDIPaCUS_1_1Morphology_a8ffa7d1c2023be8b21bc87a4b7df7cca}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}!Number\+Iterations@{Number\+Iterations}}
+\index{Number\+Iterations@{Number\+Iterations}!D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}}
+\subsubsection{\texorpdfstring{Number\+Iterations}{NumberIterations}}
+{\footnotesize\ttfamily typedef unsigned int \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a8ffa7d1c2023be8b21bc87a4b7df7cca}{D\+I\+Pa\+C\+U\+S\+::\+Morphology\+::\+Number\+Iterations}}}
 
 
-\subsection{Enumeration Type Documentation}
-\mbox{\Hypertarget{namespaceDIPaCUS_1_1Morphology_a60b552d68432e7992f09717070d9c4e7}\label{namespaceDIPaCUS_1_1Morphology_a60b552d68432e7992f09717070d9c4e7}} 
-\index{D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}!Structuring\+Element@{Structuring\+Element}}
-\index{Structuring\+Element@{Structuring\+Element}!D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}}
-\subsubsection{\texorpdfstring{Structuring\+Element}{StructuringElement}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a60b552d68432e7992f09717070d9c4e7}{D\+I\+Pa\+C\+U\+S\+::\+Morphology\+::\+Structuring\+Element}}}
 
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+E\+CT@{R\+E\+CT}!D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}}\index{D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}!R\+E\+CT@{R\+E\+CT}}}\mbox{\Hypertarget{namespaceDIPaCUS_1_1Morphology_a60b552d68432e7992f09717070d9c4e7a5ba2c6c1635185268d1540bd2075da3c}\label{namespaceDIPaCUS_1_1Morphology_a60b552d68432e7992f09717070d9c4e7a5ba2c6c1635185268d1540bd2075da3c}} 
-R\+E\+CT&\\
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Morphology_a5855de805a41a85c6e932fe291f3cbed}\label{namespaceDIPaCUS_1_1Morphology_a5855de805a41a85c6e932fe291f3cbed}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}!closing@{closing}}
+\index{closing@{closing}!D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}}
+\subsubsection{\texorpdfstring{closing()}{closing()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void D\+I\+Pa\+C\+U\+S\+::\+Morphology\+::closing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a9aff9edf28d681accfc54435fbefcbee}{Image2D}} \&}]{img\+Out,  }\item[{const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&}]{ds\+In,  }\item[{const \mbox{\hyperlink{structDIPaCUS_1_1Morphology_1_1StructuringElement}{Structuring\+Element}}}]{se,  }\item[{\mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a8ffa7d1c2023be8b21bc87a4b7df7cca}{Number\+Iterations}}}]{it = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+/brief Closing D\+Gtal digital set model and output a grayscale D\+Gtal image model. 
+\begin{DoxyParams}{Parameters}
+{\em img\+Out} & Grayscale D\+Gtal image model output. \\
 \hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+R\+O\+SS@{C\+R\+O\+SS}!D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}}\index{D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}!C\+R\+O\+SS@{C\+R\+O\+SS}}}\mbox{\Hypertarget{namespaceDIPaCUS_1_1Morphology_a60b552d68432e7992f09717070d9c4e7a7269c26cd97a608362be8ecdda8280e5}\label{namespaceDIPaCUS_1_1Morphology_a60b552d68432e7992f09717070d9c4e7a7269c26cd97a608362be8ecdda8280e5}} 
-C\+R\+O\+SS&\\
+{\em ds\+In} & D\+Gtal digital set model input. \\
 \hline
+{\em se} & Structuring element used for closing. \\
+\hline
+{\em it} & Number of closing execution. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Morphology_a99255bc91198ef5b6a75a08775d06374}\label{namespaceDIPaCUS_1_1Morphology_a99255bc91198ef5b6a75a08775d06374}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}!closing@{closing}}
+\index{closing@{closing}!D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}}
+\subsubsection{\texorpdfstring{closing()}{closing()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void D\+I\+Pa\+C\+U\+S\+::\+Morphology\+::closing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&}]{dgtal\+Set\+Out,  }\item[{const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&}]{ds\+In,  }\item[{const \mbox{\hyperlink{structDIPaCUS_1_1Morphology_1_1StructuringElement}{Structuring\+Element}}}]{se,  }\item[{\mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a8ffa7d1c2023be8b21bc87a4b7df7cca}{Number\+Iterations}}}]{it = {\ttfamily 1} }\end{DoxyParamCaption})}
 
-\end{DoxyEnumFields}
+/brief Closing D\+Gtal digital set model and output a D\+Gtal digital set model. 
+\begin{DoxyParams}{Parameters}
+{\em ds\+Out} & D\+Gtal digital set model output. \\
+\hline
+{\em ds\+In} & D\+Gtal digital set model input. \\
+\hline
+{\em se} & Structuring element used for closing. \\
+\hline
+{\em it} & Number of closing execution. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Morphology_a94b7121d637a835ba0982b2578ba142b}\label{namespaceDIPaCUS_1_1Morphology_a94b7121d637a835ba0982b2578ba142b}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}!dilate@{dilate}}
+\index{dilate@{dilate}!D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}}
+\subsubsection{\texorpdfstring{dilate()}{dilate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void D\+I\+Pa\+C\+U\+S\+::\+Morphology\+::dilate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a9aff9edf28d681accfc54435fbefcbee}{Image2D}} \&}]{img\+Out,  }\item[{const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&}]{ds\+In,  }\item[{const \mbox{\hyperlink{structDIPaCUS_1_1Morphology_1_1StructuringElement}{Structuring\+Element}}}]{se,  }\item[{const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a8ffa7d1c2023be8b21bc87a4b7df7cca}{Number\+Iterations}}}]{it = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+/brief Dilate D\+Gtal digital set model and output a grayscale D\+Gtal image model. 
+\begin{DoxyParams}{Parameters}
+{\em img\+Out} & Grayscale D\+Gtal image model output. \\
+\hline
+{\em ds\+In} & D\+Gtal digital set model input. \\
+\hline
+{\em se} & Structuring element used for dilation. \\
+\hline
+{\em it} & Number of dilation execution. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Morphology_a2748662dcc9ecb081156aaa599a535d8}\label{namespaceDIPaCUS_1_1Morphology_a2748662dcc9ecb081156aaa599a535d8}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}!dilate@{dilate}}
+\index{dilate@{dilate}!D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}}
+\subsubsection{\texorpdfstring{dilate()}{dilate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void D\+I\+Pa\+C\+U\+S\+::\+Morphology\+::dilate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&}]{ds\+Out,  }\item[{const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&}]{ds\+In,  }\item[{const \mbox{\hyperlink{structDIPaCUS_1_1Morphology_1_1StructuringElement}{Structuring\+Element}}}]{se,  }\item[{const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a8ffa7d1c2023be8b21bc87a4b7df7cca}{Number\+Iterations}}}]{it = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+/brief Dilate D\+Gtal digital set model and output a D\+Gtal digital set model. 
+\begin{DoxyParams}{Parameters}
+{\em ds\+Out} & D\+Gtal digital set model output. \\
+\hline
+{\em ds\+In} & D\+Gtal digital set model input. \\
+\hline
+{\em se} & Structuring element used for dilation. \\
+\hline
+{\em it} & Number of times dilation is executed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Morphology_a3c3fd0423507cf0d21084b434039689e}\label{namespaceDIPaCUS_1_1Morphology_a3c3fd0423507cf0d21084b434039689e}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}!erode@{erode}}
+\index{erode@{erode}!D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}}
+\subsubsection{\texorpdfstring{erode()}{erode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void D\+I\+Pa\+C\+U\+S\+::\+Morphology\+::erode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a9aff9edf28d681accfc54435fbefcbee}{Image2D}} \&}]{img\+Out,  }\item[{const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&}]{ds\+In,  }\item[{const \mbox{\hyperlink{structDIPaCUS_1_1Morphology_1_1StructuringElement}{Structuring\+Element}}}]{se,  }\item[{const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a8ffa7d1c2023be8b21bc87a4b7df7cca}{Number\+Iterations}}}]{it = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+/brief Erode D\+Gtal digital set model and output a grayscale D\+Gtal image model. 
+\begin{DoxyParams}{Parameters}
+{\em img\+Out} & Grayscale D\+Gtal image model output. \\
+\hline
+{\em ds\+In} & D\+Gtal digital set model input. \\
+\hline
+{\em se} & Structuring element used for erosion. \\
+\hline
+{\em it} & Number of times erosion is executed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Morphology_a592a651d48216270bfd75bcebe63eec7}\label{namespaceDIPaCUS_1_1Morphology_a592a651d48216270bfd75bcebe63eec7}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}!erode@{erode}}
+\index{erode@{erode}!D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}}
+\subsubsection{\texorpdfstring{erode()}{erode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void D\+I\+Pa\+C\+U\+S\+::\+Morphology\+::erode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&}]{ds\+Out,  }\item[{const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&}]{ds\+In,  }\item[{const \mbox{\hyperlink{structDIPaCUS_1_1Morphology_1_1StructuringElement}{Structuring\+Element}}}]{se,  }\item[{const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a8ffa7d1c2023be8b21bc87a4b7df7cca}{Number\+Iterations}}}]{iterations = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+/brief Erode D\+Gtal digital set model and output a D\+Gtal digital set model. 
+\begin{DoxyParams}{Parameters}
+{\em ds\+Out} & D\+Gtal digital set model output. \\
+\hline
+{\em ds\+In} & D\+Gtal digital set model input. \\
+\hline
+{\em se} & Structuring element used for erosion. \\
+\hline
+{\em it} & Number of erosion execution. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Morphology_a3ee880acb47a35ab065d52ce51a0c99c}\label{namespaceDIPaCUS_1_1Morphology_a3ee880acb47a35ab065d52ce51a0c99c}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}!opening@{opening}}
+\index{opening@{opening}!D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}}
+\subsubsection{\texorpdfstring{opening()}{opening()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void D\+I\+Pa\+C\+U\+S\+::\+Morphology\+::opening (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a9aff9edf28d681accfc54435fbefcbee}{Image2D}} \&}]{img\+Out,  }\item[{const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&}]{ds\+In,  }\item[{const \mbox{\hyperlink{structDIPaCUS_1_1Morphology_1_1StructuringElement}{Structuring\+Element}}}]{se,  }\item[{const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a8ffa7d1c2023be8b21bc87a4b7df7cca}{Number\+Iterations}}}]{it = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+/brief Opening D\+Gtal digital set model and output a grayscale D\+Gtal image model. 
+\begin{DoxyParams}{Parameters}
+{\em img\+Out} & Grayscale D\+Gtal image model output. \\
+\hline
+{\em ds\+In} & D\+Gtal digital set model input. \\
+\hline
+{\em se} & Structuring element used for opening. \\
+\hline
+{\em it} & Number of opening execution. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Morphology_ae3b5ddf7edad964159147df450c23783}\label{namespaceDIPaCUS_1_1Morphology_ae3b5ddf7edad964159147df450c23783}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}!opening@{opening}}
+\index{opening@{opening}!D\+I\+Pa\+C\+U\+S\+::\+Morphology@{D\+I\+Pa\+C\+U\+S\+::\+Morphology}}
+\subsubsection{\texorpdfstring{opening()}{opening()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void D\+I\+Pa\+C\+U\+S\+::\+Morphology\+::opening (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&}]{ds\+Out,  }\item[{const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_ab69fa725716b0ed4c311c0d00a292be7}{Digital\+Set}} \&}]{ds\+In,  }\item[{const \mbox{\hyperlink{structDIPaCUS_1_1Morphology_1_1StructuringElement}{Structuring\+Element}}}]{se,  }\item[{const \mbox{\hyperlink{namespaceDIPaCUS_1_1Morphology_a8ffa7d1c2023be8b21bc87a4b7df7cca}{Number\+Iterations}}}]{it = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+/brief Opening D\+Gtal digital set model and output a D\+Gtal digital set model. 
+\begin{DoxyParams}{Parameters}
+{\em ds\+Out} & D\+Gtal digital set model output. \\
+\hline
+{\em ds\+In} & D\+Gtal digital set model input. \\
+\hline
+{\em se} & Structuring element used for opening. \\
+\hline
+{\em it} & Number of opening execution. \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Variable Documentation}

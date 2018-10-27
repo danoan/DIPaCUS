@@ -76,7 +76,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Conversion between cv::Mat and Image2D representations.  
+<p>Conversion between grayscale openCV image and grayscale DGtal image models.  
  <a href="structDIPaCUS_1_1Representation_1_1CVMatToImage.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Representation_8h_source.html">Representation.h</a>&gt;</code></p>
@@ -92,12 +92,12 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a84778cfc56aa2ea2e2aef0c30a8fd0f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDIPaCUS_1_1Representation_1_1CVMatToImage.html#a84778cfc56aa2ea2e2aef0c30a8fd0f4">CVMatToImage</a> (<a class="el" href="structDIPaCUS_1_1Representation_1_1CVMatToImage.html#a3e6b8dea7273472226dfb9d161e7ee26">Image2D</a> &amp;image, const cv::Mat &amp;cvImg)</td></tr>
-<tr class="memdesc:a84778cfc56aa2ea2e2aef0c30a8fd0f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates Image2D representation from cv::Mat representation.  <a href="#a84778cfc56aa2ea2e2aef0c30a8fd0f4">More...</a><br /></td></tr>
-<tr class="separator:a84778cfc56aa2ea2e2aef0c30a8fd0f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13f057de01e98b7f106360834c68d9ea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDIPaCUS_1_1Representation_1_1CVMatToImage.html#a13f057de01e98b7f106360834c68d9ea">CVMatToImage</a> (<a class="el" href="structDIPaCUS_1_1Representation_1_1CVMatToImage.html#a3e6b8dea7273472226dfb9d161e7ee26">Image2D</a> &amp;image, const cv::Mat &amp;cvImage)</td></tr>
+<tr class="memdesc:a13f057de01e98b7f106360834c68d9ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates grayscale DGtal image model from grayscale openCV image model.  <a href="#a13f057de01e98b7f106360834c68d9ea">More...</a><br /></td></tr>
+<tr class="separator:a13f057de01e98b7f106360834c68d9ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p class="">Conversion between cv::Mat and Image2D representations. </p>
+<div class="textblock"><p class="">Conversion between grayscale openCV image and grayscale DGtal image models. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a5d9aec8c9bd96fa66e4f7ed3a8feac02"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5d9aec8c9bd96fa66e4f7ed3a8feac02">&#9670;&nbsp;</a></span>Domain</h2>
@@ -142,8 +142,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a84778cfc56aa2ea2e2aef0c30a8fd0f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84778cfc56aa2ea2e2aef0c30a8fd0f4">&#9670;&nbsp;</a></span>CVMatToImage()</h2>
+<a id="a13f057de01e98b7f106360834c68d9ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13f057de01e98b7f106360834c68d9ea">&#9670;&nbsp;</a></span>CVMatToImage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,7 +158,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const cv::Mat &amp;&#160;</td>
-          <td class="paramname"><em>cvImg</em>&#160;</td>
+          <td class="paramname"><em>cvImage</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -168,11 +168,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates Image2D representation from cv::Mat representation. </p>
+<p>Creates grayscale DGtal image model from grayscale openCV image model. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">image</td><td>Created Image2D. </td></tr>
-    <tr><td class="paramname">cvImg</td><td>cv::Mat representation. </td></tr>
+    <tr><td class="paramname">image</td><td>Grayscale DGtal image model output. </td></tr>
+    <tr><td class="paramname">cvImg</td><td>Grayscale openCV image model input. </td></tr>
   </table>
   </dd>
 </dl>
@@ -180,7 +180,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>base/include/<a class="el" href="Representation_8h_source.html">Representation.h</a></li>
+<li>modules/base/include/DIPaCUS/base/<a class="el" href="Representation_8h_source.html">Representation.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

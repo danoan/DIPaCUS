@@ -70,22 +70,19 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">DIPaCUS::Morphology Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="namespaceDIPaCUS_1_1Morphology.html" title="Morphology basic operations on DGtal digital set models.">Morphology</a> basic operations on DGtal digital set models.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDIPaCUS_1_1Morphology_1_1Closing.html">Closing</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDIPaCUS_1_1Morphology_1_1Dilate.html">Dilate</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDIPaCUS_1_1Morphology_1_1Erode.html">Erode</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDIPaCUS_1_1Morphology_1_1Opening.html">Opening</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDIPaCUS_1_1Morphology_1_1StructuringElement.html">StructuringElement</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -96,20 +93,39 @@ Typedefs</h2></td></tr>
 <tr class="separator:ab69fa725716b0ed4c311c0d00a292be7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9aff9edf28d681accfc54435fbefcbee"><td class="memItemLeft" align="right" valign="top">typedef DGtal::ImageContainerBySTLVector&lt; <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab9f5fc1118b80b969855f77bee7d9914">Domain</a>, unsigned char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a9aff9edf28d681accfc54435fbefcbee">Image2D</a></td></tr>
 <tr class="separator:a9aff9edf28d681accfc54435fbefcbee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ffa7d1c2023be8b21bc87a4b7df7cca"><td class="memItemLeft" align="right" valign="top">typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a8ffa7d1c2023be8b21bc87a4b7df7cca">NumberIterations</a></td></tr>
+<tr class="separator:a8ffa7d1c2023be8b21bc87a4b7df7cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a60b552d68432e7992f09717070d9c4e7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a60b552d68432e7992f09717070d9c4e7">StructuringElement</a> { <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a60b552d68432e7992f09717070d9c4e7a5ba2c6c1635185268d1540bd2075da3c">RECT</a> = cv::MORPH_RECT, 
-<a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a60b552d68432e7992f09717070d9c4e7a7269c26cd97a608362be8ecdda8280e5">CROSS</a> = cv::MORPH_CROSS
- }</td></tr>
-<tr class="separator:a60b552d68432e7992f09717070d9c4e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a94b7121d637a835ba0982b2578ba142b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a94b7121d637a835ba0982b2578ba142b">dilate</a> (<a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a9aff9edf28d681accfc54435fbefcbee">Image2D</a> &amp;imgOut, const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;dsIn, const <a class="el" href="structDIPaCUS_1_1Morphology_1_1StructuringElement.html">StructuringElement</a> se, const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a8ffa7d1c2023be8b21bc87a4b7df7cca">NumberIterations</a> it=1)</td></tr>
+<tr class="separator:a94b7121d637a835ba0982b2578ba142b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2748662dcc9ecb081156aaa599a535d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a2748662dcc9ecb081156aaa599a535d8">dilate</a> (<a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;dsOut, const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;dsIn, const <a class="el" href="structDIPaCUS_1_1Morphology_1_1StructuringElement.html">StructuringElement</a> se, const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a8ffa7d1c2023be8b21bc87a4b7df7cca">NumberIterations</a> it=1)</td></tr>
+<tr class="separator:a2748662dcc9ecb081156aaa599a535d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c3fd0423507cf0d21084b434039689e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a3c3fd0423507cf0d21084b434039689e">erode</a> (<a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a9aff9edf28d681accfc54435fbefcbee">Image2D</a> &amp;imgOut, const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;dsIn, const <a class="el" href="structDIPaCUS_1_1Morphology_1_1StructuringElement.html">StructuringElement</a> se, const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a8ffa7d1c2023be8b21bc87a4b7df7cca">NumberIterations</a> it=1)</td></tr>
+<tr class="separator:a3c3fd0423507cf0d21084b434039689e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a592a651d48216270bfd75bcebe63eec7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a592a651d48216270bfd75bcebe63eec7">erode</a> (<a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;dsOut, const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;dsIn, const <a class="el" href="structDIPaCUS_1_1Morphology_1_1StructuringElement.html">StructuringElement</a> se, const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a8ffa7d1c2023be8b21bc87a4b7df7cca">NumberIterations</a> iterations=1)</td></tr>
+<tr class="separator:a592a651d48216270bfd75bcebe63eec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ee880acb47a35ab065d52ce51a0c99c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a3ee880acb47a35ab065d52ce51a0c99c">opening</a> (<a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a9aff9edf28d681accfc54435fbefcbee">Image2D</a> &amp;imgOut, const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;dsIn, const <a class="el" href="structDIPaCUS_1_1Morphology_1_1StructuringElement.html">StructuringElement</a> se, const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a8ffa7d1c2023be8b21bc87a4b7df7cca">NumberIterations</a> it=1)</td></tr>
+<tr class="separator:a3ee880acb47a35ab065d52ce51a0c99c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3b5ddf7edad964159147df450c23783"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ae3b5ddf7edad964159147df450c23783">opening</a> (<a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;dsOut, const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;dsIn, const <a class="el" href="structDIPaCUS_1_1Morphology_1_1StructuringElement.html">StructuringElement</a> se, const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a8ffa7d1c2023be8b21bc87a4b7df7cca">NumberIterations</a> it=1)</td></tr>
+<tr class="separator:ae3b5ddf7edad964159147df450c23783"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5855de805a41a85c6e932fe291f3cbed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a5855de805a41a85c6e932fe291f3cbed">closing</a> (<a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a9aff9edf28d681accfc54435fbefcbee">Image2D</a> &amp;imgOut, const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;dsIn, const <a class="el" href="structDIPaCUS_1_1Morphology_1_1StructuringElement.html">StructuringElement</a> se, <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a8ffa7d1c2023be8b21bc87a4b7df7cca">NumberIterations</a> it=1)</td></tr>
+<tr class="separator:a5855de805a41a85c6e932fe291f3cbed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99255bc91198ef5b6a75a08775d06374"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a99255bc91198ef5b6a75a08775d06374">closing</a> (<a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;dgtalSetOut, const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;dsIn, const <a class="el" href="structDIPaCUS_1_1Morphology_1_1StructuringElement.html">StructuringElement</a> se, <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a8ffa7d1c2023be8b21bc87a4b7df7cca">NumberIterations</a> it=1)</td></tr>
+<tr class="separator:a99255bc91198ef5b6a75a08775d06374"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:ae40d30ec8ea7661ab5ab1c36795837d0"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ae40d30ec8ea7661ab5ab1c36795837d0">IMG_TYPE</a> = CV_8UC1</td></tr>
 <tr class="separator:ae40d30ec8ea7661ab5ab1c36795837d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p class=""><a class="el" href="namespaceDIPaCUS_1_1Morphology.html" title="Morphology basic operations on DGtal digital set models.">Morphology</a> basic operations on DGtal digital set models. </p>
+<p class="">It operates on grayscale images only. </p><dl class="section author"><dt>Author</dt><dd>Daniel Martins Antunes </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2018/08/27 </dd></dl>
+</div><h2 class="groupheader">Typedef Documentation</h2>
 <a id="ab69fa725716b0ed4c311c0d00a292be7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab69fa725716b0ed4c311c0d00a292be7">&#9670;&nbsp;</a></span>DigitalSet</h2>
 
@@ -152,22 +168,410 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="a60b552d68432e7992f09717070d9c4e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60b552d68432e7992f09717070d9c4e7">&#9670;&nbsp;</a></span>StructuringElement</h2>
+<a id="a8ffa7d1c2023be8b21bc87a4b7df7cca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ffa7d1c2023be8b21bc87a4b7df7cca">&#9670;&nbsp;</a></span>NumberIterations</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a60b552d68432e7992f09717070d9c4e7">DIPaCUS::Morphology::StructuringElement</a></td>
+          <td class="memname">typedef unsigned int <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a8ffa7d1c2023be8b21bc87a4b7df7cca">DIPaCUS::Morphology::NumberIterations</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a60b552d68432e7992f09717070d9c4e7a5ba2c6c1635185268d1540bd2075da3c"></a>RECT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a60b552d68432e7992f09717070d9c4e7a7269c26cd97a608362be8ecdda8280e5"></a>CROSS&#160;</td><td class="fielddoc"></td></tr>
-</table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a5855de805a41a85c6e932fe291f3cbed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5855de805a41a85c6e932fe291f3cbed">&#9670;&nbsp;</a></span>closing() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DIPaCUS::Morphology::closing </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a9aff9edf28d681accfc54435fbefcbee">Image2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>imgOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>dsIn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structDIPaCUS_1_1Morphology_1_1StructuringElement.html">StructuringElement</a>&#160;</td>
+          <td class="paramname"><em>se</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a8ffa7d1c2023be8b21bc87a4b7df7cca">NumberIterations</a>&#160;</td>
+          <td class="paramname"><em>it</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p class="">/brief Closing DGtal digital set model and output a grayscale DGtal image model. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">imgOut</td><td>Grayscale DGtal image model output. </td></tr>
+    <tr><td class="paramname">dsIn</td><td>DGtal digital set model input. </td></tr>
+    <tr><td class="paramname">se</td><td>Structuring element used for closing. </td></tr>
+    <tr><td class="paramname">it</td><td>Number of closing execution. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a99255bc91198ef5b6a75a08775d06374"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99255bc91198ef5b6a75a08775d06374">&#9670;&nbsp;</a></span>closing() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DIPaCUS::Morphology::closing </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>dgtalSetOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>dsIn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structDIPaCUS_1_1Morphology_1_1StructuringElement.html">StructuringElement</a>&#160;</td>
+          <td class="paramname"><em>se</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a8ffa7d1c2023be8b21bc87a4b7df7cca">NumberIterations</a>&#160;</td>
+          <td class="paramname"><em>it</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p class="">/brief Closing DGtal digital set model and output a DGtal digital set model. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dsOut</td><td>DGtal digital set model output. </td></tr>
+    <tr><td class="paramname">dsIn</td><td>DGtal digital set model input. </td></tr>
+    <tr><td class="paramname">se</td><td>Structuring element used for closing. </td></tr>
+    <tr><td class="paramname">it</td><td>Number of closing execution. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a94b7121d637a835ba0982b2578ba142b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94b7121d637a835ba0982b2578ba142b">&#9670;&nbsp;</a></span>dilate() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DIPaCUS::Morphology::dilate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a9aff9edf28d681accfc54435fbefcbee">Image2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>imgOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>dsIn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structDIPaCUS_1_1Morphology_1_1StructuringElement.html">StructuringElement</a>&#160;</td>
+          <td class="paramname"><em>se</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a8ffa7d1c2023be8b21bc87a4b7df7cca">NumberIterations</a>&#160;</td>
+          <td class="paramname"><em>it</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p class="">/brief Dilate DGtal digital set model and output a grayscale DGtal image model. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">imgOut</td><td>Grayscale DGtal image model output. </td></tr>
+    <tr><td class="paramname">dsIn</td><td>DGtal digital set model input. </td></tr>
+    <tr><td class="paramname">se</td><td>Structuring element used for dilation. </td></tr>
+    <tr><td class="paramname">it</td><td>Number of dilation execution. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2748662dcc9ecb081156aaa599a535d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2748662dcc9ecb081156aaa599a535d8">&#9670;&nbsp;</a></span>dilate() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DIPaCUS::Morphology::dilate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>dsOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>dsIn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structDIPaCUS_1_1Morphology_1_1StructuringElement.html">StructuringElement</a>&#160;</td>
+          <td class="paramname"><em>se</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a8ffa7d1c2023be8b21bc87a4b7df7cca">NumberIterations</a>&#160;</td>
+          <td class="paramname"><em>it</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p class="">/brief Dilate DGtal digital set model and output a DGtal digital set model. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dsOut</td><td>DGtal digital set model output. </td></tr>
+    <tr><td class="paramname">dsIn</td><td>DGtal digital set model input. </td></tr>
+    <tr><td class="paramname">se</td><td>Structuring element used for dilation. </td></tr>
+    <tr><td class="paramname">it</td><td>Number of times dilation is executed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3c3fd0423507cf0d21084b434039689e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c3fd0423507cf0d21084b434039689e">&#9670;&nbsp;</a></span>erode() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DIPaCUS::Morphology::erode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a9aff9edf28d681accfc54435fbefcbee">Image2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>imgOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>dsIn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structDIPaCUS_1_1Morphology_1_1StructuringElement.html">StructuringElement</a>&#160;</td>
+          <td class="paramname"><em>se</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a8ffa7d1c2023be8b21bc87a4b7df7cca">NumberIterations</a>&#160;</td>
+          <td class="paramname"><em>it</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p class="">/brief Erode DGtal digital set model and output a grayscale DGtal image model. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">imgOut</td><td>Grayscale DGtal image model output. </td></tr>
+    <tr><td class="paramname">dsIn</td><td>DGtal digital set model input. </td></tr>
+    <tr><td class="paramname">se</td><td>Structuring element used for erosion. </td></tr>
+    <tr><td class="paramname">it</td><td>Number of times erosion is executed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a592a651d48216270bfd75bcebe63eec7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a592a651d48216270bfd75bcebe63eec7">&#9670;&nbsp;</a></span>erode() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DIPaCUS::Morphology::erode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>dsOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>dsIn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structDIPaCUS_1_1Morphology_1_1StructuringElement.html">StructuringElement</a>&#160;</td>
+          <td class="paramname"><em>se</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a8ffa7d1c2023be8b21bc87a4b7df7cca">NumberIterations</a>&#160;</td>
+          <td class="paramname"><em>iterations</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p class="">/brief Erode DGtal digital set model and output a DGtal digital set model. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dsOut</td><td>DGtal digital set model output. </td></tr>
+    <tr><td class="paramname">dsIn</td><td>DGtal digital set model input. </td></tr>
+    <tr><td class="paramname">se</td><td>Structuring element used for erosion. </td></tr>
+    <tr><td class="paramname">it</td><td>Number of erosion execution. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3ee880acb47a35ab065d52ce51a0c99c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ee880acb47a35ab065d52ce51a0c99c">&#9670;&nbsp;</a></span>opening() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DIPaCUS::Morphology::opening </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a9aff9edf28d681accfc54435fbefcbee">Image2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>imgOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>dsIn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structDIPaCUS_1_1Morphology_1_1StructuringElement.html">StructuringElement</a>&#160;</td>
+          <td class="paramname"><em>se</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a8ffa7d1c2023be8b21bc87a4b7df7cca">NumberIterations</a>&#160;</td>
+          <td class="paramname"><em>it</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p class="">/brief Opening DGtal digital set model and output a grayscale DGtal image model. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">imgOut</td><td>Grayscale DGtal image model output. </td></tr>
+    <tr><td class="paramname">dsIn</td><td>DGtal digital set model input. </td></tr>
+    <tr><td class="paramname">se</td><td>Structuring element used for opening. </td></tr>
+    <tr><td class="paramname">it</td><td>Number of opening execution. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae3b5ddf7edad964159147df450c23783"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3b5ddf7edad964159147df450c23783">&#9670;&nbsp;</a></span>opening() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DIPaCUS::Morphology::opening </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>dsOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#ab69fa725716b0ed4c311c0d00a292be7">DigitalSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>dsIn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structDIPaCUS_1_1Morphology_1_1StructuringElement.html">StructuringElement</a>&#160;</td>
+          <td class="paramname"><em>se</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceDIPaCUS_1_1Morphology.html#a8ffa7d1c2023be8b21bc87a4b7df7cca">NumberIterations</a>&#160;</td>
+          <td class="paramname"><em>it</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p class="">/brief Opening DGtal digital set model and output a DGtal digital set model. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dsOut</td><td>DGtal digital set model output. </td></tr>
+    <tr><td class="paramname">dsIn</td><td>DGtal digital set model input. </td></tr>
+    <tr><td class="paramname">se</td><td>Structuring element used for opening. </td></tr>
+    <tr><td class="paramname">it</td><td>Number of opening execution. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

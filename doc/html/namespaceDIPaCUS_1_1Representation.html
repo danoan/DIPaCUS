@@ -68,40 +68,433 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">DIPaCUS::Representation Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Data representation conversions between DigitalSet and grayscale images.  
+<p>Groups conversion between image models in DGtal and openCV libraries and DGtal DigitalSets.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet.html">CVMatToDigitalSet</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion between cv::Mat and DigitalSet representations.  <a href="structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDIPaCUS_1_1Representation_1_1CVMatToImage.html">CVMatToImage</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion between cv::Mat and Image2D representations.  <a href="structDIPaCUS_1_1Representation_1_1CVMatToImage.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDIPaCUS_1_1Representation_1_1DigitalSetToCVMat.html">DigitalSetToCVMat</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion between DigitalSet and cv::Mat representations.  <a href="structDIPaCUS_1_1Representation_1_1DigitalSetToCVMat.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet.html">ImageAsDigitalSet</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion between Image2D and DigitalSet representations.  <a href="structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDIPaCUS_1_1Representation_1_1ImageToCVMat.html">ImageToCVMat</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conversion between Image2D and cv::Mat representations.  <a href="structDIPaCUS_1_1Representation_1_1ImageToCVMat.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a85996f90f0c4186ddae15b4f372bf875"><td class="memItemLeft" align="right" valign="top">typedef unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Representation.html#a85996f90f0c4186ddae15b4f372bf875">ThresholdValue</a></td></tr>
+<tr class="separator:a85996f90f0c4186ddae15b4f372bf875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66bd167c31ee02704986500ddb462df8"><td class="memItemLeft" align="right" valign="top">typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Representation.html#a66bd167c31ee02704986500ddb462df8">ShiftValue</a></td></tr>
+<tr class="separator:a66bd167c31ee02704986500ddb462df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae97917e89f57298fda1626daad9f1733"><td class="memItemLeft" align="right" valign="top">typedef DGtal::ImageContainerBySTLVector&lt; DGtal::Z2i::Domain, unsigned char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Representation.html#ae97917e89f57298fda1626daad9f1733">Image2D</a></td></tr>
+<tr class="separator:ae97917e89f57298fda1626daad9f1733"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eca0b4fa262f2d600f11d82ee10b5a6"><td class="memItemLeft" align="right" valign="top">typedef DGtal::Z2i::DigitalSet&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Representation.html#a6eca0b4fa262f2d600f11d82ee10b5a6">DigitalSet</a></td></tr>
+<tr class="separator:a6eca0b4fa262f2d600f11d82ee10b5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a2b07e44f7c61b0a3b971cbda49aa0d88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Representation.html#a2b07e44f7c61b0a3b971cbda49aa0d88">imageAsDigitalSet</a> (<a class="el" href="namespaceDIPaCUS_1_1Representation.html#a6eca0b4fa262f2d600f11d82ee10b5a6">DigitalSet</a> &amp;dsOut, const std::string &amp;imgPath, const <a class="el" href="namespaceDIPaCUS_1_1Representation.html#a85996f90f0c4186ddae15b4f372bf875">ThresholdValue</a> tv=100)</td></tr>
+<tr class="memdesc:a2b07e44f7c61b0a3b971cbda49aa0d88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the DigitalSet model of grayscale image located at imagePath.  <a href="#a2b07e44f7c61b0a3b971cbda49aa0d88">More...</a><br /></td></tr>
+<tr class="separator:a2b07e44f7c61b0a3b971cbda49aa0d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ec92a29e6c9a4b581c086f4be6185de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Representation.html#a7ec92a29e6c9a4b581c086f4be6185de">imageAsDigitalSet</a> (<a class="el" href="namespaceDIPaCUS_1_1Representation.html#a6eca0b4fa262f2d600f11d82ee10b5a6">DigitalSet</a> &amp;dsOut, const <a class="el" href="namespaceDIPaCUS_1_1Representation.html#ae97917e89f57298fda1626daad9f1733">Image2D</a> &amp;imgIn, const <a class="el" href="namespaceDIPaCUS_1_1Representation.html#a85996f90f0c4186ddae15b4f372bf875">ThresholdValue</a> tv=100)</td></tr>
+<tr class="memdesc:a7ec92a29e6c9a4b581c086f4be6185de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the DigitalSet model from DGtal grayscale image model.  <a href="#a7ec92a29e6c9a4b581c086f4be6185de">More...</a><br /></td></tr>
+<tr class="separator:a7ec92a29e6c9a4b581c086f4be6185de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41889947a0233ac7c4433140f2d8886a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Representation.html#a41889947a0233ac7c4433140f2d8886a">digitalSetToImage</a> (<a class="el" href="namespaceDIPaCUS_1_1Representation.html#ae97917e89f57298fda1626daad9f1733">Image2D</a> &amp;imgOut, const <a class="el" href="namespaceDIPaCUS_1_1Representation.html#a6eca0b4fa262f2d600f11d82ee10b5a6">DigitalSet</a> &amp;dsIn)</td></tr>
+<tr class="memdesc:a41889947a0233ac7c4433140f2d8886a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates grasycale DGtal Image model from DigitalSet model.  <a href="#a41889947a0233ac7c4433140f2d8886a">More...</a><br /></td></tr>
+<tr class="separator:a41889947a0233ac7c4433140f2d8886a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a790f8a0a301e25de1fd7371e9b1ccada"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Representation.html#a790f8a0a301e25de1fd7371e9b1ccada">imageToCVMat</a> (cv::Mat &amp;cvImgOut, const <a class="el" href="namespaceDIPaCUS_1_1Representation.html#ae97917e89f57298fda1626daad9f1733">Image2D</a> &amp;imgIn)</td></tr>
+<tr class="memdesc:a790f8a0a301e25de1fd7371e9b1ccada"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates grayscale openCV image model from grayscale DGtal image representation.  <a href="#a790f8a0a301e25de1fd7371e9b1ccada">More...</a><br /></td></tr>
+<tr class="separator:a790f8a0a301e25de1fd7371e9b1ccada"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21b3320f4db6e9be9b4ef3dc09c98afa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Representation.html#a21b3320f4db6e9be9b4ef3dc09c98afa">CVMatToImage</a> (<a class="el" href="namespaceDIPaCUS_1_1Representation.html#ae97917e89f57298fda1626daad9f1733">Image2D</a> &amp;imgOut, const cv::Mat &amp;cvImgIn)</td></tr>
+<tr class="memdesc:a21b3320f4db6e9be9b4ef3dc09c98afa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates grayscale DGtal image model from grayscale openCV image model.  <a href="#a21b3320f4db6e9be9b4ef3dc09c98afa">More...</a><br /></td></tr>
+<tr class="separator:a21b3320f4db6e9be9b4ef3dc09c98afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8ad6c44d5f4a4f7033fac84899bb3fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Representation.html#ad8ad6c44d5f4a4f7033fac84899bb3fa">digitalSetToCVMat</a> (cv::Mat &amp;cvImgOut, const <a class="el" href="namespaceDIPaCUS_1_1Representation.html#a6eca0b4fa262f2d600f11d82ee10b5a6">DigitalSet</a> &amp;dsIn)</td></tr>
+<tr class="memdesc:ad8ad6c44d5f4a4f7033fac84899bb3fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates grayscale openCV image model from DigitalSet model.  <a href="#ad8ad6c44d5f4a4f7033fac84899bb3fa">More...</a><br /></td></tr>
+<tr class="separator:ad8ad6c44d5f4a4f7033fac84899bb3fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30987a074b773f7b4091b133a806618d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Representation.html#a30987a074b773f7b4091b133a806618d">CVMatToDigitalSet</a> (<a class="el" href="namespaceDIPaCUS_1_1Representation.html#a6eca0b4fa262f2d600f11d82ee10b5a6">DigitalSet</a> &amp;dsOut, const cv::Mat &amp;cvImgIn, const <a class="el" href="namespaceDIPaCUS_1_1Representation.html#a85996f90f0c4186ddae15b4f372bf875">ThresholdValue</a> tv=100, <a class="el" href="namespaceDIPaCUS_1_1Representation.html#a66bd167c31ee02704986500ddb462df8">ShiftValue</a> sx=0, <a class="el" href="namespaceDIPaCUS_1_1Representation.html#a66bd167c31ee02704986500ddb462df8">ShiftValue</a> sy=0)</td></tr>
+<tr class="memdesc:a30987a074b773f7b4091b133a806618d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates DigitalSet model from grayscale openCV image model.  <a href="#a30987a074b773f7b4091b133a806618d">More...</a><br /></td></tr>
+<tr class="separator:a30987a074b773f7b4091b133a806618d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ad86d37ae840297d40c79295d1c7e6e52"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDIPaCUS_1_1Representation.html#ad86d37ae840297d40c79295d1c7e6e52">GRAYSCALE_IMG_TYPE</a> = CV_8UC1</td></tr>
+<tr class="separator:ad86d37ae840297d40c79295d1c7e6e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p class="">Data representation conversions between DigitalSet and grayscale images. </p>
+<div class="textblock"><p class="">Groups conversion between image models in DGtal and openCV libraries and DGtal DigitalSets. </p>
 <dl class="section author"><dt>Author</dt><dd>Daniel Martins Antunes </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2018/08/27 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Implementation is limited to grayscale images. A proposal to incorporate color images is described at </dd></dl>
-</div></div><!-- contents -->
+<dl class="section note"><dt>Note</dt><dd>Implementation is limited to grayscale images. </dd>
+<dd>
+A better design might be the use of free functions instead of structs. </dd></dl>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="a6eca0b4fa262f2d600f11d82ee10b5a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eca0b4fa262f2d600f11d82ee10b5a6">&#9670;&nbsp;</a></span>DigitalSet</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef DGtal::Z2i::DigitalSet <a class="el" href="namespaceDIPaCUS_1_1Representation.html#a6eca0b4fa262f2d600f11d82ee10b5a6">DIPaCUS::Representation::DigitalSet</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae97917e89f57298fda1626daad9f1733"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae97917e89f57298fda1626daad9f1733">&#9670;&nbsp;</a></span>Image2D</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef DGtal::ImageContainerBySTLVector&lt;DGtal::Z2i::Domain, unsigned char&gt; <a class="el" href="namespaceDIPaCUS_1_1Representation.html#ae97917e89f57298fda1626daad9f1733">DIPaCUS::Representation::Image2D</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a66bd167c31ee02704986500ddb462df8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66bd167c31ee02704986500ddb462df8">&#9670;&nbsp;</a></span>ShiftValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned int <a class="el" href="namespaceDIPaCUS_1_1Representation.html#a66bd167c31ee02704986500ddb462df8">DIPaCUS::Representation::ShiftValue</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85996f90f0c4186ddae15b4f372bf875"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85996f90f0c4186ddae15b4f372bf875">&#9670;&nbsp;</a></span>ThresholdValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned char <a class="el" href="namespaceDIPaCUS_1_1Representation.html#a85996f90f0c4186ddae15b4f372bf875">DIPaCUS::Representation::ThresholdValue</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a30987a074b773f7b4091b133a806618d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30987a074b773f7b4091b133a806618d">&#9670;&nbsp;</a></span>CVMatToDigitalSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DIPaCUS::Representation::CVMatToDigitalSet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceDIPaCUS_1_1Representation.html#a6eca0b4fa262f2d600f11d82ee10b5a6">DigitalSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>dsOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>cvImgIn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceDIPaCUS_1_1Representation.html#a85996f90f0c4186ddae15b4f372bf875">ThresholdValue</a>&#160;</td>
+          <td class="paramname"><em>tv</em> = <code>100</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceDIPaCUS_1_1Representation.html#a66bd167c31ee02704986500ddb462df8">ShiftValue</a>&#160;</td>
+          <td class="paramname"><em>sx</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceDIPaCUS_1_1Representation.html#a66bd167c31ee02704986500ddb462df8">ShiftValue</a>&#160;</td>
+          <td class="paramname"><em>sy</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates DigitalSet model from grayscale openCV image model. </p>
+<p class="">Only those pixels with value greater or equal the threshold will belong to the digital set. Extra shift parameters allows to translate the points in the digital set domain. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dsOut</td><td>DigitalSet model output. </td></tr>
+    <tr><td class="paramname">cvImgIn</td><td>Grayscale openCV image model input. </td></tr>
+    <tr><td class="paramname">tv</td><td>Threshold value. </td></tr>
+    <tr><td class="paramname">sx</td><td>Axis x translation. </td></tr>
+    <tr><td class="paramname">sy</td><td>Axis y translation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a21b3320f4db6e9be9b4ef3dc09c98afa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21b3320f4db6e9be9b4ef3dc09c98afa">&#9670;&nbsp;</a></span>CVMatToImage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DIPaCUS::Representation::CVMatToImage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceDIPaCUS_1_1Representation.html#ae97917e89f57298fda1626daad9f1733">Image2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>imgOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>cvImgIn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates grayscale DGtal image model from grayscale openCV image model. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">imgOut</td><td>Grayscale DGtal image model output. </td></tr>
+    <tr><td class="paramname">cvImgIn</td><td>Grayscale openCV image model input. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad8ad6c44d5f4a4f7033fac84899bb3fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8ad6c44d5f4a4f7033fac84899bb3fa">&#9670;&nbsp;</a></span>digitalSetToCVMat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DIPaCUS::Representation::digitalSetToCVMat </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>cvImgOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceDIPaCUS_1_1Representation.html#a6eca0b4fa262f2d600f11d82ee10b5a6">DigitalSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>dsIn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates grayscale openCV image model from DigitalSet model. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cvImgOut</td><td>Grayscale openCV image model output. </td></tr>
+    <tr><td class="paramname">dsIn</td><td>DigitalSet model input. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a41889947a0233ac7c4433140f2d8886a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41889947a0233ac7c4433140f2d8886a">&#9670;&nbsp;</a></span>digitalSetToImage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DIPaCUS::Representation::digitalSetToImage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceDIPaCUS_1_1Representation.html#ae97917e89f57298fda1626daad9f1733">Image2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>imgOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceDIPaCUS_1_1Representation.html#a6eca0b4fa262f2d600f11d82ee10b5a6">DigitalSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>dsIn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates grasycale DGtal Image model from DigitalSet model. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">imgOut</td><td>Grayscale DGtal image model output. </td></tr>
+    <tr><td class="paramname">dsIn</td><td>DigitalSet model input. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2b07e44f7c61b0a3b971cbda49aa0d88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b07e44f7c61b0a3b971cbda49aa0d88">&#9670;&nbsp;</a></span>imageAsDigitalSet() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DIPaCUS::Representation::imageAsDigitalSet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceDIPaCUS_1_1Representation.html#a6eca0b4fa262f2d600f11d82ee10b5a6">DigitalSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>dsOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>imgPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceDIPaCUS_1_1Representation.html#a85996f90f0c4186ddae15b4f372bf875">ThresholdValue</a>&#160;</td>
+          <td class="paramname"><em>tv</em> = <code>100</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates the DigitalSet model of grayscale image located at imagePath. </p>
+<p class="">Only those pixels with value greater or equal the threshold will belong to the digital set. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dsOut</td><td>DigitalSet model output. </td></tr>
+    <tr><td class="paramname">imgPath</td><td>Path to grayscale image input. </td></tr>
+    <tr><td class="paramname">tv</td><td>Threshold value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7ec92a29e6c9a4b581c086f4be6185de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ec92a29e6c9a4b581c086f4be6185de">&#9670;&nbsp;</a></span>imageAsDigitalSet() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DIPaCUS::Representation::imageAsDigitalSet </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceDIPaCUS_1_1Representation.html#a6eca0b4fa262f2d600f11d82ee10b5a6">DigitalSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>dsOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceDIPaCUS_1_1Representation.html#ae97917e89f57298fda1626daad9f1733">Image2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>imgIn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceDIPaCUS_1_1Representation.html#a85996f90f0c4186ddae15b4f372bf875">ThresholdValue</a>&#160;</td>
+          <td class="paramname"><em>tv</em> = <code>100</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates the DigitalSet model from DGtal grayscale image model. </p>
+<p class="">Only those pixels with value greater or equal the threshold will belong to the digital set. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dsOut</td><td>DigitalSet model output. </td></tr>
+    <tr><td class="paramname">imgIn</td><td>Grayscale DGtal Image model input. </td></tr>
+    <tr><td class="paramname">tv</td><td>Threshold value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a790f8a0a301e25de1fd7371e9b1ccada"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a790f8a0a301e25de1fd7371e9b1ccada">&#9670;&nbsp;</a></span>imageToCVMat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DIPaCUS::Representation::imageToCVMat </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>cvImgOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceDIPaCUS_1_1Representation.html#ae97917e89f57298fda1626daad9f1733">Image2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>imgIn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates grayscale openCV image model from grayscale DGtal image representation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cvImgOut</td><td>Grayscale openCV image model output. </td></tr>
+    <tr><td class="paramname">imgIn</td><td>Grayscale DGtal image model input. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ad86d37ae840297d40c79295d1c7e6e52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad86d37ae840297d40c79295d1c7e6e52">&#9670;&nbsp;</a></span>GRAYSCALE_IMG_TYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int DIPaCUS::Representation::GRAYSCALE_IMG_TYPE = CV_8UC1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

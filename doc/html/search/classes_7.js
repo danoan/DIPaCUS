@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['opening',['Opening',['../structDIPaCUS_1_1Morphology_1_1Opening.html',1,'DIPaCUS::Morphology']]]
+  ['noholes',['NoHoles',['../structDIPaCUS_1_1Misc_1_1NoHoles.html',1,'DIPaCUS::Misc']]]
 ];

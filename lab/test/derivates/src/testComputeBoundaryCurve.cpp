@@ -64,11 +64,14 @@ void TestComputeBoundaryCurve::afterDilation()
         std::string imgFilepath = IMAGE_INPUT_PATH + "/" + *it;
         Image2D original = DGtal::GenericReader<Image2D>::import(imgFilepath);
 
-        DIPaCUS::Representation::ImageAsDigitalSet::DigitalSet originalDS(original.domain());
-        DIPaCUS::Representation::ImageAsDigitalSet(originalDS,original);
+        DIPaCUS::Representation::DigitalSet originalDS(original.domain());
+        DIPaCUS::Representation::imageAsDigitalSet(originalDS,original);
 
         Image2D dilation(original.domain());
-        DIPaCUS::Morphology::Dilate(dilation,originalDS,DIPaCUS::Morphology::RECT);
+
+        typedef DIPaCUS::Morphology::StructuringElement SE;
+        SE se(SE::RECT,1);
+        DIPaCUS::Morphology::dilate(dilation,originalDS,se);
 
         Curve curve;
         createCurve(curve,dilation);

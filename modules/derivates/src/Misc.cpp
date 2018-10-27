@@ -84,7 +84,10 @@ ThickBorder::ThickBorder(DigitalSet &thickBorder, const DigitalSet &dsIn, int th
     Domain domain = dsIn.domain();
 
     DigitalSet eroded(domain);
-    Morphology::Erode(eroded, dsIn, Morphology::RECT, thickness);
+    Morphology::erode(eroded,
+                      dsIn,
+                      Morphology::StructuringElement(Morphology::StructuringElement::RECT,
+                                                                   thickness) );
 
     DIPaCUS::SetOperations::SetDifference(thickBorder, dsIn, eroded);
 }

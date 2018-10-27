@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.2)
 project(lib-dipacus-base)
 
 #SHARED LIBRARY
-add_library(dipacus-base SHARED src/Representation.cpp src/Objects.cpp)
+add_library(dipacus-base SHARED src/Representation.cpp)
 
 target_include_directories(dipacus-base PRIVATE
         include

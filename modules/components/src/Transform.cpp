@@ -17,7 +17,7 @@ Resize::Resize(Image2D &input,
     cv::Mat cvInput(rIn, cIn, IMG_TYPE);
     cv::Mat cvOut(rOut, cOut, IMG_TYPE);
 
-    DIPaCUS::Representation::ImageToCVMat(cvInput, input);
+    DIPaCUS::Representation::imageToCVMat(cvInput, input);
     cv::resize(cvInput, cvOut, cvOut.size(), factor, factor, cv::INTER_NEAREST);
     DIPaCUS::Representation::CVMatToImage(out, cvOut);
 }
@@ -30,7 +30,7 @@ InvertColors::InvertColors(Image2D &outputImage, Image2D &inputImage)
 
     cv::Mat cvIn(r, c, IMG_TYPE);
 
-    DIPaCUS::Representation::ImageToCVMat(cvIn, inputImage);
+    DIPaCUS::Representation::imageToCVMat(cvIn, inputImage);
 
     auto begin = cvIn.begin<unsigned char>();
     auto end = cvIn.end<unsigned char>();
@@ -50,7 +50,7 @@ AddBorder::AddBorder(Image2D &outputImage,
 
     cv::Mat cvIn(r, c, IMG_TYPE);
 
-    DIPaCUS::Representation::ImageToCVMat(cvIn,
+    DIPaCUS::Representation::imageToCVMat(cvIn,
                                           inputImage);
 
     cv::copyMakeBorder(cvIn, cvIn, borderWidth, borderWidth, borderWidth, borderWidth,

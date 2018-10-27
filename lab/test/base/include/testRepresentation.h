@@ -19,9 +19,7 @@ namespace Test
     extern bool visualOutput;
 
     struct Representation {
-        typedef ImageAsDigitalSet::Image2D Image2D;
-        typedef ImageAsDigitalSet::DigitalSet DigitalSet;
-        typedef ImageAsDigitalSet::Point Point;
+        typedef DGtal::Z2i::Point Point;
 
         Representation();
     };

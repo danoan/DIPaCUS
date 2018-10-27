@@ -76,7 +76,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Conversion between DigitalSet and cv::Mat representations.  
+<p>Conversion between DigitalSet and grayscale openCV imagem models.  
  <a href="structDIPaCUS_1_1Representation_1_1DigitalSetToCVMat.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Representation_8h_source.html">Representation.h</a>&gt;</code></p>
@@ -90,12 +90,12 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae8d37dafdb5e92009461c08ebb5c3bb1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDIPaCUS_1_1Representation_1_1DigitalSetToCVMat.html#ae8d37dafdb5e92009461c08ebb5c3bb1">DigitalSetToCVMat</a> (cv::Mat &amp;cvImg, const <a class="el" href="structDIPaCUS_1_1Representation_1_1DigitalSetToCVMat.html#a476ca922b6635faab97aa112341663a9">DigitalSet</a> &amp;dgtalSet)</td></tr>
-<tr class="memdesc:ae8d37dafdb5e92009461c08ebb5c3bb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates cv::Mat representation from DigitalSet representation.  <a href="#ae8d37dafdb5e92009461c08ebb5c3bb1">More...</a><br /></td></tr>
-<tr class="separator:ae8d37dafdb5e92009461c08ebb5c3bb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07a54dd29af75029e5f77d2ef41ce844"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDIPaCUS_1_1Representation_1_1DigitalSetToCVMat.html#a07a54dd29af75029e5f77d2ef41ce844">DigitalSetToCVMat</a> (cv::Mat &amp;cvImage, const <a class="el" href="structDIPaCUS_1_1Representation_1_1DigitalSetToCVMat.html#a476ca922b6635faab97aa112341663a9">DigitalSet</a> &amp;digitalSet)</td></tr>
+<tr class="memdesc:a07a54dd29af75029e5f77d2ef41ce844"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates grayscale openCV image model from DigitalSet model.  <a href="#a07a54dd29af75029e5f77d2ef41ce844">More...</a><br /></td></tr>
+<tr class="separator:a07a54dd29af75029e5f77d2ef41ce844"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p class="">Conversion between DigitalSet and cv::Mat representations. </p>
+<div class="textblock"><p class="">Conversion between DigitalSet and grayscale openCV imagem models. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a476ca922b6635faab97aa112341663a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a476ca922b6635faab97aa112341663a9">&#9670;&nbsp;</a></span>DigitalSet</h2>
@@ -126,8 +126,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae8d37dafdb5e92009461c08ebb5c3bb1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8d37dafdb5e92009461c08ebb5c3bb1">&#9670;&nbsp;</a></span>DigitalSetToCVMat()</h2>
+<a id="a07a54dd29af75029e5f77d2ef41ce844"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07a54dd29af75029e5f77d2ef41ce844">&#9670;&nbsp;</a></span>DigitalSetToCVMat()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -136,13 +136,13 @@ Public Member Functions</h2></td></tr>
           <td class="memname">DIPaCUS::Representation::DigitalSetToCVMat::DigitalSetToCVMat </td>
           <td>(</td>
           <td class="paramtype">cv::Mat &amp;&#160;</td>
-          <td class="paramname"><em>cvImg</em>, </td>
+          <td class="paramname"><em>cvImage</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="structDIPaCUS_1_1Representation_1_1DigitalSetToCVMat.html#a476ca922b6635faab97aa112341663a9">DigitalSet</a> &amp;&#160;</td>
-          <td class="paramname"><em>dgtalSet</em>&#160;</td>
+          <td class="paramname"><em>digitalSet</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -152,11 +152,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates cv::Mat representation from DigitalSet representation. </p>
+<p>Creates grayscale openCV image model from DigitalSet model. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cvImg</td><td>Created cv::Mat. </td></tr>
-    <tr><td class="paramname">dgtalSet</td><td>DigitalSet representation. </td></tr>
+    <tr><td class="paramname">cvImage</td><td>Grayscale openCV image model output. </td></tr>
+    <tr><td class="paramname">dgtalSet</td><td>DigitalSet model input. </td></tr>
   </table>
   </dd>
 </dl>
@@ -164,7 +164,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>base/include/<a class="el" href="Representation_8h_source.html">Representation.h</a></li>
+<li>modules/base/include/DIPaCUS/base/<a class="el" href="Representation_8h_source.html">Representation.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

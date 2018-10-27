@@ -2,7 +2,7 @@
 \label{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet}\index{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+Image\+As\+Digital\+Set@{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+Image\+As\+Digital\+Set}}
 
 
-Conversion between Image2D and Digital\+Set representations.  
+Conversion between grayscale D\+Gtal image model and Digital\+Set models.  
 
 
 
@@ -27,14 +27,14 @@ typedef D\+Gtal\+::\+Digital\+Set\+Inserter$<$ \mbox{\hyperlink{structDIPaCUS_1_
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_a7e40656e617812a4be262273cff996ea}{Image\+As\+Digital\+Set}} (\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_a3a19b478392377afed24a5234dfdbd68}{Digital\+Set}} \&digital\+Set, const std\+::string image\+Path, int thresh\+Value=100)
-\begin{DoxyCompactList}\small\item\em Creates the Digital\+Set representation of grayscale image located at image\+Path. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_a26f61973ec8fa49b35bf303d1d34bd9b}{Image\+As\+Digital\+Set}} (\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_a3a19b478392377afed24a5234dfdbd68}{Digital\+Set}} \&digital\+Set, const \mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_a594777514834a88dac93cac43b5e9324}{Image2D}} \&image, int thresh\+Value=100)
-\begin{DoxyCompactList}\small\item\em Creates the Digital\+Set representation of grayscale image image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_a42e0b9a725f2714763ac461e8941f4c3}{Image\+As\+Digital\+Set}} (\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_a3a19b478392377afed24a5234dfdbd68}{Digital\+Set}} \&digital\+Set, const std\+::string \&image\+Path, unsigned char thresh\+Value=100)
+\begin{DoxyCompactList}\small\item\em Creates the Digital\+Set model of grayscale image located at image\+Path. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_aa59e85beff6b478a59378804a35e58d3}{Image\+As\+Digital\+Set}} (\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_a3a19b478392377afed24a5234dfdbd68}{Digital\+Set}} \&digital\+Set, const \mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_a594777514834a88dac93cac43b5e9324}{Image2D}} \&image, unsigned char thresh\+Value=100)
+\begin{DoxyCompactList}\small\item\em Creates the Digital\+Set model from D\+Gtal grayscale image model. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Conversion between Image2D and Digital\+Set representations. 
+Conversion between grayscale D\+Gtal image model and Digital\+Set models. 
 
 
 
@@ -78,46 +78,46 @@ Conversion between Image2D and Digital\+Set representations.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_a7e40656e617812a4be262273cff996ea}\label{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_a7e40656e617812a4be262273cff996ea}} 
+\mbox{\Hypertarget{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_a42e0b9a725f2714763ac461e8941f4c3}\label{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_a42e0b9a725f2714763ac461e8941f4c3}} 
 \index{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+Image\+As\+Digital\+Set@{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+Image\+As\+Digital\+Set}!Image\+As\+Digital\+Set@{Image\+As\+Digital\+Set}}
 \index{Image\+As\+Digital\+Set@{Image\+As\+Digital\+Set}!D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+Image\+As\+Digital\+Set@{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+Image\+As\+Digital\+Set}}
 \subsubsection{\texorpdfstring{Image\+As\+Digital\+Set()}{ImageAsDigitalSet()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+Image\+As\+Digital\+Set\+::\+Image\+As\+Digital\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_a3a19b478392377afed24a5234dfdbd68}{Digital\+Set}} \&}]{digital\+Set,  }\item[{const std\+::string}]{image\+Path,  }\item[{int}]{thresh\+Value = {\ttfamily 100} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+Image\+As\+Digital\+Set\+::\+Image\+As\+Digital\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_a3a19b478392377afed24a5234dfdbd68}{Digital\+Set}} \&}]{digital\+Set,  }\item[{const std\+::string \&}]{image\+Path,  }\item[{unsigned char}]{thresh\+Value = {\ttfamily 100} }\end{DoxyParamCaption})}
 
 
 
-Creates the Digital\+Set representation of grayscale image located at image\+Path. 
+Creates the Digital\+Set model of grayscale image located at image\+Path. 
 
-
+Only those pixels with value greater or equal the threshold will belong to the digital set. 
 \begin{DoxyParams}{Parameters}
-{\em digital\+Set} & Digital\+Set representation output. \\
+{\em digital\+Set} & Digital\+Set model output. \\
 \hline
-{\em image\+Path} & Path to grayscale image. \\
+{\em image\+Path} & Path to grayscale image input. \\
 \hline
-{\em thresh\+Value} & Pixel intensity thresholding for digital set belonginess. \\
+{\em thresh\+Value} & Threshold value. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_a26f61973ec8fa49b35bf303d1d34bd9b}\label{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_a26f61973ec8fa49b35bf303d1d34bd9b}} 
+\mbox{\Hypertarget{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_aa59e85beff6b478a59378804a35e58d3}\label{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_aa59e85beff6b478a59378804a35e58d3}} 
 \index{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+Image\+As\+Digital\+Set@{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+Image\+As\+Digital\+Set}!Image\+As\+Digital\+Set@{Image\+As\+Digital\+Set}}
 \index{Image\+As\+Digital\+Set@{Image\+As\+Digital\+Set}!D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+Image\+As\+Digital\+Set@{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+Image\+As\+Digital\+Set}}
 \subsubsection{\texorpdfstring{Image\+As\+Digital\+Set()}{ImageAsDigitalSet()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+Image\+As\+Digital\+Set\+::\+Image\+As\+Digital\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_a3a19b478392377afed24a5234dfdbd68}{Digital\+Set}} \&}]{digital\+Set,  }\item[{const \mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_a594777514834a88dac93cac43b5e9324}{Image2D}} \&}]{image,  }\item[{int}]{thresh\+Value = {\ttfamily 100} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+Image\+As\+Digital\+Set\+::\+Image\+As\+Digital\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_a3a19b478392377afed24a5234dfdbd68}{Digital\+Set}} \&}]{digital\+Set,  }\item[{const \mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet_a594777514834a88dac93cac43b5e9324}{Image2D}} \&}]{image,  }\item[{unsigned char}]{thresh\+Value = {\ttfamily 100} }\end{DoxyParamCaption})}
 
 
 
-Creates the Digital\+Set representation of grayscale image image. 
+Creates the Digital\+Set model from D\+Gtal grayscale image model. 
 
-
+Only those pixels with value greater or equal the threshold will belong to the digital set. 
 \begin{DoxyParams}{Parameters}
-{\em digital\+Set} & Created Digital\+Set. \\
+{\em digital\+Set} & Digital\+Set model output. \\
 \hline
-{\em image} & Image2D representation of image. \\
+{\em image} & Grayscale D\+Gtal Image model input. \\
 \hline
-{\em thresh\+Value} & Pixel intensity thresholding for digital set belonginess. \\
+{\em thresh\+Value} & Threshold value. \\
 \hline
 \end{DoxyParams}
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-base/include/\mbox{\hyperlink{Representation_8h}{Representation.\+h}}\end{DoxyCompactItemize}
+modules/base/include/\+D\+I\+Pa\+C\+U\+S/base/\mbox{\hyperlink{Representation_8h}{Representation.\+h}}\end{DoxyCompactItemize}

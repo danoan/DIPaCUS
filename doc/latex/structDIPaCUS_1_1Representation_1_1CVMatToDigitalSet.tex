@@ -2,7 +2,7 @@
 \label{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet}\index{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Digital\+Set@{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Digital\+Set}}
 
 
-Conversion between cv\+::\+Mat and Digital\+Set representations.  
+Conversion between grayscale open\+CV image and Digital\+Set models.  
 
 
 
@@ -17,18 +17,16 @@ typedef D\+Gtal\+::\+Z2i\+::\+Domain \mbox{\hyperlink{structDIPaCUS_1_1Represent
 typedef D\+Gtal\+::\+Z2i\+::\+Point \mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet_adad5bdd19c3c97ae7b6aad32211a2430}{Point}}
 \item 
 typedef D\+Gtal\+::\+Z2i\+::\+Digital\+Set \mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet_ab7e5df61bd4397642ff888bcca66a4dc}{Digital\+Set}}
-\item 
-typedef D\+Gtal\+::\+Image\+Container\+By\+S\+T\+L\+Vector$<$ \mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet_a105fa216170e3f3a3722444b0cb7e71b}{Domain}}, unsigned char $>$ \mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet_a89c01e1bec79da4c4592499f6ad3c70a}{Image2D}}
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet_ad6c4afb2204d91753aa97dd48795c218}{C\+V\+Mat\+To\+Digital\+Set}} (\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet_ab7e5df61bd4397642ff888bcca66a4dc}{Digital\+Set}} \&dgtal\+Set, const cv\+::\+Mat \&cv\+Img, int thresh\+Value=100)
-\begin{DoxyCompactList}\small\item\em Creates Digital\+Set representation from cv\+::\+Mat representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet_aadf01ae92c99a92ff218ee73b4086a5b}{C\+V\+Mat\+To\+Digital\+Set}} (\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet_ab7e5df61bd4397642ff888bcca66a4dc}{Digital\+Set}} \&digital\+Set, const cv\+::\+Mat \&cv\+Image, unsigned char thresh\+Value=100, int shiftx=0, int shifty=0)
+\begin{DoxyCompactList}\small\item\em Creates Digital\+Set model from grayscale open\+CV image model. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Conversion between cv\+::\+Mat and Digital\+Set representations. 
+Conversion between grayscale open\+CV image and Digital\+Set models. 
 
 
 
@@ -45,12 +43,6 @@ Conversion between cv\+::\+Mat and Digital\+Set representations.
 \subsubsection{\texorpdfstring{Domain}{Domain}}
 {\footnotesize\ttfamily typedef D\+Gtal\+::\+Z2i\+::\+Domain \mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet_a105fa216170e3f3a3722444b0cb7e71b}{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Digital\+Set\+::\+Domain}}}
 
-\mbox{\Hypertarget{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet_a89c01e1bec79da4c4592499f6ad3c70a}\label{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet_a89c01e1bec79da4c4592499f6ad3c70a}} 
-\index{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Digital\+Set@{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Digital\+Set}!Image2D@{Image2D}}
-\index{Image2D@{Image2D}!D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Digital\+Set@{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Digital\+Set}}
-\subsubsection{\texorpdfstring{Image2D}{Image2D}}
-{\footnotesize\ttfamily typedef D\+Gtal\+::\+Image\+Container\+By\+S\+T\+L\+Vector$<$\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet_a105fa216170e3f3a3722444b0cb7e71b}{Domain}}, unsigned char$>$ \mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet_a89c01e1bec79da4c4592499f6ad3c70a}{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Digital\+Set\+::\+Image2D}}}
-
 \mbox{\Hypertarget{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet_adad5bdd19c3c97ae7b6aad32211a2430}\label{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet_adad5bdd19c3c97ae7b6aad32211a2430}} 
 \index{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Digital\+Set@{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Digital\+Set}!Point@{Point}}
 \index{Point@{Point}!D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Digital\+Set@{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Digital\+Set}}
@@ -60,27 +52,31 @@ Conversion between cv\+::\+Mat and Digital\+Set representations.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet_ad6c4afb2204d91753aa97dd48795c218}\label{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet_ad6c4afb2204d91753aa97dd48795c218}} 
+\mbox{\Hypertarget{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet_aadf01ae92c99a92ff218ee73b4086a5b}\label{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet_aadf01ae92c99a92ff218ee73b4086a5b}} 
 \index{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Digital\+Set@{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Digital\+Set}!C\+V\+Mat\+To\+Digital\+Set@{C\+V\+Mat\+To\+Digital\+Set}}
 \index{C\+V\+Mat\+To\+Digital\+Set@{C\+V\+Mat\+To\+Digital\+Set}!D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Digital\+Set@{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Digital\+Set}}
 \subsubsection{\texorpdfstring{C\+V\+Mat\+To\+Digital\+Set()}{CVMatToDigitalSet()}}
-{\footnotesize\ttfamily D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Digital\+Set\+::\+C\+V\+Mat\+To\+Digital\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet_ab7e5df61bd4397642ff888bcca66a4dc}{Digital\+Set}} \&}]{dgtal\+Set,  }\item[{const cv\+::\+Mat \&}]{cv\+Img,  }\item[{int}]{thresh\+Value = {\ttfamily 100} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Digital\+Set\+::\+C\+V\+Mat\+To\+Digital\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet_ab7e5df61bd4397642ff888bcca66a4dc}{Digital\+Set}} \&}]{digital\+Set,  }\item[{const cv\+::\+Mat \&}]{cv\+Image,  }\item[{unsigned char}]{thresh\+Value = {\ttfamily 100},  }\item[{int}]{shiftx = {\ttfamily 0},  }\item[{int}]{shifty = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 
 
-Creates Digital\+Set representation from cv\+::\+Mat representation. 
+Creates Digital\+Set model from grayscale open\+CV image model. 
 
-
+Only those pixels with value greater or equal the threshold will belong to the digital set. Extra shift parameters allows to translate the points in the digital set domain. 
 \begin{DoxyParams}{Parameters}
-{\em dgtal\+Set} & Created Digital\+Set. \\
+{\em digital\+Set} & Digital\+Set model output. \\
 \hline
-{\em cv\+Img} & cv\+::\+Mat representation. \\
+{\em cv\+Image} & Grayscale open\+CV image model input. \\
 \hline
-{\em thresh\+Value} & Pixel intensity thresholding for digital set belonginess. \\
+{\em thresh\+Value} & Threshold value. \\
+\hline
+{\em shiftx} & Axis x translation. \\
+\hline
+{\em shifty} & Axis y translation. \\
 \hline
 \end{DoxyParams}
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-base/include/\mbox{\hyperlink{Representation_8h}{Representation.\+h}}\end{DoxyCompactItemize}
+modules/base/include/\+D\+I\+Pa\+C\+U\+S/base/\mbox{\hyperlink{Representation_8h}{Representation.\+h}}\end{DoxyCompactItemize}

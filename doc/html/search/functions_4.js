@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['fillinterior',['FillInterior',['../structDIPaCUS_1_1Misc_1_1FillInterior.html#a05ba475a43a025a4d06577b3ad20e298',1,'DIPaCUS::Misc::FillInterior']]],
-  ['findipnis',['FindIPNIS',['../structDIPaCUS_1_1Misc_1_1FindIPNIS.html#a2a14b039bc1efdc8adfa4285d8b65972',1,'DIPaCUS::Misc::FindIPNIS']]],
-  ['fourneighborhoodpredicate',['FourNeighborhoodPredicate',['../classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate.html#ae0b8d8d5448bfaf05083d71fb19aeeca',1,'DIPaCUS::Neighborhood::FourNeighborhoodPredicate::FourNeighborhoodPredicate(DigitalSet &amp;DS)'],['../classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate.html#a7dc107e1ed2f9aaf59d4d0a76d266feb',1,'DIPaCUS::Neighborhood::FourNeighborhoodPredicate::FourNeighborhoodPredicate()']]]
+  ['eightneighborhoodpredicate',['EightNeighborhoodPredicate',['../classDIPaCUS_1_1Neighborhood_1_1EightNeighborhoodPredicate.html#a1837b60e370bcea807d6663c596214bb',1,'DIPaCUS::Neighborhood::EightNeighborhoodPredicate::EightNeighborhoodPredicate(const DigitalSet &amp;DS)'],['../classDIPaCUS_1_1Neighborhood_1_1EightNeighborhoodPredicate.html#ac854d645c83febba06718ef4a1091fc7',1,'DIPaCUS::Neighborhood::EightNeighborhoodPredicate::EightNeighborhoodPredicate()']]],
+  ['eliminateloops',['EliminateLoops',['../structDIPaCUS_1_1Transform_1_1EliminateLoops.html#a5054417882a5fb8867d237ca11eb5867',1,'DIPaCUS::Transform::EliminateLoops']]],
+  ['erode',['erode',['../namespaceDIPaCUS_1_1Morphology.html#a3c3fd0423507cf0d21084b434039689e',1,'DIPaCUS::Morphology::erode(Image2D &amp;imgOut, const DigitalSet &amp;dsIn, const StructuringElement se, const NumberIterations it=1)'],['../namespaceDIPaCUS_1_1Morphology.html#a592a651d48216270bfd75bcebe63eec7',1,'DIPaCUS::Morphology::erode(DigitalSet &amp;dsOut, const DigitalSet &amp;dsIn, const StructuringElement se, const NumberIterations iterations=1)']]]
 ];

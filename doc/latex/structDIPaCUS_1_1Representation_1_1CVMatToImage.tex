@@ -2,7 +2,7 @@
 \label{structDIPaCUS_1_1Representation_1_1CVMatToImage}\index{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Image@{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Image}}
 
 
-Conversion between cv\+::\+Mat and Image2D representations.  
+Conversion between grayscale open\+CV image and grayscale D\+Gtal image models.  
 
 
 
@@ -21,12 +21,12 @@ typedef D\+Gtal\+::\+Image\+Container\+By\+S\+T\+L\+Vector$<$ \mbox{\hyperlink{s
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1CVMatToImage_a84778cfc56aa2ea2e2aef0c30a8fd0f4}{C\+V\+Mat\+To\+Image}} (\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1CVMatToImage_a3e6b8dea7273472226dfb9d161e7ee26}{Image2D}} \&image, const cv\+::\+Mat \&cv\+Img)
-\begin{DoxyCompactList}\small\item\em Creates Image2D representation from cv\+::\+Mat representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1CVMatToImage_a13f057de01e98b7f106360834c68d9ea}{C\+V\+Mat\+To\+Image}} (\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1CVMatToImage_a3e6b8dea7273472226dfb9d161e7ee26}{Image2D}} \&image, const cv\+::\+Mat \&cv\+Image)
+\begin{DoxyCompactList}\small\item\em Creates grayscale D\+Gtal image model from grayscale open\+CV image model. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Conversion between cv\+::\+Mat and Image2D representations. 
+Conversion between grayscale open\+CV image and grayscale D\+Gtal image models. 
 
 
 
@@ -52,25 +52,25 @@ Conversion between cv\+::\+Mat and Image2D representations.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{structDIPaCUS_1_1Representation_1_1CVMatToImage_a84778cfc56aa2ea2e2aef0c30a8fd0f4}\label{structDIPaCUS_1_1Representation_1_1CVMatToImage_a84778cfc56aa2ea2e2aef0c30a8fd0f4}} 
+\mbox{\Hypertarget{structDIPaCUS_1_1Representation_1_1CVMatToImage_a13f057de01e98b7f106360834c68d9ea}\label{structDIPaCUS_1_1Representation_1_1CVMatToImage_a13f057de01e98b7f106360834c68d9ea}} 
 \index{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Image@{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Image}!C\+V\+Mat\+To\+Image@{C\+V\+Mat\+To\+Image}}
 \index{C\+V\+Mat\+To\+Image@{C\+V\+Mat\+To\+Image}!D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Image@{D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Image}}
 \subsubsection{\texorpdfstring{C\+V\+Mat\+To\+Image()}{CVMatToImage()}}
-{\footnotesize\ttfamily D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Image\+::\+C\+V\+Mat\+To\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1CVMatToImage_a3e6b8dea7273472226dfb9d161e7ee26}{Image2D}} \&}]{image,  }\item[{const cv\+::\+Mat \&}]{cv\+Img }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily D\+I\+Pa\+C\+U\+S\+::\+Representation\+::\+C\+V\+Mat\+To\+Image\+::\+C\+V\+Mat\+To\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structDIPaCUS_1_1Representation_1_1CVMatToImage_a3e6b8dea7273472226dfb9d161e7ee26}{Image2D}} \&}]{image,  }\item[{const cv\+::\+Mat \&}]{cv\+Image }\end{DoxyParamCaption})}
 
 
 
-Creates Image2D representation from cv\+::\+Mat representation. 
+Creates grayscale D\+Gtal image model from grayscale open\+CV image model. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em image} & Created Image2D. \\
+{\em image} & Grayscale D\+Gtal image model output. \\
 \hline
-{\em cv\+Img} & cv\+::\+Mat representation. \\
+{\em cv\+Img} & Grayscale open\+CV image model input. \\
 \hline
 \end{DoxyParams}
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-base/include/\mbox{\hyperlink{Representation_8h}{Representation.\+h}}\end{DoxyCompactItemize}
+modules/base/include/\+D\+I\+Pa\+C\+U\+S/base/\mbox{\hyperlink{Representation_8h}{Representation.\+h}}\end{DoxyCompactItemize}

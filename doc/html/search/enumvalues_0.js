@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cross',['CROSS',['../namespaceDIPaCUS_1_1Morphology.html#a60b552d68432e7992f09717070d9c4e7a7269c26cd97a608362be8ecdda8280e5',1,'DIPaCUS::Morphology']]]
+  ['cross',['CROSS',['../structDIPaCUS_1_1Morphology_1_1StructuringElement.html#a266d1fadc80f8b6ead0b9a38046db1a9aa3ab6a623692ce64ea4c9abe4dfb0844',1,'DIPaCUS::Morphology::StructuringElement']]]
 ];

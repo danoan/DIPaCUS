@@ -76,7 +76,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Conversion between cv::Mat and DigitalSet representations.  
+<p>Conversion between grayscale openCV image and DigitalSet models.  
  <a href="structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Representation_8h_source.html">Representation.h</a>&gt;</code></p>
@@ -89,17 +89,15 @@ Public Types</h2></td></tr>
 <tr class="separator:adad5bdd19c3c97ae7b6aad32211a2430"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7e5df61bd4397642ff888bcca66a4dc"><td class="memItemLeft" align="right" valign="top">typedef DGtal::Z2i::DigitalSet&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet.html#ab7e5df61bd4397642ff888bcca66a4dc">DigitalSet</a></td></tr>
 <tr class="separator:ab7e5df61bd4397642ff888bcca66a4dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89c01e1bec79da4c4592499f6ad3c70a"><td class="memItemLeft" align="right" valign="top">typedef DGtal::ImageContainerBySTLVector&lt; <a class="el" href="structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet.html#a105fa216170e3f3a3722444b0cb7e71b">Domain</a>, unsigned char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet.html#a89c01e1bec79da4c4592499f6ad3c70a">Image2D</a></td></tr>
-<tr class="separator:a89c01e1bec79da4c4592499f6ad3c70a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad6c4afb2204d91753aa97dd48795c218"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet.html#ad6c4afb2204d91753aa97dd48795c218">CVMatToDigitalSet</a> (<a class="el" href="structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet.html#ab7e5df61bd4397642ff888bcca66a4dc">DigitalSet</a> &amp;dgtalSet, const cv::Mat &amp;cvImg, int threshValue=100)</td></tr>
-<tr class="memdesc:ad6c4afb2204d91753aa97dd48795c218"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates DigitalSet representation from cv::Mat representation.  <a href="#ad6c4afb2204d91753aa97dd48795c218">More...</a><br /></td></tr>
-<tr class="separator:ad6c4afb2204d91753aa97dd48795c218"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadf01ae92c99a92ff218ee73b4086a5b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet.html#aadf01ae92c99a92ff218ee73b4086a5b">CVMatToDigitalSet</a> (<a class="el" href="structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet.html#ab7e5df61bd4397642ff888bcca66a4dc">DigitalSet</a> &amp;digitalSet, const cv::Mat &amp;cvImage, unsigned char threshValue=100, int shiftx=0, int shifty=0)</td></tr>
+<tr class="memdesc:aadf01ae92c99a92ff218ee73b4086a5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates DigitalSet model from grayscale openCV image model.  <a href="#aadf01ae92c99a92ff218ee73b4086a5b">More...</a><br /></td></tr>
+<tr class="separator:aadf01ae92c99a92ff218ee73b4086a5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p class="">Conversion between cv::Mat and DigitalSet representations. </p>
+<div class="textblock"><p class="">Conversion between grayscale openCV image and DigitalSet models. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ab7e5df61bd4397642ff888bcca66a4dc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab7e5df61bd4397642ff888bcca66a4dc">&#9670;&nbsp;</a></span>DigitalSet</h2>
@@ -129,20 +127,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a89c01e1bec79da4c4592499f6ad3c70a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89c01e1bec79da4c4592499f6ad3c70a">&#9670;&nbsp;</a></span>Image2D</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef DGtal::ImageContainerBySTLVector&lt;<a class="el" href="structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet.html#a105fa216170e3f3a3722444b0cb7e71b">Domain</a>, unsigned char&gt; <a class="el" href="structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet.html#a89c01e1bec79da4c4592499f6ad3c70a">DIPaCUS::Representation::CVMatToDigitalSet::Image2D</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="adad5bdd19c3c97ae7b6aad32211a2430"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adad5bdd19c3c97ae7b6aad32211a2430">&#9670;&nbsp;</a></span>Point</h2>
 
@@ -158,8 +142,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ad6c4afb2204d91753aa97dd48795c218"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6c4afb2204d91753aa97dd48795c218">&#9670;&nbsp;</a></span>CVMatToDigitalSet()</h2>
+<a id="aadf01ae92c99a92ff218ee73b4086a5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadf01ae92c99a92ff218ee73b4086a5b">&#9670;&nbsp;</a></span>CVMatToDigitalSet()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -168,19 +152,31 @@ Public Member Functions</h2></td></tr>
           <td class="memname">DIPaCUS::Representation::CVMatToDigitalSet::CVMatToDigitalSet </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structDIPaCUS_1_1Representation_1_1CVMatToDigitalSet.html#ab7e5df61bd4397642ff888bcca66a4dc">DigitalSet</a> &amp;&#160;</td>
-          <td class="paramname"><em>dgtalSet</em>, </td>
+          <td class="paramname"><em>digitalSet</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const cv::Mat &amp;&#160;</td>
-          <td class="paramname"><em>cvImg</em>, </td>
+          <td class="paramname"><em>cvImage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>threshValue</em> = <code>100</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>threshValue</em> = <code>100</code>&#160;</td>
+          <td class="paramname"><em>shiftx</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>shifty</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -190,12 +186,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates DigitalSet representation from cv::Mat representation. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Creates DigitalSet model from grayscale openCV image model. </p>
+<p class="">Only those pixels with value greater or equal the threshold will belong to the digital set. Extra shift parameters allows to translate the points in the digital set domain. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dgtalSet</td><td>Created DigitalSet. </td></tr>
-    <tr><td class="paramname">cvImg</td><td>cv::Mat representation. </td></tr>
-    <tr><td class="paramname">threshValue</td><td>Pixel intensity thresholding for digital set belonginess. </td></tr>
+    <tr><td class="paramname">digitalSet</td><td>DigitalSet model output. </td></tr>
+    <tr><td class="paramname">cvImage</td><td>Grayscale openCV image model input. </td></tr>
+    <tr><td class="paramname">threshValue</td><td>Threshold value. </td></tr>
+    <tr><td class="paramname">shiftx</td><td>Axis x translation. </td></tr>
+    <tr><td class="paramname">shifty</td><td>Axis y translation. </td></tr>
   </table>
   </dd>
 </dl>
@@ -203,7 +201,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>base/include/<a class="el" href="Representation_8h_source.html">Representation.h</a></li>
+<li>modules/base/include/DIPaCUS/base/<a class="el" href="Representation_8h_source.html">Representation.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

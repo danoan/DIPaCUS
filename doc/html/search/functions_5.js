@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['imageasdigitalset',['ImageAsDigitalSet',['../structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet.html#a7e40656e617812a4be262273cff996ea',1,'DIPaCUS::Representation::ImageAsDigitalSet::ImageAsDigitalSet(DigitalSet &amp;digitalSet, const std::string imagePath, int threshValue=100)'],['../structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet.html#a26f61973ec8fa49b35bf303d1d34bd9b',1,'DIPaCUS::Representation::ImageAsDigitalSet::ImageAsDigitalSet(DigitalSet &amp;digitalSet, const Image2D &amp;image, int threshValue=100)']]],
-  ['imagetocvmat',['ImageToCVMat',['../structDIPaCUS_1_1Representation_1_1ImageToCVMat.html#a603fcae59baae238ba419d83367be61a',1,'DIPaCUS::Representation::ImageToCVMat']]],
-  ['invertcolors',['InvertColors',['../structDIPaCUS_1_1Transform_1_1InvertColors.html#a2e947f46c2a3790fa5f82b9891deb425',1,'DIPaCUS::Transform::InvertColors']]]
+  ['fillinterior',['FillInterior',['../structDIPaCUS_1_1Misc_1_1FillInterior.html#a05ba475a43a025a4d06577b3ad20e298',1,'DIPaCUS::Misc::FillInterior']]],
+  ['findipnis',['FindIPNIS',['../structDIPaCUS_1_1Misc_1_1FindIPNIS.html#a2a14b039bc1efdc8adfa4285d8b65972',1,'DIPaCUS::Misc::FindIPNIS']]],
+  ['fourneighborhoodpredicate',['FourNeighborhoodPredicate',['../classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate.html#a090626c4ebc27a08542a209a575cc46e',1,'DIPaCUS::Neighborhood::FourNeighborhoodPredicate::FourNeighborhoodPredicate(const DigitalSet &amp;DS)'],['../classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate.html#a7dc107e1ed2f9aaf59d4d0a76d266feb',1,'DIPaCUS::Neighborhood::FourNeighborhoodPredicate::FourNeighborhoodPredicate()']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['kimage',['KImage',['../structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet.html#afa81bc0256169e31c499fa6e44f9f5bb',1,'DIPaCUS::Representation::ImageAsDigitalSet']]],
-  ['kspace',['KSpace',['../structDIPaCUS_1_1Transform_1_1EliminateLoops.html#aed679a455575ffdf2c1e5140fdb451fe',1,'DIPaCUS::Transform::EliminateLoops']]]
+  ['image2d',['Image2D',['../structDIPaCUS_1_1Transform_1_1Resize.html#a0e4548850b3aed5dd86283f0c4f38fee',1,'DIPaCUS::Transform::Resize::Image2D()'],['../structDIPaCUS_1_1Transform_1_1InvertColors.html#a0520b12f53327b6240a03bd9db4dfda7',1,'DIPaCUS::Transform::InvertColors::Image2D()'],['../structDIPaCUS_1_1Transform_1_1AddBorder.html#afc1095eded4646df5be042cfe0a9c20a',1,'DIPaCUS::Transform::AddBorder::Image2D()'],['../structDIPaCUS_1_1Misc_1_1DigitalBoundary.html#ab93b0af531244071a9da5370ab17e3a4',1,'DIPaCUS::Misc::DigitalBoundary::Image2D()'],['../structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve.html#a67511f091a6fb85b38f29a4df3f480dd',1,'DIPaCUS::Misc::ComputeBoundaryCurve::Image2D()'],['../namespaceDIPaCUS_1_1Representation.html#ae97917e89f57298fda1626daad9f1733',1,'DIPaCUS::Representation::Image2D()'],['../namespaceDIPaCUS_1_1Morphology.html#a9aff9edf28d681accfc54435fbefcbee',1,'DIPaCUS::Morphology::Image2D()']]]
 ];

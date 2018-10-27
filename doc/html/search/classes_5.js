@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['imageasdigitalset',['ImageAsDigitalSet',['../structDIPaCUS_1_1Representation_1_1ImageAsDigitalSet.html',1,'DIPaCUS::Representation']]],
-  ['imagetocvmat',['ImageToCVMat',['../structDIPaCUS_1_1Representation_1_1ImageToCVMat.html',1,'DIPaCUS::Representation']]],
-  ['invertcolors',['InvertColors',['../structDIPaCUS_1_1Transform_1_1InvertColors.html',1,'DIPaCUS::Transform']]]
+  ['fillinterior',['FillInterior',['../structDIPaCUS_1_1Misc_1_1FillInterior.html',1,'DIPaCUS::Misc']]],
+  ['findipnis',['FindIPNIS',['../structDIPaCUS_1_1Misc_1_1FindIPNIS.html',1,'DIPaCUS::Misc']]],
+  ['fourneighborhoodpredicate',['FourNeighborhoodPredicate',['../classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate.html',1,'DIPaCUS::Neighborhood']]]
 ];

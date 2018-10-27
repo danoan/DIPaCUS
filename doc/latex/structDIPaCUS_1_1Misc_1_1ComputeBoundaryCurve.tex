@@ -1,0 +1,111 @@
+\hypertarget{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve}{}\section{D\+I\+Pa\+C\+US\+:\+:Misc\+:\+:Compute\+Boundary\+Curve Struct Reference}
+\label{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve}\index{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}}
+
+
+{\ttfamily \#include $<$Misc.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef D\+Gtal\+::\+Z2i\+::\+Curve \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_ac3d7adcd3d9b37d2166c65346e0916d2}{Curve}}
+\item 
+typedef D\+Gtal\+::\+Z2i\+::\+K\+Space \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_acc6e92e432a70c87e062e3beef65953b}{K\+Space}}
+\item 
+typedef D\+Gtal\+::\+Z2i\+::\+S\+Cell \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_affd97ae2b7fea729fca28c9a4bb16fd5}{S\+Cell}}
+\item 
+typedef D\+Gtal\+::\+Z2i\+::\+Point \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a32066ce33f46a6f384cfe87ff62243d0}{Point}}
+\item 
+typedef D\+Gtal\+::\+Z2i\+::\+Domain \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a7adb0e563e32b1096bde9f5a136e6cbc}{Domain}}
+\item 
+typedef D\+Gtal\+::\+Surfel\+Adjacency$<$ K\+Space\+::dimension $>$ \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_aa06c85b92e3bd9660c70f25cccd0ffe1}{Surfel\+Adjacency}}
+\item 
+typedef D\+Gtal\+::\+Surfaces$<$ \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_acc6e92e432a70c87e062e3beef65953b}{K\+Space}} $>$ \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_ad6763f5050153634ba8e78e7ed0a8344}{Surfaces}}
+\item 
+typedef D\+Gtal\+::\+Image\+Container\+By\+S\+T\+L\+Vector$<$ \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a7adb0e563e32b1096bde9f5a136e6cbc}{Domain}}, unsigned char $>$ \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a67511f091a6fb85b38f29a4df3f480dd}{Image2D}}
+\item 
+typedef D\+Gtal\+::functors\+::\+Simple\+Threshold\+Foreground\+Predicate$<$ \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a67511f091a6fb85b38f29a4df3f480dd}{Image2D}} $>$ \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_af7d6bf815acb40e8ae7e99c418d94b30}{Thresh\+Predicate}}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_ae2d9570a6bc09a61cb38eb6375729f94}{Compute\+Boundary\+Curve}} (const \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a67511f091a6fb85b38f29a4df3f480dd}{Image2D}} \&image, \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_ac3d7adcd3d9b37d2166c65346e0916d2}{Curve}} \&bound\+Curve, unsigned int thresh\+\_\+value)
+\item 
+\mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a822855aabf08a913095310ab5a5acfa5}{Compute\+Boundary\+Curve}} (const \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a67511f091a6fb85b38f29a4df3f480dd}{Image2D}} \&image, \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_ac3d7adcd3d9b37d2166c65346e0916d2}{Curve}} \&bound\+Curve, unsigned int thresh\+\_\+value, \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_affd97ae2b7fea729fca28c9a4bb16fd5}{S\+Cell}} image\+Bel)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_ac3d7adcd3d9b37d2166c65346e0916d2}\label{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_ac3d7adcd3d9b37d2166c65346e0916d2}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}!Curve@{Curve}}
+\index{Curve@{Curve}!D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}}
+\subsubsection{\texorpdfstring{Curve}{Curve}}
+{\footnotesize\ttfamily typedef D\+Gtal\+::\+Z2i\+::\+Curve \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_ac3d7adcd3d9b37d2166c65346e0916d2}{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve\+::\+Curve}}}
+
+\mbox{\Hypertarget{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a7adb0e563e32b1096bde9f5a136e6cbc}\label{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a7adb0e563e32b1096bde9f5a136e6cbc}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}!Domain@{Domain}}
+\index{Domain@{Domain}!D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}}
+\subsubsection{\texorpdfstring{Domain}{Domain}}
+{\footnotesize\ttfamily typedef D\+Gtal\+::\+Z2i\+::\+Domain \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a7adb0e563e32b1096bde9f5a136e6cbc}{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve\+::\+Domain}}}
+
+\mbox{\Hypertarget{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a67511f091a6fb85b38f29a4df3f480dd}\label{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a67511f091a6fb85b38f29a4df3f480dd}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}!Image2D@{Image2D}}
+\index{Image2D@{Image2D}!D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}}
+\subsubsection{\texorpdfstring{Image2D}{Image2D}}
+{\footnotesize\ttfamily typedef D\+Gtal\+::\+Image\+Container\+By\+S\+T\+L\+Vector$<$\mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a7adb0e563e32b1096bde9f5a136e6cbc}{Domain}}, unsigned char$>$ \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a67511f091a6fb85b38f29a4df3f480dd}{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve\+::\+Image2D}}}
+
+\mbox{\Hypertarget{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_acc6e92e432a70c87e062e3beef65953b}\label{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_acc6e92e432a70c87e062e3beef65953b}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}!K\+Space@{K\+Space}}
+\index{K\+Space@{K\+Space}!D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}}
+\subsubsection{\texorpdfstring{K\+Space}{KSpace}}
+{\footnotesize\ttfamily typedef D\+Gtal\+::\+Z2i\+::\+K\+Space \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_acc6e92e432a70c87e062e3beef65953b}{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve\+::\+K\+Space}}}
+
+\mbox{\Hypertarget{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a32066ce33f46a6f384cfe87ff62243d0}\label{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a32066ce33f46a6f384cfe87ff62243d0}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}!Point@{Point}}
+\index{Point@{Point}!D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}}
+\subsubsection{\texorpdfstring{Point}{Point}}
+{\footnotesize\ttfamily typedef D\+Gtal\+::\+Z2i\+::\+Point \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a32066ce33f46a6f384cfe87ff62243d0}{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve\+::\+Point}}}
+
+\mbox{\Hypertarget{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_affd97ae2b7fea729fca28c9a4bb16fd5}\label{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_affd97ae2b7fea729fca28c9a4bb16fd5}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}!S\+Cell@{S\+Cell}}
+\index{S\+Cell@{S\+Cell}!D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}}
+\subsubsection{\texorpdfstring{S\+Cell}{SCell}}
+{\footnotesize\ttfamily typedef D\+Gtal\+::\+Z2i\+::\+S\+Cell \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_affd97ae2b7fea729fca28c9a4bb16fd5}{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve\+::\+S\+Cell}}}
+
+\mbox{\Hypertarget{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_ad6763f5050153634ba8e78e7ed0a8344}\label{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_ad6763f5050153634ba8e78e7ed0a8344}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}!Surfaces@{Surfaces}}
+\index{Surfaces@{Surfaces}!D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}}
+\subsubsection{\texorpdfstring{Surfaces}{Surfaces}}
+{\footnotesize\ttfamily typedef D\+Gtal\+::\+Surfaces$<$\mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_acc6e92e432a70c87e062e3beef65953b}{K\+Space}}$>$ \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_ad6763f5050153634ba8e78e7ed0a8344}{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve\+::\+Surfaces}}}
+
+\mbox{\Hypertarget{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_aa06c85b92e3bd9660c70f25cccd0ffe1}\label{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_aa06c85b92e3bd9660c70f25cccd0ffe1}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}!Surfel\+Adjacency@{Surfel\+Adjacency}}
+\index{Surfel\+Adjacency@{Surfel\+Adjacency}!D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}}
+\subsubsection{\texorpdfstring{Surfel\+Adjacency}{SurfelAdjacency}}
+{\footnotesize\ttfamily typedef D\+Gtal\+::\+Surfel\+Adjacency$<$K\+Space\+::dimension$>$ \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_aa06c85b92e3bd9660c70f25cccd0ffe1}{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve\+::\+Surfel\+Adjacency}}}
+
+\mbox{\Hypertarget{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_af7d6bf815acb40e8ae7e99c418d94b30}\label{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_af7d6bf815acb40e8ae7e99c418d94b30}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}!Thresh\+Predicate@{Thresh\+Predicate}}
+\index{Thresh\+Predicate@{Thresh\+Predicate}!D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}}
+\subsubsection{\texorpdfstring{Thresh\+Predicate}{ThreshPredicate}}
+{\footnotesize\ttfamily typedef D\+Gtal\+::functors\+::\+Simple\+Threshold\+Foreground\+Predicate$<$\mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a67511f091a6fb85b38f29a4df3f480dd}{Image2D}}$>$ \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_af7d6bf815acb40e8ae7e99c418d94b30}{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve\+::\+Thresh\+Predicate}}}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_ae2d9570a6bc09a61cb38eb6375729f94}\label{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_ae2d9570a6bc09a61cb38eb6375729f94}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}!Compute\+Boundary\+Curve@{Compute\+Boundary\+Curve}}
+\index{Compute\+Boundary\+Curve@{Compute\+Boundary\+Curve}!D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}}
+\subsubsection{\texorpdfstring{Compute\+Boundary\+Curve()}{ComputeBoundaryCurve()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve\+::\+Compute\+Boundary\+Curve (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a67511f091a6fb85b38f29a4df3f480dd}{Image2D}} \&}]{image,  }\item[{\mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_ac3d7adcd3d9b37d2166c65346e0916d2}{Curve}} \&}]{bound\+Curve,  }\item[{unsigned int}]{thresh\+\_\+value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a822855aabf08a913095310ab5a5acfa5}\label{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a822855aabf08a913095310ab5a5acfa5}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}!Compute\+Boundary\+Curve@{Compute\+Boundary\+Curve}}
+\index{Compute\+Boundary\+Curve@{Compute\+Boundary\+Curve}!D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve@{D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve}}
+\subsubsection{\texorpdfstring{Compute\+Boundary\+Curve()}{ComputeBoundaryCurve()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily D\+I\+Pa\+C\+U\+S\+::\+Misc\+::\+Compute\+Boundary\+Curve\+::\+Compute\+Boundary\+Curve (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_a67511f091a6fb85b38f29a4df3f480dd}{Image2D}} \&}]{image,  }\item[{\mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_ac3d7adcd3d9b37d2166c65346e0916d2}{Curve}} \&}]{bound\+Curve,  }\item[{unsigned int}]{thresh\+\_\+value,  }\item[{\mbox{\hyperlink{structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve_affd97ae2b7fea729fca28c9a4bb16fd5}{S\+Cell}}}]{image\+Bel }\end{DoxyParamCaption})}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+modules/derivates/include/\+D\+I\+Pa\+C\+U\+S/derivates/\mbox{\hyperlink{Misc_8h}{Misc.\+h}}\end{DoxyCompactItemize}

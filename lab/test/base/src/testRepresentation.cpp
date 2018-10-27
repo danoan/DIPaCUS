@@ -5,7 +5,7 @@ namespace Test
 {
     Representation::Representation()
     {
-        int IMAGE_TYPE = CV_8SC1;
+        int IMAGE_TYPE = CV_8UC1;
         std::string visualOutputDir = IMAGE_OUTPUT_PATH + "/Representation";
 
         if(verbose) std::cout << "Tests ImageAsDigitalSet" << std::endl;
@@ -16,7 +16,7 @@ namespace Test
 
         Image2D image = DGtal::GenericReader<Image2D>::import(p.generic_string());
         DigitalSet ds(image.domain());
-        ImageAsDigitalSet(ds, image);
+        imageAsDigitalSet(ds, image);
 
         assert(ds.size() == 169);
 
@@ -30,7 +30,7 @@ namespace Test
         unsigned long int cols = (pu-pl)[0];
 
         cv::Mat cvImg(rows,cols,IMAGE_TYPE);
-        DigitalSetToCVMat(cvImg,ds);
+        digitalSetToCVMat(cvImg,ds);
 
         DigitalSet ds2(image.domain());
         CVMatToDigitalSet(ds2,cvImg);
@@ -47,7 +47,7 @@ namespace Test
         if(verbose) std::cout << "Tests CVMatToImage; DigitalSetToCVMat" << std::endl;
 
         cv::Mat cvImg2(rows,cols,IMAGE_TYPE);
-        DigitalSetToCVMat(cvImg2,ds2);
+        digitalSetToCVMat(cvImg2,ds2);
 
         Image2D image2(image.domain());
         CVMatToImage(image2,cvImg2);
