@@ -1,4 +1,4 @@
-#include "testRepresentation.h"
+#include "Representation/testRepresentation.h"
 
 
 #include <iostream>
@@ -18,7 +18,7 @@ namespace Test
 int main()
 {
     std::cout << "Testing Representation" << std::endl;
-    Test::Representation();
+    Test::Representation::runTest();
 
     return 0;
 }

@@ -9,6 +9,9 @@ void Representation::imageAsDigitalSet(DigitalSet &dsOut,
     typedef DGtal::DigitalSetInserter<DigitalSet> DigitalSetInserter;
     Image2D image = DGtal::GenericReader<Image2D>::import(imgPath);
 
+    assert(dsOut.domain().lowerBound() <= image.domain().lowerBound());
+    assert(dsOut.domain().upperBound() >= image.domain().upperBound() );
+
     DigitalSetInserter inserter(dsOut);
     DGtal::setFromImage(image, inserter, tv, 255);
 }
@@ -18,6 +21,10 @@ void Representation::imageAsDigitalSet(DigitalSet &dsOut,
                        const ThresholdValue tv)
 {
     typedef DGtal::DigitalSetInserter<DigitalSet> DigitalSetInserter;
+
+    assert(dsOut.domain().lowerBound() <= imgIn.domain().lowerBound());
+    assert(dsOut.domain().upperBound() >= imgIn.domain().upperBound() );
+
     DigitalSetInserter inserter(dsOut);
     DGtal::setFromImage(imgIn, inserter, tv, 255);
 }
@@ -26,6 +33,10 @@ void Representation::digitalSetToImage(Image2D &imgOut,
                        const DigitalSet &dsIn)
 {
     typedef DGtal::Z2i::Point Point;
+
+    assert(imgOut.domain().lowerBound() <= imgOut.domain().lowerBound());
+    assert(imgOut.domain().upperBound() >= imgOut.domain().upperBound() );
+
     int ubY = dsIn.domain().upperBound()[1];
 
     for (auto it = dsIn.begin(); it != dsIn.end(); ++it) {
@@ -42,7 +53,18 @@ void Representation::imageToCVMat(cv::Mat &cvImgOut,
                   const Image2D &imgIn)
 {
     typedef DGtal::Z2i::Point Point;
-    int ubY = imgIn.domain().upperBound()[1];
+    typedef DGtal::Z2i::Domain Domain;
+
+    assert(cvImgOut.type()==GRAYSCALE_IMG_TYPE);
+
+    Domain domain = imgIn.domain();
+    Point dimSize = domain.upperBound() - domain.lowerBound() + Point(1,1);
+
+    assert(dimSize>Point(0,0));
+    assert(cvImgOut.rows >= dimSize(1) );
+    assert(cvImgOut.cols >= dimSize(0) );
+
+    int ubY = cvImgOut.rows - 1;
 
     for (auto it = imgIn.domain().begin(); it != imgIn.domain().end(); ++it) {
         Point p = *it;
@@ -58,6 +80,10 @@ void Representation::CVMatToImage(Image2D &imgOut,
 {
     typedef DGtal::Z2i::Point Point;
     assert(cvImgIn.type()==GRAYSCALE_IMG_TYPE);
+    Point dimSize = imgOut.domain().upperBound() - imgOut.domain().lowerBound() + Point(1,1);
+
+    assert(dimSize(1)>=cvImgIn.rows);
+    assert(dimSize(0)>=cvImgIn.cols);
 
     int ubY = cvImgIn.rows - 1;
     for (int i = 0; i < cvImgIn.rows; i++) {
@@ -74,12 +100,22 @@ void Representation::digitalSetToCVMat(cv::Mat &cvImgOut,
                        const DigitalSet &dsIn)
 {
     typedef DGtal::Z2i::Point Point;
+    typedef DGtal::Z2i::Domain Domain;
 
-    cvImgOut = cv::Mat::zeros(cvImgOut.rows, cvImgOut.cols, cvImgOut.type());
-    int ubY = dsIn.domain().upperBound()[1];
+    assert(cvImgOut.type()==GRAYSCALE_IMG_TYPE);
+
+    Domain domain = dsIn.domain();
+    Point dimSize = domain.upperBound() - domain.lowerBound() + Point(1,1);
+
+    assert(dimSize>Point(0,0));
+    assert(cvImgOut.rows>=dimSize(1));
+    assert(cvImgOut.cols>=dimSize(0));
+
+    Point t = Point(0,0) - domain.lowerBound();
+    int ubY = cvImgOut.rows - 1;
 
     for (auto it = dsIn.begin(); it != dsIn.end(); ++it) {
-        Point p = *it;
+        Point p = *it + t;
         unsigned char v = (unsigned char) (dsIn(*it)) ? 255 : 0;
         cvImgOut.at<unsigned char>((ubY - p[1]), p[0]) = v;
     }
@@ -95,6 +131,9 @@ void Representation::CVMatToDigitalSet(DigitalSet &dsOut,
 {
     typedef DGtal::Z2i::Point Point;
     assert(cvImgIn.type()==GRAYSCALE_IMG_TYPE);
+    Point dimSize = dsOut.domain().upperBound() - dsOut.domain().lowerBound() + Point(1,1);
+    assert(dimSize(1)>=cvImgIn.rows);
+    assert(dimSize(0)>=cvImgIn.cols);
 
     int ubY = cvImgIn.rows - 1;
     for (int i = 0; i < cvImgIn.rows; i++) {

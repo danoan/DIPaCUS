@@ -1,7 +1,11 @@
 cmake_minimum_required(VERSION 3.0)
 project(test-dipacus-base)
 
-add_executable(test-base testBase.cpp src/testRepresentation.cpp)
+add_executable(test-base
+		testBase.cpp
+		src/Representation/testRepresentation.cpp
+		src/Representation/data.cpp
+		src/Representation/utils/boundingBox.cpp)
 
 add_dependencies(test-base dipacus-base)
 
