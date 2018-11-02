@@ -20,6 +20,7 @@ namespace DIPaCUS {
      * \date 2018/08/27
      */
     namespace Morphology {
+        typedef DGtal::Z2i::Point Point;
         typedef DGtal::Z2i::Domain Domain;
         typedef DGtal::Z2i::DigitalSet DigitalSet;
         typedef DGtal::ImageContainerBySTLVector<Domain, unsigned char> Image2D;

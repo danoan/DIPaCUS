@@ -30,7 +30,7 @@ namespace Test
     {
         namespace Data
         {
-            GrayscaleImageInstance giSquare(IMAGE_INPUT_PATH + "/square.pgm", 169);
+            std::string giSquare = IMAGE_INPUT_PATH + "/square.pgm";
             DigitalSet dsSquare= Intern::createSquareDS();
         }
     }

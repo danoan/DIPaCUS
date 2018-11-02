@@ -12,7 +12,7 @@
 #include "DIPaCUS/base/Representation.h"
 
 #include "Representation/data.h"
-#include <Representation/utils/boundingBox.h>
+#include "utils/utils.h"
 
 using namespace DIPaCUS::Representation;
 
@@ -37,14 +37,41 @@ namespace Test
 
         namespace Intern
         {
-            void testDigitalSetToImage(const DigitalSet& tc);
-            void testImageAsDigitalSet(const GrayscaleImageInstance &tc);
-            void testDigitalSetToCVMat(const DigitalSet& tc);
-            void testCVMatToDigitalSet(const GrayscaleImageInstance& gii);
-            void testImageToCVMat(const GrayscaleImageInstance& gii);
+            typedef Test::Utils::BoundingBox BoundingBox;
 
+            void testDigitalSetToImage(const DigitalSet& tc);
+            void testImageAsDigitalSet(const std::string &tc);
+            void testDigitalSetToCVMat(const DigitalSet& tc);
+            void testCVMatToDigitalSet(const std::string& gii);
+            void testImageToCVMat(const std::string& gii);
+
+
+            /**
+             * \brief Checks if digital set points map to non-zero image pixel and likewise,
+             * if domain points but not part of the set maps to zero image pixel.
+             *
+             * @param ds DigitalSet to test
+             * @param cvImg Grayscale openCV image map candidate
+             * @param translation Translation map between DigitalSet and grayscale openCV Image.
+             * @return The digital set is correctly mapped to the image.
+             */
             bool digitalPointsMapsImagePoints(const DigitalSet& ds,
                                               const cv::Mat& cvImg,
+                                              const Point& translation);
+
+
+
+            /**
+             * \brief Checks if digital set points map to non-zero image pixel and likewise,
+             * if domain points but not part of the set maps to zero image pixel.
+             *
+             * @param ds DigitalSet to test
+             * @param image Grayscale DGtal image map candidate
+             * @param translation Translation map between DigitalSet and grayscale DGtal Image.
+             * @return The digital set is correctly mapped to the image.
+             */
+            bool digitalPointsMapsImagePoints(const DigitalSet& ds,
+                                              const Image2D& image,
                                               const Point& translation);
         }
 

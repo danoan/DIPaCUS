@@ -26,7 +26,7 @@ namespace DIPaCUS {
     namespace Representation {
 
         typedef unsigned char ThresholdValue;
-        typedef unsigned int ShiftValue;
+        typedef int ShiftValue;
         typedef DGtal::ImageContainerBySTLVector<DGtal::Z2i::Domain, unsigned char> Image2D;
         typedef DGtal::Z2i::DigitalSet DigitalSet;
 

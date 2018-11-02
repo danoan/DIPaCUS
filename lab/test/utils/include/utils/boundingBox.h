@@ -1,5 +1,5 @@
-#ifndef DIPACUS_TESTBOUNDINGBOX_H
-#define DIPACUS_TESTBOUNDINGBOX_H
+#ifndef DIPACUS_TEST_BASE_REPRESENTATION_BOUNDINGBOX_H
+#define DIPACUS_TEST_BASE_REPRESENTATION_BOUNDINGBOX_H
 
 #include <DGtal/helpers/StdDefs.h>
 #include <DGtal/images/ImageContainerBySTLVector.h>
@@ -7,7 +7,7 @@
 
 namespace Test
 {
-    namespace Representation
+    namespace Utils
     {
         typedef DGtal::Z2i::Point Point;
         typedef DGtal::Z2i::Domain Domain;
@@ -22,11 +22,7 @@ namespace Test
             inline bool operator==(const BoundingBox& other){ return other.lb == this->lb && other.ub==this->ub;}
         };
 
-        void boundingBox(BoundingBox& bb,
-                         const Image2D& image);
 
-        void boundingBox(BoundingBox& bb,
-                         const cv::Mat& cvImg);
 
         namespace Intern
         {
@@ -64,4 +60,4 @@ namespace Test
 
 #include "boundingBox.hpp"
 
-#endif //DIPACUS_TESTBOUNDINGBOX_H
+#endif //DIPACUS_TEST_BASE_REPRESENTATION_BOUNDINGBOX_H

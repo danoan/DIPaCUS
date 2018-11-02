@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.2)
+project(test-dipacus-utils)
+
+find_package(OpenCV REQUIRED)
+find_package(DGtal REQUIRED)
+
+add_library(test-dipacus-utils
+        src/utils.cpp
+        src/boundingBox.cpp)
+
+add_dependencies(test-dipacus-utils dipacus-base dipacus-components dipacus-derivates)
+
+target_include_directories(test-dipacus-utils PRIVATE
+        include
+        ${DGTAL_INCLUDE_DIRS})
+
+target_link_libraries(test-dipacus-utils
+        ${DGTAL_LIBRARIES}
+        ${OpenCV_LIBS})

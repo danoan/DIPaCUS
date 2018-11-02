@@ -1,5 +1,5 @@
-#ifndef DIPACUS_TESTDATA_H
-#define DIPACUS_TESTDATA_H
+#ifndef DIPACUS_TEST_BASE_REPRESENTATION_DATA_H
+#define DIPACUS_TEST_BASE_REPRESENTATION_DATA_H
 
 #include <DGtal/helpers/StdDefs.h>
 #include "string"
@@ -25,23 +25,13 @@ namespace Test
         }
 
 
-        struct GrayscaleImageInstance
-        {
-            GrayscaleImageInstance(const std::string& imagePath,
-                                   unsigned int totalPixels):imagePath(imagePath),
-                                                             totalPixels(totalPixels){}
-
-            const std::string imagePath;
-            const unsigned int totalPixels;
-        };
-
         namespace Data
         {
-            extern GrayscaleImageInstance giSquare;
+            extern std::string giSquare;
             extern DigitalSet dsSquare;
         }
 
     }
 }
 
-#endif //DIPACUS_TESTDATA_H
+#endif //DIPACUS_TEST_BASE_REPRESENTATION_DATA_H

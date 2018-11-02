@@ -6,7 +6,7 @@ find_package(OpenCV REQUIRED)
 
 add_executable(testDerivates testDerivates.cpp src/testComputeBoundaryCurve.cpp src/testCompactSetFromClosedCurve.cpp)
 
-add_dependencies(testDerivates dipacus-derivates)
+add_dependencies(testDerivates test-dipacus-utils dipacus-base dipacus-components dipacus-derivates)
 
 target_compile_definitions(testDerivates PRIVATE -DPROJECT_DIR=\"${PROJECT_SOURCE_DIR}\")
 
