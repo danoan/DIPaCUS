@@ -4,9 +4,11 @@ project(lib-dipacus-components)
 #SHARED LIBRARY
 add_library(dipacus-components SHARED
         src/Morphology.cpp
+        src/Neighborhood.cpp
         src/SetOperations.cpp
         src/Transform.cpp
-        src/Properties.cpp)
+        src/Properties.cpp
+        src/properties/boundingBox.cpp)
 
 add_dependencies(dipacus-components dipacus-base)
 

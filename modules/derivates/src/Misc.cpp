@@ -13,7 +13,7 @@ void DigitalBallIntersection::operator()(DigitalSet &intersectionSet,
 {
     DigitalSet db(intersectionSet.domain());
     digitalBall(db, center, _r);
-    DIPaCUS::SetOperations::SetIntersection(intersectionSet, db, _ds);
+    DIPaCUS::SetOperations::setIntersection(intersectionSet, db, _ds);
 }
 
 void DigitalBallIntersection::digitalBall(DigitalSet &db,
@@ -89,7 +89,7 @@ ThickBorder::ThickBorder(DigitalSet &thickBorder, const DigitalSet &dsIn, int th
                       Morphology::StructuringElement(Morphology::StructuringElement::RECT,
                                                                    thickness) );
 
-    DIPaCUS::SetOperations::SetDifference(thickBorder, dsIn, eroded);
+    DIPaCUS::SetOperations::setDifference(thickBorder, dsIn, eroded);
 }
 
 ComputeBoundaryCurve::ComputeBoundaryCurve(const Image2D &image,
@@ -115,7 +115,7 @@ ComputeBoundaryCurve::ComputeBoundaryCurve(const Image2D &image,
 
     boundCurve.initFromSCellsVector(boundarySCells);
 
-    DIPaCUS::Transform::EliminateLoops(boundCurve,KImage,boundCurve);
+    DIPaCUS::Transform::eliminateLoops(boundCurve,KImage,boundCurve);
 }
 
 ComputeBoundaryCurve::ComputeBoundaryCurve(const Image2D& image,

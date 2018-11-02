@@ -1,16 +1,17 @@
-#include "Neighborhood.h"
+#include "DIPaCUS/components/Neighborhood.h"
 
 using namespace DIPaCUS::Neighborhood;
 
-template<typename DigitalSet>
-FourNeighborhoodPredicate<DigitalSet>::FourNeighborhoodPredicate(const DigitalSet &DS):myDigitalSet(DS)
+
+
+FourNeighborhoodPredicate::FourNeighborhoodPredicate(const DigitalSet &DS):myDigitalSet(DS)
 {
     lowerBound = DS.domain().lowerBound();
     upperBound = DS.domain().upperBound();
 };
 
-template<typename DigitalSet>
-bool FourNeighborhoodPredicate<DigitalSet>::operator()(const Point &aPoint) const
+
+bool FourNeighborhoodPredicate::operator()(const Point &aPoint) const
 {
     Point np;
     int s = 0;
@@ -26,8 +27,8 @@ bool FourNeighborhoodPredicate<DigitalSet>::operator()(const Point &aPoint) cons
     return !(s > 0 && s < 4);
 }
 
-template<typename DigitalSet>
-bool FourNeighborhoodPredicate<DigitalSet>::operator()(const Domain::ConstIterator &it) const
+
+bool FourNeighborhoodPredicate::operator()(const Domain::ConstIterator &it) const
 {
     return (*this)(*it);
 }
@@ -35,16 +36,14 @@ bool FourNeighborhoodPredicate<DigitalSet>::operator()(const Domain::ConstIterat
 
 
 
-template<typename DigitalSet>
-EightNeighborhoodPredicate<DigitalSet>::EightNeighborhoodPredicate(const DigitalSet &DS): myDigitalSet(DS)
+EightNeighborhoodPredicate::EightNeighborhoodPredicate(const DigitalSet &DS): myDigitalSet(DS)
 {
     lowerBound = DS.domain().lowerBound();
     upperBound = DS.domain().upperBound();
 }
 
 
-template<typename DigitalSet>
-bool EightNeighborhoodPredicate<DigitalSet>::operator()(const Point &aPoint) const
+bool EightNeighborhoodPredicate::operator()(const Point &aPoint) const
 {
     Point np;
     int s = 0;
@@ -60,8 +59,8 @@ bool EightNeighborhoodPredicate<DigitalSet>::operator()(const Point &aPoint) con
     return !(s > 0 && s < 8);
 }
 
-template<typename DigitalSet>
-bool EightNeighborhoodPredicate<DigitalSet>::operator()(const Domain::ConstIterator &it) const
+
+bool EightNeighborhoodPredicate::operator()(const Domain::ConstIterator &it) const
 {
     return (*this)(*it);
 }

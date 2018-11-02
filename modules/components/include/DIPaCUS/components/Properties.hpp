@@ -1,11 +1,11 @@
 #include "Properties.h"
 
-using namespace DIPaCUS::Properties;
+using namespace DIPaCUS;
 
 template<class TSCellIterator>
-CurveBoundingBox<TSCellIterator>::CurveBoundingBox(BoundingBox& bb,
-                                                   TSCellIterator itb,
-                                                   TSCellIterator ite)
+void Properties::curveBoundingBox(BoundingBox& bb,
+                                  TSCellIterator itb,
+                                  TSCellIterator ite)
 {
     TSCellIterator it = itb;
     Point currP;
@@ -23,7 +23,9 @@ CurveBoundingBox<TSCellIterator>::CurveBoundingBox(BoundingBox& bb,
         ++it;
     }while(it!=ite);
 
-    //Convert to normal coordinates( before was KCoordinates)
+    //Convert to pixel coordinates( before was KCoordinates)
+    //Linels are identified by one odd and one even coordinate.
+    //Conversion below should be more careful.
     bb.lb/=2;
     bb.ub/=2;
 }

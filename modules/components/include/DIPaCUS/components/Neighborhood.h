@@ -1,5 +1,5 @@
-#ifndef DIPACUS_MODULES_NEIGHBORHOOD_H
-#define DIPACUS_MODULES_NEIGHBORHOOD_H
+#ifndef DIPACUS_COMPONENTS_NEIGHBORHOOD_H
+#define DIPACUS_COMPONENTS_NEIGHBORHOOD_H
 
 #include <iostream>
 
@@ -14,16 +14,38 @@
 namespace DIPaCUS
 {
     namespace Neighborhood {
-        template<typename DigitalSet>
-        class FourNeighborhoodPredicate {
+
+        /**
+        * \brief Predicate to identify points in a 8-connected boundary.
+        * \author Daniel Martins Antunes
+        * \version 0.1
+        * \date 2018/08/27
+        */
+        class EightNeighborhoodPredicate {
         public:
             typedef DGtal::Z2i::Domain Domain;
             typedef DGtal::Z2i::Point Point;
+            typedef DGtal::Z2i::DigitalSet DigitalSet;
 
-            FourNeighborhoodPredicate(const DigitalSet &DS);
+            /**
+             * \brief Constructor.
+             * @param digitalSet DGtal DigitalSet in which the precidate is evaluated.
+             */
+            explicit EightNeighborhoodPredicate(const DigitalSet &digitalSet);
 
+            /**
+             * \brief Test if a point belongs to the 8-connected boundary of digitalSet.
+             * @param aPoint Point belonging to digital set.
+             * @return True if aPoint belongs to the 8-connected boundary of digitalSet.
+             */
             bool operator()(const Point &aPoint) const;
 
+
+            /**
+             * \brief Test if a point belongs to the 8-connected boundary of digitalSet.
+             * @param it ConstIterator from a digitalSet domain.
+             * @return True if aPoint belongs to the 8-connected boundary of digitalSet.
+             */
             bool operator()(const Domain::ConstIterator &it) const;
 
 
@@ -34,23 +56,40 @@ namespace DIPaCUS
 
             Point lowerBound, upperBound;
 
-
-        protected:
-            FourNeighborhoodPredicate();
-
         };
 
 
-        template<typename DigitalSet>
-        class EightNeighborhoodPredicate {
+        /**
+        * \brief Predicate to identify points in a 4-connected boundary.
+        * \author Daniel Martins Antunes
+        * \version 0.1
+        * \date 2018/08/27
+        */
+        class FourNeighborhoodPredicate {
         public:
             typedef DGtal::Z2i::Domain Domain;
             typedef DGtal::Z2i::Point Point;
+            typedef DGtal::Z2i::DigitalSet DigitalSet;
 
-            EightNeighborhoodPredicate(const DigitalSet &DS);
+            /**
+             * \brief Constructor.
+             * @param digitalSet DGtal DigitalSet in which the precidate is evaluated.
+             */
+            explicit FourNeighborhoodPredicate(const DigitalSet &digitalSet);
 
+            /**
+             * \brief Test if a point belongs to the 4-connected boundary of digitalSet.
+             * @param aPoint Point belonging to digital set.
+             * @return True if aPoint belongs to the 4-connected boundary of digitalSet.
+             */
             bool operator()(const Point &aPoint) const;
 
+
+            /**
+             * \brief Test if a point belongs to the 4-connected boundary of digitalSet.
+             * @param it ConstIterator from a digitalSet domain.
+             * @return True if aPoint belongs to the 4-connected boundary of digitalSet.
+             */
             bool operator()(const Domain::ConstIterator &it) const;
 
 
@@ -64,15 +103,9 @@ namespace DIPaCUS
 
             Point lowerBound, upperBound;
 
-
-        protected:
-            EightNeighborhoodPredicate();
-
         };
     }
 }
 
-#include "Neighborhood.hpp"
 
-
-#endif //DIPACUS_MODULES_NEIGHBORHOOD_H
+#endif //DIPACUS_COMPONENTS_NEIGHBORHOOD_H

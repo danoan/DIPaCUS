@@ -96,7 +96,7 @@ namespace DIPaCUS
             typedef DGtal::Z2i::DigitalSet DigitalSet;
             typedef DGtal::DigitalSetInserter<DigitalSet> DigitalSetInserter;
 
-            typedef DigitalBoundary<Neighborhood::FourNeighborhoodPredicate<DigitalSet>> FourBoundary;
+            typedef DigitalBoundary<Neighborhood::FourNeighborhoodPredicate> FourBoundary;
 
             NoHoles(DigitalSet &noHoles,
                     const DigitalSet &dsIn);
@@ -158,7 +158,7 @@ namespace DIPaCUS
             typedef DGtal::Z2i::Domain Domain;
             typedef DGtal::Z2i::DigitalSet DigitalSet;
 
-            typedef typename DIPaCUS::Properties::CurveBoundingBox<TSCellIterator>::BoundingBox BoundingBox;
+            typedef typename DIPaCUS::Properties::BoundingBox BoundingBox;
 
             CompactSetFromClosedCurve(DigitalSet& ds, TSCellIterator itb, TSCellIterator ite,bool ccw=true);
         };

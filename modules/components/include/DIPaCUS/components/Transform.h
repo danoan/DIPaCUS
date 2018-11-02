@@ -1,5 +1,5 @@
-#ifndef DIPACUS_MODULES__TRANSFORM_H
-#define DIPACUS_MODULES__TRANSFORM_H
+#ifndef DIPACUS_COMPONENTS_TRANSFORM_H
+#define DIPACUS_COMPONENTS_TRANSFORM_H
 
 #include <DGtal/helpers/StdDefs.h>
 #include <DGtal/images/ImageContainerBySTLVector.h>
@@ -10,59 +10,89 @@
 
 namespace DIPaCUS
 {
-    namespace Transform {
-        struct Resize {
-            typedef DGtal::Z2i::Domain Domain;
-            typedef DGtal::ImageContainerBySTLVector<Domain, unsigned char> Image2D;
+    /**
+     * Collection of transform operations on DGtal Image, Curve and
+     * DigitalSet
+     *
+     * \author Daniel Martins Antunes
+     * \version 0.1
+     * \date 2018/08/27
+     */
+    namespace Transform
+    {
+        typedef DGtal::Z2i::Domain Domain;
+        typedef DGtal::ImageContainerBySTLVector<Domain, unsigned char> Image2D;
 
-            const int IMG_TYPE = CV_8UC1;   //Limited to grayscale images only.
+        const int IMG_TYPE = CV_8UC1;   //Limited to grayscale images only.
 
-            Resize(Image2D &input,
-                   Image2D &out,
-                   double factor);
-        };
-
-        struct InvertColors {
-            typedef DGtal::Z2i::Domain Domain;
-            typedef DGtal::ImageContainerBySTLVector<Domain, unsigned char> Image2D;
-
-            const int IMG_TYPE = CV_8UC1;   //Limited to grayscale images only.
-
-            InvertColors(Image2D &outputImage,
-                         Image2D &inputImage);
-        };
-
-        struct AddBorder {
-            typedef DGtal::Z2i::Domain Domain;
-            typedef DGtal::ImageContainerBySTLVector<Domain, unsigned char> Image2D;
-
-            const int IMG_TYPE = CV_8UC1;   //Limited to grayscale images only.
-
-            AddBorder(Image2D &outputImage,
-                      Image2D &inputImage,
-                      int borderWidth);
-        };
-
-        struct EliminateLoops {
-            typedef DGtal::Z2i::KSpace KSpace;
-            typedef DGtal::Z2i::Curve Curve;
+        /**
+         * \brief Resize a DGtal Image by a scaling factor.
+         * @param out Scaled DGtal Image
+         * @param input Original DGtal Image
+         * @param factor Scaling factor
+         */
+        void resize(Image2D &out,
+                    const Image2D &input,
+                    double factor);
 
 
-            /*
-             * Eliminate loops from self intersected curves.
-             *
-             * Description: The curve is
-             */
-            EliminateLoops(Curve &curveOut,
-                           KSpace &KImage,
-                           Curve &curveIn);
-        };
+        /**
+         * /brief Swap white and black pixels.
+         * @param outputImage Swapped DGtal Image
+         * @param inputImage Original DGtal Image
+         */
+        void invertColors(Image2D &outputImage,
+                          const Image2D &inputImage);
 
 
-        DGtal::Z2i::DigitalSet BottomLeftBoundingBoxAtOrigin(const DGtal::Z2i::DigitalSet& ds,
-                                                        DGtal::Z2i::Point border=DGtal::Z2i::Point(10,10));
+        /**
+         * /brief Include a border of a given width. Domain scaling
+         * follows appropriately.
+         *
+         * @param outputImage DGtal image with border
+         * @param inputImage  Original DGtal image
+         * @param borderWidth Border width.
+         */
+        void addBorder(Image2D &outputImage,
+                       const Image2D &inputImage,
+                       int borderWidth);
+
+
+        typedef DGtal::Z2i::KSpace KSpace;
+        typedef DGtal::Z2i::Curve Curve;
+
+        /**
+         * /brief Eliminate loops from self-intersected curves.
+         *
+         * Sequentially visits the linels. If a linel is visited twice before the end
+         * of the curve, remove all the linels between the first and second appearance of
+         * the linel.
+         * @param curveOut Curve without self loops.
+         * @param KImage Khalismky Space of the given curve.
+         * @param curveIn Original DGtal Curve.
+         */
+        void eliminateLoops(Curve &curveOut,
+                            const KSpace &KImage,
+                            const Curve &curveIn);
+
+
+        /**
+         * /brief Changes the domain of a digital set.
+         *
+         * The new domain has its origin set at point (0,0) and
+         * dimension Length(BoundingBox(ds))+2*border. The lower
+         * bounding box of original set is set at distance border
+         * from origin (0,0).
+         *
+         * @param ds Original digital set.
+         * @param border Distance of lower bounding box point of
+         * original digital set from origin (0,0).
+         * @return
+         */
+        DGtal::Z2i::DigitalSet bottomLeftBoundingBoxAtOrigin(const DGtal::Z2i::DigitalSet& ds,
+                                                             const DGtal::Z2i::Point border=DGtal::Z2i::Point(10,10));
 
     }
 }
 
-#endif //DIPACUS_MODULES_TRANSFORM_H
+#endif //DIPACUS_COMPONENTS_TRANSFORM_H

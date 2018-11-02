@@ -1,12 +1,10 @@
 #include "DIPaCUS/components/Transform.h"
 
-using namespace DIPaCUS::Transform;
+using namespace DIPaCUS;
 
-
-
-Resize::Resize(Image2D &input,
-               Image2D &out,
-               double factor)
+void Transform::resize(Image2D &out,
+                       const Image2D &input,
+                       double factor)
 {
     int rIn = input.domain().upperBound()[1] + 1;
     int cIn = input.domain().upperBound()[0] + 1;
@@ -23,7 +21,8 @@ Resize::Resize(Image2D &input,
 }
 
 
-InvertColors::InvertColors(Image2D &outputImage, Image2D &inputImage)
+void Transform::invertColors(Image2D &outputImage,
+                             const Image2D &inputImage)
 {
     int r = inputImage.domain().upperBound()[1] + 1;
     int c = inputImage.domain().upperBound()[0] + 1;
@@ -41,9 +40,9 @@ InvertColors::InvertColors(Image2D &outputImage, Image2D &inputImage)
     DIPaCUS::Representation::CVMatToImage(outputImage, cvIn);
 }
 
-AddBorder::AddBorder(Image2D &outputImage,
-                     Image2D &inputImage,
-                     int borderWidth)
+void Transform::addBorder(Image2D &outputImage,
+                          const Image2D &inputImage,
+                          int borderWidth)
 {
     int r = inputImage.domain().upperBound()[1] + 1;
     int c = inputImage.domain().upperBound()[0] + 1;
@@ -61,26 +60,31 @@ AddBorder::AddBorder(Image2D &outputImage,
 }
 
 
-EliminateLoops::EliminateLoops(Curve &curveOut,
-                               KSpace &KImage,
-                               Curve &curveIn)
+void Transform::eliminateLoops(Curve &curveOut,
+                               const KSpace &KImage,
+                               const Curve &curveIn)
 {
     std::vector<KSpace::SCell> vectorOfSCell;
 
-    std::map<KSpace::SCell, KSpace::SCell> appearanceTable;
+    std::map<KSpace::SCell, KSpace::SCell> visited;
     KSpace::SCell toReconnectSCell;
 
     int i = 0;
-    for (auto it = curveIn.begin(); it != curveIn.end(); ++it, ++i) {
+    for (auto it = curveIn.begin(); it != curveIn.end(); ++it, ++i)
+    {
         KSpace::SCell pointel = KImage.sDirectIncident(*it, *KImage.sDirs(*it));
-        if (appearanceTable.find(pointel) == appearanceTable.end()) {
-            appearanceTable[pointel] = *it;
+        if (visited.find(pointel) == visited.end())
+        {
+            visited[pointel] = *it;
             vectorOfSCell.push_back(*it);
-        } else {
-            toReconnectSCell = appearanceTable[pointel];
+        }
+        else
+        {
+            toReconnectSCell = visited[pointel];
 
             KSpace::SCell backOfVector = vectorOfSCell.back();
-            while (backOfVector != toReconnectSCell) {
+            while (backOfVector != toReconnectSCell)
+            {
                 vectorOfSCell.pop_back();
                 backOfVector = vectorOfSCell.back();
             }
@@ -90,27 +94,23 @@ EliminateLoops::EliminateLoops(Curve &curveOut,
     curveOut.initFromSCellsVector(vectorOfSCell);
 }
 
-namespace DIPaCUS
+DGtal::Z2i::DigitalSet Transform::bottomLeftBoundingBoxAtOrigin(const DGtal::Z2i::DigitalSet& ds,
+                                                                const DGtal::Z2i::Point border)
 {
-    namespace Transform
+    using namespace DGtal::Z2i;
+    assert(ds.size()>0);
+
+    Point lb,ub;
+    ds.computeBoundingBox(lb,ub);
+
+    Point diff = lb;
+
+    Domain newDomain( Point(0,0),ub - diff + 2*border );
+    DigitalSet newDS(newDomain);
+    for(auto it=ds.begin();it!=ds.end();++it)
     {
-        DGtal::Z2i::DigitalSet BottomLeftBoundingBoxAtOrigin(const DGtal::Z2i::DigitalSet& ds, DGtal::Z2i::Point border)
-        {
-            using namespace DGtal::Z2i;
-            assert(ds.size()>0);
-            Point lb,ub;
-            ds.computeBoundingBox(lb,ub);
-
-            Point diff = lb;
-
-            Domain newDomain( Point(0,0),ub - diff + 2*border );
-            DigitalSet newDS(newDomain);
-            for(auto it=ds.begin();it!=ds.end();++it)
-            {
-                newDS.insert(*it - diff + border);
-            }
-
-            return newDS;
-        }
+        newDS.insert(*it - diff + border);
     }
+
+    return newDS;
 }
