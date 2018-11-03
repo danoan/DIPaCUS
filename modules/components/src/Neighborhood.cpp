@@ -4,14 +4,14 @@ using namespace DIPaCUS::Neighborhood;
 
 
 
-FourNeighborhoodPredicate::FourNeighborhoodPredicate(const DigitalSet &DS):myDigitalSet(DS)
+EightNeighborhoodPredicate::EightNeighborhoodPredicate(const DigitalSet &DS):myDigitalSet(DS)
 {
     lowerBound = DS.domain().lowerBound();
     upperBound = DS.domain().upperBound();
 };
 
 
-bool FourNeighborhoodPredicate::operator()(const Point &aPoint) const
+bool EightNeighborhoodPredicate::operator()(const Point &aPoint) const
 {
     Point np;
     int s = 0;
@@ -28,7 +28,7 @@ bool FourNeighborhoodPredicate::operator()(const Point &aPoint) const
 }
 
 
-bool FourNeighborhoodPredicate::operator()(const Domain::ConstIterator &it) const
+bool EightNeighborhoodPredicate::operator()(const Domain::ConstIterator &it) const
 {
     return (*this)(*it);
 }
@@ -36,14 +36,14 @@ bool FourNeighborhoodPredicate::operator()(const Domain::ConstIterator &it) cons
 
 
 
-EightNeighborhoodPredicate::EightNeighborhoodPredicate(const DigitalSet &DS): myDigitalSet(DS)
+FourNeighborhoodPredicate::FourNeighborhoodPredicate(const DigitalSet &DS): myDigitalSet(DS)
 {
     lowerBound = DS.domain().lowerBound();
     upperBound = DS.domain().upperBound();
 }
 
 
-bool EightNeighborhoodPredicate::operator()(const Point &aPoint) const
+bool FourNeighborhoodPredicate::operator()(const Point &aPoint) const
 {
     Point np;
     int s = 0;
@@ -60,7 +60,7 @@ bool EightNeighborhoodPredicate::operator()(const Point &aPoint) const
 }
 
 
-bool EightNeighborhoodPredicate::operator()(const Domain::ConstIterator &it) const
+bool FourNeighborhoodPredicate::operator()(const Domain::ConstIterator &it) const
 {
     return (*this)(*it);
 }
