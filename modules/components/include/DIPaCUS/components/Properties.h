@@ -19,8 +19,8 @@ namespace DIPaCUS
         /**
          * \brief Computes the bounding box of a curve.
          *
-         * Computed Bounding Box is given in pixel coordinates (recall
-         * that SCells lies in Khalimsky Space).
+         * Bounding Box is given in terms of incident pixel coordinates
+         * (recall that SCells lies in Khalimsky Space).
          *
          * @tparam TSCellIterator It must be an iterator on DGtal SCells
          * @param bb BoundingBox struct
@@ -32,7 +32,11 @@ namespace DIPaCUS
 
 
         /**
-         * \brief Computes bounding box of a DGtal Image.
+         * \brief Computes bounding box of a Grayscale DGtal Image.
+         *
+         * Any pixel with intensity value higher than 1 is taken
+         * into account for bounding box computation
+         *
          * @param bb BoundingBox
          * @param image DGtal Image
          */
@@ -40,7 +44,11 @@ namespace DIPaCUS
                          const Image2D& image);
 
         /**
-         * \brief Computes bounding box of an openCV Image.
+         * \brief Computes bounding box of a Grayscale openCV Image.
+         *
+         * Any pixel with intensity value higher than 1 is taken
+         * into account for bounding box computation
+         *
          * @param bb BoundingBox
          * @param cvImg openCV Image
          */

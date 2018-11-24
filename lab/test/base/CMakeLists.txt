@@ -4,7 +4,8 @@ project(test-dipacus-base)
 add_executable(test-base
 		testBase.cpp
 		src/Representation/testRepresentation.cpp
-		src/Representation/data.cpp)
+		src/Representation/data.cpp
+		src/Shapes/testShapes.cpp)
 
 add_dependencies(test-base test-dipacus-utils dipacus-base)
 

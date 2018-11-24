@@ -2,9 +2,15 @@
 #define DIPACUS_TEST_UTILS_H
 
 #include <DGtal/helpers/StdDefs.h>
+#include <DGtal/io/boards/Board2D.h>
+
 #include <DGtal/shapes/parametric/NGon2D.h>
 #include <DGtal/shapes/GaussDigitizer.h>
-#include <DGtal/io/boards/Board2D.h>
+
+#include <DGtal/images/SimpleThresholdForegroundPredicate.h>
+
+#include <DIPaCUS/base/Shapes.h>
+#include <DIPaCUS/base/Representation.h>
 
 #include "boundingBox.h"
 
@@ -15,8 +21,7 @@ namespace Test
         typedef DGtal::Z2i::DigitalSet DigitalSet;
         typedef DGtal::Z2i::Space Space;
         typedef DGtal::Z2i::Domain Domain;
-        typedef DGtal::NGon2D<Space> NGon2D;
-
+        typedef DGtal::Z2i::Curve Curve;
 
 
         DigitalSet createSquareDS(int sideLength);
@@ -26,6 +31,9 @@ namespace Test
 
         void boundingBox(BoundingBox& bb,
                          const cv::Mat& cvImg);
+
+        void computeBoundaryCurve(const DigitalSet& ds,
+                                  Curve& boundCurve);
     }
 }
 

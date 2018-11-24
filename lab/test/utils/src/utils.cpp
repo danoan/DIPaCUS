@@ -5,24 +5,7 @@ using namespace Test;
 Utils::DigitalSet Utils::createSquareDS(int sideLength)
 {
     double radius = sideLength/2.0*sqrt(2);
-
-    NGon2D square(0,0,radius,4,3.1416/4.0);
-    DGtal::GaussDigitizer<Space,NGon2D> gd;
-    gd.attach(square);
-    gd.init(square.getLowerBound(),square.getUpperBound(),1.0);
-
-    Domain squareDomain = Domain( square.getLowerBound(),square.getUpperBound() );
-    DigitalSet squareDS( squareDomain );
-    for(auto it=squareDomain.begin();it!=squareDomain.end();++it)
-    {
-        if(gd.operator()(*it)) squareDS.insert(*it);
-    }
-
-    DGtal::Board2D board;
-    board << squareDS;
-    board.saveEPS("ds.eps");
-
-    return squareDS;
+    return DIPaCUS::Shapes::square(1.0,0,0,radius);
 }
 
 void Utils::boundingBox(BoundingBox& bb,
@@ -43,4 +26,37 @@ void Utils::boundingBox(BoundingBox& bb,
     Intern::CVImageAdapter cvImgEnd = Intern::cvImageAdapter(cvImg,domain.end(),1);
 
     Intern::boundingBox(bb,cvImgBegin,cvImgEnd);
+}
+
+void Utils::computeBoundaryCurve(const DigitalSet &ds,
+                                 Curve &curve)
+{
+    typedef DGtal::Z2i::Domain Domain;
+    typedef DGtal::Z2i::KSpace KSpace;
+
+    typedef DIPaCUS::Representation::Image2D Image2D;
+    typedef DGtal::Z2i::SCell SCell;
+    typedef DGtal::SurfelAdjacency<KSpace::dimension> SurfelAdjacency;
+    typedef DGtal::Surfaces<KSpace> Surfaces;
+    typedef DGtal::functors::SimpleThresholdForegroundPredicate<Image2D> ThreshPredicate;
+
+    Image2D image(ds.domain());
+    DIPaCUS::Representation::digitalSetToImage(image,ds);
+    KSpace KImage;
+
+    KImage.init(image.domain().lowerBound(),image.domain().upperBound(),true);
+
+    ThreshPredicate imagePredicate (image,1);
+    SCell imageBel = Surfaces::findABel(KImage, imagePredicate, 10000);
+
+    SurfelAdjacency SAdj(true);
+
+    std::vector<SCell> boundarySCells;
+    Surfaces::track2DBoundary(boundarySCells,
+                              KImage,
+                              SAdj,
+                              imagePredicate,
+                              imageBel);
+
+    curve.initFromSCellsVector(boundarySCells);
 }

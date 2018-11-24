@@ -64,10 +64,11 @@ void Representation::imageToCVMat(cv::Mat &cvImgOut,
     assert(cvImgOut.rows >= dimSize(1) );
     assert(cvImgOut.cols >= dimSize(0) );
 
+    Point t = Point(0,0) - domain.lowerBound();
     int ubY = cvImgOut.rows - 1;
 
     for (auto it = imgIn.domain().begin(); it != imgIn.domain().end(); ++it) {
-        Point p = *it;
+        Point p = *it + t;
         unsigned char v(imgIn(*it));
         cvImgOut.at<unsigned char>((ubY - p[1]), p[0]) = v;
     }

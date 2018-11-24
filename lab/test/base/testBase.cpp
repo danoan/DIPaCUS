@@ -1,7 +1,7 @@
-#include "Representation/testRepresentation.h"
-
-
 #include <iostream>
+
+#include <Shapes/testShapes.h>
+#include "Representation/testRepresentation.h"
 
 namespace Test
 {
@@ -19,6 +19,9 @@ int main()
 {
     std::cout << "Testing Representation" << std::endl;
     Test::Representation::runTest();
+
+    std::cout << "Testing Shapes" << std::endl;
+    Test::Shapes::testExecution();
 
     return 0;
 }
