@@ -1,6 +1,8 @@
 #include <data.h>
 #include <testNeighborhood.h>
 #include <testProperties.h>
+#include <testSetOperations.h>
+#include <testTransform.h>
 #include "testMorphology.h"
 
 int main()
@@ -30,6 +32,10 @@ int main()
     Test::Neighborhood::testComplementEquivalence();
 
     Test::Properties::testExecution();
+
+    Test::SetOperations::testExecution();
+
+    Test::Transform::testExecution();
 
     return 0;
 }

@@ -20,8 +20,13 @@ namespace DIPaCUS
      */
     namespace Transform
     {
+        typedef DGtal::Z2i::Point Point;
+        typedef DGtal::Z2i::DigitalSet DigitalSet;
         typedef DGtal::Z2i::Domain Domain;
         typedef DGtal::ImageContainerBySTLVector<Domain, unsigned char> Image2D;
+
+        typedef DGtal::Z2i::KSpace KSpace;
+        typedef DGtal::Z2i::Curve Curve;
 
         const int IMG_TYPE = CV_8UC1;   //Limited to grayscale images only.
 
@@ -57,9 +62,6 @@ namespace DIPaCUS
                        const Image2D &inputImage,
                        int borderWidth);
 
-
-        typedef DGtal::Z2i::KSpace KSpace;
-        typedef DGtal::Z2i::Curve Curve;
 
         /**
          * /brief Eliminate loops from self-intersected curves.

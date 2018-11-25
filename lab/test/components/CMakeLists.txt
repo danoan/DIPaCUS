@@ -10,6 +10,8 @@ add_executable(test-components
         src/data.cpp
         src/testNeighborhood.cpp
         src/testProperties.cpp
+        src/testSetOperations.cpp
+        src/testTransform.cpp
         ${CMAKE_SOURCE_DIR}/lab/test/utils/src/utils.cpp)
 
 add_dependencies(test-components test-dipacus-utils dipacus-base dipacus-components dipacus-derivates)

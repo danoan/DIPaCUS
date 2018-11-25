@@ -4,13 +4,13 @@ project(test-dipacus-derivates)
 find_package(DGtal REQUIRED)
 find_package(OpenCV REQUIRED)
 
-add_executable(testDerivates testDerivates.cpp src/testComputeBoundaryCurve.cpp src/testCompactSetFromClosedCurve.cpp)
+add_executable(test-derivates test-derivates.cpp src/testComputeBoundaryCurve.cpp src/testCompactSetFromClosedCurve.cpp)
 
-add_dependencies(testDerivates test-dipacus-utils dipacus-base dipacus-components dipacus-derivates)
+add_dependencies(test-derivates test-dipacus-utils dipacus-base dipacus-components dipacus-derivates)
 
-target_compile_definitions(testDerivates PRIVATE -DPROJECT_DIR=\"${PROJECT_SOURCE_DIR}\")
+target_compile_definitions(test-derivates PRIVATE -DPROJECT_DIR=\"${PROJECT_SOURCE_DIR}\")
 
-target_include_directories(testDerivates PRIVATE
+target_include_directories(test-derivates PRIVATE
         include
         ${CMAKE_SOURCE_DIR}/modules/derivates/include
         ${CMAKE_SOURCE_DIR}/modules/base/include
@@ -18,7 +18,7 @@ target_include_directories(testDerivates PRIVATE
         ${DGTAL_INCLUDE_DIRS}
         ${BOOST_INCLUDE_DIRS})
 
-target_link_libraries(testDerivates
+target_link_libraries(test-derivates
         -ldipacus-derivates
         -ldipacus-components
         -ldipacus-base
