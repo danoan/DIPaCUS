@@ -139,13 +139,11 @@ void Representation::CVMatToDigitalSet(DigitalSet &dsOut,
     assert(dimSize(1)>=cvImgIn.rows);
     assert(dimSize(0)>=cvImgIn.cols);
 
-    Point t = dsOut.domain().lowerBound();
-
     int ubY = cvImgIn.rows - 1;
     for (int i = 0; i < cvImgIn.rows; i++) {
         for (int j = 0; j < cvImgIn.cols; j++) {
             unsigned char v(cvImgIn.at<unsigned char>(i, j));
-            if(v>tv) dsOut.insert( Point(j+t(0)+sx, ubY - i + t(1) + sy ) );
+            if(v>tv) dsOut.insert( Point(j+sx, ubY - i  + sy ) );
         }
     }
 }
