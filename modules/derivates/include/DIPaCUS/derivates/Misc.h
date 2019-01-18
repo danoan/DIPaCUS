@@ -116,26 +116,38 @@ namespace DIPaCUS
 
         struct ComputeBoundaryCurve
         {
-            typedef DGtal::Z2i::Curve Curve;
+        private:
             typedef DGtal::Z2i::KSpace KSpace;
-            typedef DGtal::Z2i::SCell SCell;
             typedef DGtal::Z2i::Point Point;
             typedef DGtal::Z2i::Domain Domain;
 
             typedef DGtal::SurfelAdjacency<KSpace::dimension> SurfelAdjacency;
             typedef DGtal::Surfaces<KSpace> Surfaces;
 
+        public:
+            typedef DGtal::Z2i::Curve Curve;
             typedef DGtal::ImageContainerBySTLVector<Domain, unsigned char> Image2D;
+            typedef DGtal::Z2i::SCell SCell;
+            typedef unsigned int ThresholdValue;
+
+            typedef DGtal::Z2i::DigitalSet DigitalSet;
+
+        private:
             typedef DGtal::functors::SimpleThresholdForegroundPredicate<Image2D> ThreshPredicate;
 
+
+        public:
             ComputeBoundaryCurve(const Image2D &image,
                                  Curve &boundCurve,
-                                 unsigned int thresh_value);
+                                 ThresholdValue thresh_value);
 
             ComputeBoundaryCurve(const Image2D& image,
                                  Curve& boundCurve,
-                                 unsigned int thresh_value,
+                                 ThresholdValue thresh_value,
                                  SCell imageBel);
+
+            ComputeBoundaryCurve(const DigitalSet& ds,
+                                 Curve& boundCurve);
         };
 
         template<typename TIterator>

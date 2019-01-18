@@ -143,3 +143,31 @@ ComputeBoundaryCurve::ComputeBoundaryCurve(const Image2D& image,
 
 }
 
+
+
+ComputeBoundaryCurve::ComputeBoundaryCurve(const DigitalSet& ds,
+                                           Curve& boundCurve)
+{
+    typedef DGtal::Surfaces<KSpace> Surfaces;
+    typedef DGtal::SurfelAdjacency<2> SurfelAdjacency;
+
+    const Domain &domain = ds.domain();
+    KSpace KImage;
+
+    KImage.init(domain.lowerBound(),domain.upperBound(),true);
+
+    DGtal::Z2i::SCell imageBel = Surfaces::findABel(KImage, ds, 10000);
+
+    SurfelAdjacency SAdj(true);
+
+    std::vector<DGtal::Z2i::SCell> boundarySCells;
+    Surfaces::track2DBoundary(boundarySCells,
+                              KImage,
+                              SAdj,
+                              ds,
+                              imageBel);
+
+    boundCurve.initFromSCellsVector(boundarySCells);
+
+    DIPaCUS::Transform::eliminateLoops(boundCurve,KImage,boundCurve);
+}
