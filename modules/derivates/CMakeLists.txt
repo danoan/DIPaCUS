@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.2)
 project(lib-dipacus-derivates)
 
+
 #SHARED LIBRARY
 add_library(dipacus-derivates SHARED src/Misc.cpp)
 
@@ -28,6 +29,6 @@ install(DIRECTORY include
         DESTINATION ${CMAKE_INSTALL_PREFIX})
 
 install(TARGETS dipacus-derivates
-        DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
+        LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
 
 

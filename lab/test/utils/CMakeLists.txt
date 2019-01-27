@@ -4,7 +4,7 @@ project(test-dipacus-utils)
 find_package(OpenCV REQUIRED)
 find_package(DGtal REQUIRED)
 
-add_library(test-dipacus-utils
+add_library(test-dipacus-utils SHARED
         src/utils.cpp
         src/boundingBox.cpp)
 

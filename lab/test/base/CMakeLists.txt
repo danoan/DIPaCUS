@@ -20,10 +20,10 @@ target_include_directories(test-base PRIVATE
         ${DGTAL_INCLUDE_DIRS})
 
 target_link_libraries(test-base
+		-ldipacus-base
+		-ltest-dipacus-utils
         -lboost_system
         -lboost_filesystem
-        -ldipacus-base
-		-ltest-dipacus-utils
-	${DGTAL_LIBRARIES}
-	${OpenCV_LIBS}
+		${DGTAL_LIBRARIES}
+		${OpenCV_LIBS}
 )

@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.2)
 project(lib-dipacus-components)
 
+
 #SHARED LIBRARY
 add_library(dipacus-components SHARED
         src/Morphology.cpp
@@ -31,4 +32,4 @@ install(DIRECTORY include
         DESTINATION ${CMAKE_INSTALL_PREFIX})
 
 install(TARGETS dipacus-components
-        DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
+        LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
