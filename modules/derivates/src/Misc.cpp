@@ -149,7 +149,6 @@ ComputeBoundaryCurve::ComputeBoundaryCurve(const DigitalSet& ds,
                                            Curve& boundCurve)
 {
     typedef DGtal::Surfaces<KSpace> Surfaces;
-    typedef DGtal::SurfelAdjacency<2> SurfelAdjacency;
 
     const Domain &domain = ds.domain();
     KSpace KImage;
