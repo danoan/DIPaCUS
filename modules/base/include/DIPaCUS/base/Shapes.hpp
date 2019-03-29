@@ -15,7 +15,7 @@ namespace DIPaCUS
         gd.attach(shape);
         gd.init(shape.getLowerBound(), shape.getUpperBound(),h);
 
-        Domain domain(shape.getLowerBound(),shape.getUpperBound());
+        Domain domain(gd.getDomain().lowerBound(),gd.getDomain().upperBound());
         DigitalSet output(domain);
         DGtal::Shapes<Domain>::digitalShaper(output,gd);
 
