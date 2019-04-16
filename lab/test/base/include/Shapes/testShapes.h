@@ -1,14 +1,27 @@
-#ifndef DIPACUS_TESTSHAPES_H
-#define DIPACUS_TESTSHAPES_H
+#ifndef DIPACUS_TEST_BASE_SHAPES_H
+#define DIPACUS_TEST_BASE_SHAPES_H
 
-#include <DIPaCUS/base/Shapes.h>
+#include "DIPaCUS/base/Shapes.h"
 
-namespace Test
+#include "logger/logger.h"
+
+namespace DIPaCUS
 {
-    namespace Shapes
+    namespace Test
     {
-        void testExecution();
+        namespace Shapes
+        {
+            typedef DIPaCUS::Shapes::DigitalSet DigitalSet;
+
+            bool testTriangle(Logger& logger);
+            bool testSquare(Logger& logger);
+            bool testFlower(Logger& logger);
+            bool testNGon(Logger& logger);
+            bool testBall(Logger& logger);
+
+            bool runTest(std::ostream& os, const std::string& outputFolder, bool exportObjectsFlag=false );
+        }
     }
 }
 
-#endif //DIPACUS_TESTSHAPES_H
+#endif //DIPACUS_TEST_BASE_SHAPES_H

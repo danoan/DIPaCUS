@@ -1,6 +1,6 @@
 #include "testNeighborhood.h"
 
-namespace Test {namespace Neighborhood{
+namespace DIPaCUS{ namespace Test {namespace Neighborhood{
     template<typename TPredicate>
     DigitalSet Internal::digitalBoundary(const DigitalSet& ds)
     {
@@ -14,4 +14,4 @@ namespace Test {namespace Neighborhood{
 
         return boundary;
     }
-}}
+}}}

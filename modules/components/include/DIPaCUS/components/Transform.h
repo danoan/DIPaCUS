@@ -1,12 +1,14 @@
 #ifndef DIPACUS_COMPONENTS_TRANSFORM_H
 #define DIPACUS_COMPONENTS_TRANSFORM_H
 
+#include <opencv2/imgproc.hpp>
+#include <opencv2/imgcodecs.hpp>
+
 #include <DGtal/helpers/StdDefs.h>
 #include <DGtal/images/ImageContainerBySTLVector.h>
+
 #include "DIPaCUS/base/Representation.h"
 
-#include "opencv2/imgproc.hpp"
-#include "opencv2/imgcodecs.hpp"
 
 namespace DIPaCUS
 {

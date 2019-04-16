@@ -1,22 +1,7 @@
 
 #include "Representation/testRepresentation.h"
 
-namespace Test
-{
-    void Representation::runTest()
-    {
-        std::string visualOutputDir = IMAGE_OUTPUT_PATH + "/Representation";
-
-        Intern::testDigitalSetToImage(Data::dsSquare);
-        Intern::testImageAsDigitalSet(Data::giSquare);
-        Intern::testDigitalSetToCVMat(Data::dsSquare);
-        Intern::testCVMatToDigitalSet(Data::giSquare);
-        Intern::testImageToCVMat(Data::giSquare);
-
-    }
-}
-
-namespace Test{ namespace Representation {
+namespace DIPaCUS{ namespace Test{ namespace Representation {
 
     bool Intern::digitalPointsMapsImagePoints(const DigitalSet& ds,
                                               const cv::Mat& cvImg,
@@ -57,66 +42,103 @@ namespace Test{ namespace Representation {
         return flag_ds_assert;
     }
 
-    void Intern::testDigitalSetToImage(const DigitalSet& ds)
+    void Intern::boundingBox(BoundingBox& bb, const Image2D& img)
     {
-        std::cout << "Tests DigitalSetAsImage" << std::endl;
+        DigitalSet ds(img.domain());
+        DIPaCUS::Representation::imageAsDigitalSet(ds,img);
+        ds.computeBoundingBox(bb.lb,bb.ub);
+    }
+
+    void Intern::boundingBox(BoundingBox& bb, const cv::Mat& cvImg)
+    {
+        Domain domain( Point(0,0),Point(cvImg.cols+1,cvImg.rows+1) );
+        DigitalSet ds(domain);
+
+        DIPaCUS::Representation::CVMatToDigitalSet(ds,cvImg);
+        ds.computeBoundingBox(bb.lb,bb.ub);
+    }
+
+    bool testDigitalSetToImage(const DigitalSet& ds,Logger& logger)
+    {
+        logger < Logger::HeaderTwo < "Tests DigitalSetAsImage" < Logger::Normal;
 
         Image2D image(ds.domain());
         DIPaCUS::Representation::digitalSetToImage(image,ds);
 
         BoundingBox bbImage;
-        boundingBox(bbImage,image);
+        Intern::boundingBox(bbImage,image);
 
         BoundingBox bbDs;
         ds.computeBoundingBox(bbDs.lb,bbDs.ub);
 
-        assert(bbImage==bbDs);
-        assert(digitalPointsMapsImagePoints(ds,image,Point(0,0)));
+        logger < Logger::LoggableObject<Image2D>(image,"ds-to-image.pgm");
+
+        bool t1 = bbImage==bbDs;
+        bool t2 = Intern::digitalPointsMapsImagePoints(ds,image,Point(0,0));
+
+        logger < "Passed (bounding-boxes): " < t1 < "\n";
+        logger < "Passed (exact-copy): " < t2 < "\n";
+
+        return t1 && t2;
     }
 
-    void Intern::testImageAsDigitalSet(const std::string& imagePath)
+    bool testImageAsDigitalSet(const std::string& imagePath,Logger& logger)
     {
-        std::cout << "Tests ImageAsDigitalSet" << std::endl;
+        logger < Logger::HeaderTwo < "Tests ImageAsDigitalSet" < Logger::Normal;
 
         Image2D image = DGtal::GenericReader<Image2D>::import(imagePath);
         DigitalSet ds(image.domain());
-        imageAsDigitalSet(ds, image);
+        DIPaCUS::Representation::imageAsDigitalSet(ds, image);
 
         BoundingBox bbImage;
-        boundingBox(bbImage,image);
+        Intern::boundingBox(bbImage,image);
 
         BoundingBox bbDs;
         ds.computeBoundingBox(bbDs.lb,bbDs.ub);
 
-        assert(bbDs==bbImage);
-        assert(digitalPointsMapsImagePoints(ds,image,Point(0,0)));
+        logger < Logger::LoggableObject<DigitalSet>(ds,"image-to-ds.eps");
+
+        bool t1 = bbDs==bbImage;
+        bool t2 = Intern::digitalPointsMapsImagePoints(ds,image,Point(0,0));
+
+        logger < "Passed (bounding-boxes): " < t1 < "\n";
+        logger < "Passed (exact-copy): " < t2 < "\n";
+
+        return t1 && t2;
     }
 
-    void Intern::testDigitalSetToCVMat(const DigitalSet& testDS)
+    bool testDigitalSetToCVMat(const DigitalSet& testDS,Logger& logger)
     {
-        if(verbose) std::cout << "Tests DigitalSetToCVMat" << std::endl;
+        logger < Logger::HeaderTwo < "Tests DigitalSetToCVMat" < Logger::Normal;
 
         const Domain& domain = testDS.domain();
         Point dLB = domain.lowerBound();
         Point dimSize = domain.upperBound() - domain.lowerBound() + Point(1,1);
 
         cv::Mat cvImg = cv::Mat::zeros(dimSize(1),dimSize(0),GRAYSCALE_IMAGE_TYPE);
-        digitalSetToCVMat(cvImg,testDS);
+        DIPaCUS::Representation::digitalSetToCVMat(cvImg,testDS);
 
         BoundingBox bbDS,bbCV;
         testDS.computeBoundingBox(bbDS.lb,bbDS.ub);
-        boundingBox(bbCV,cvImg);
+        Intern::boundingBox(bbCV,cvImg);
 
         Point translation = Point(0,0) - dLB;
 
-        assert(bbCV.ub==bbDS.ub+translation);
-        assert(digitalPointsMapsImagePoints(testDS,cvImg,translation) );
+        logger < Logger::LoggableObject<cv::Mat>(cvImg,"ds-to-cv.pgm");
+
+        bool t1 = bbCV.ub==bbDS.ub+translation;
+        bool t2 = Intern::digitalPointsMapsImagePoints(testDS,cvImg,translation);
+
+        logger < "Passed (bounding-boxes): " < t1 < "\n";
+        logger < "Passed (exact-copy): " < t2 < "\n";
+
+        return t1 && t2;
 
     }
 
-    void Intern::testCVMatToDigitalSet(const std::string& imagePath)
+    bool testCVMatToDigitalSet(const std::string& imagePath,Logger& logger)
     {
-        std::cout << "Tests CVMatToDigitalSet" << std::endl;
+        logger < Logger::HeaderTwo < "Tests CVMatToDigitalSet" < Logger::Normal;
 
         cv::Mat cvImg = cv::imread(imagePath,GRAYSCALE_IMAGE_TYPE);
         Domain domain( Point(0,0),Point(cvImg.cols-1,cvImg.rows-1) );
@@ -125,19 +147,26 @@ namespace Test{ namespace Representation {
         DIPaCUS::Representation::CVMatToDigitalSet(ds,cvImg);
 
         BoundingBox bbCvImg;
-        boundingBox(bbCvImg,cvImg);
+        Intern::boundingBox(bbCvImg,cvImg);
 
         BoundingBox bbDs;
         ds.computeBoundingBox(bbDs.lb,bbDs.ub);
 
-        assert(bbDs==bbCvImg);
-        assert(digitalPointsMapsImagePoints(ds,cvImg,Point(0,0)));
+        logger < Logger::LoggableObject<DigitalSet>(ds,"cv-to-ds.eps");
+
+        bool t1 = bbDs==bbCvImg;
+        bool t2 = Intern::digitalPointsMapsImagePoints(ds,cvImg,Point(0,0));
+
+        logger < "Passed (bounding-boxes): " < t1 < "\n";
+        logger < "Passed (exact-copy): " < t2 < "\n";
+
+        return t1 && t2;
     }
 
 
-    void Intern::testImageToCVMat(const std::string& imagePath)
+    bool testImageToCVMat(const std::string& imagePath,Logger& logger)
     {
-        if(verbose) std::cout << "Tests DigitalSetToCVMat" << std::endl;
+        logger < Logger::HeaderTwo < "Tests DigitalSetToCVMat" < Logger::Normal;
 
         Image2D image = DGtal::GenericReader<Image2D>::import(imagePath);
 
@@ -145,17 +174,38 @@ namespace Test{ namespace Representation {
         Point dimSize = domain.upperBound() - domain.lowerBound() + Point(1,1);
 
         cv::Mat cvImg = cv::Mat::zeros(dimSize(1),dimSize(0),GRAYSCALE_IMAGE_TYPE);
-        imageToCVMat(cvImg,image);
+        DIPaCUS::Representation::imageToCVMat(cvImg,image);
 
+        logger < Logger::LoggableObject<cv::Mat>(cvImg,"image-to-cv.pgm");
 
         BoundingBox bbImg,bbCV;
-        boundingBox(bbImg,image);
-        boundingBox(bbCV,cvImg);
+        Intern::boundingBox(bbImg,image);
+        Intern::boundingBox(bbCV,cvImg);
 
-        assert(bbCV.ub==bbImg.ub);
+        bool t1 = bbCV.ub==bbImg.ub;
+
+        logger < "Passed (bounding-boxes): " < t1 < "\n";
+
+        return t1;
     }
 
-}}
+    bool runTest(std::ostream& os, std::string outputFolder, bool exportObjectsFlag)
+    {
+        Logger logger(os,outputFolder,exportObjectsFlag);
+        logger < Logger::HeaderOne < "Test Representation" < Logger::Normal;
+
+        bool flag=true;
+
+        flag = flag && testDigitalSetToImage(Data::dsSquare,logger);
+        flag = flag && testImageAsDigitalSet(Data::giSquare,logger);
+        flag = flag && testDigitalSetToCVMat(Data::dsSquare,logger);
+        flag = flag && testCVMatToDigitalSet(Data::giSquare,logger);
+        flag = flag && testImageToCVMat(Data::giSquare,logger);
+
+        return flag;
+    }
+
+}}}
 
 
 

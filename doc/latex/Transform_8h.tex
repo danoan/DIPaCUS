@@ -1,30 +1,47 @@
 \hypertarget{Transform_8h}{}\section{modules/components/include/\+D\+I\+Pa\+C\+U\+S/components/\+Transform.h File Reference}
 \label{Transform_8h}\index{modules/components/include/\+D\+I\+Pa\+C\+U\+S/components/\+Transform.\+h@{modules/components/include/\+D\+I\+Pa\+C\+U\+S/components/\+Transform.\+h}}
+{\ttfamily \#include $<$opencv2/imgproc.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/imgcodecs.\+hpp$>$}\newline
 {\ttfamily \#include $<$D\+Gtal/helpers/\+Std\+Defs.\+h$>$}\newline
 {\ttfamily \#include $<$D\+Gtal/images/\+Image\+Container\+By\+S\+T\+L\+Vector.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}D\+I\+Pa\+C\+U\+S/base/\+Representation.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}opencv2/imgproc.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}opencv2/imgcodecs.\+hpp\char`\"{}}\newline
-\subsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct \mbox{\hyperlink{structDIPaCUS_1_1Transform_1_1Resize}{D\+I\+Pa\+C\+U\+S\+::\+Transform\+::\+Resize}}
-\item 
-struct \mbox{\hyperlink{structDIPaCUS_1_1Transform_1_1InvertColors}{D\+I\+Pa\+C\+U\+S\+::\+Transform\+::\+Invert\+Colors}}
-\item 
-struct \mbox{\hyperlink{structDIPaCUS_1_1Transform_1_1AddBorder}{D\+I\+Pa\+C\+U\+S\+::\+Transform\+::\+Add\+Border}}
-\item 
-struct \mbox{\hyperlink{structDIPaCUS_1_1Transform_1_1EliminateLoops}{D\+I\+Pa\+C\+U\+S\+::\+Transform\+::\+Eliminate\+Loops}}
-\end{DoxyCompactItemize}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \mbox{\hyperlink{namespaceDIPaCUS}{D\+I\+Pa\+C\+US}}
+ \hyperlink{namespaceDIPaCUS}{D\+I\+Pa\+C\+US}
 \item 
- \mbox{\hyperlink{namespaceDIPaCUS_1_1Transform}{D\+I\+Pa\+C\+U\+S\+::\+Transform}}
+ \hyperlink{namespaceDIPaCUS_1_1Transform}{D\+I\+Pa\+C\+U\+S\+::\+Transform}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef D\+Gtal\+::\+Z2i\+::\+Point \hyperlink{namespaceDIPaCUS_1_1Transform_a3d5053cb006656a776156934f3c365ec}{D\+I\+Pa\+C\+U\+S\+::\+Transform\+::\+Point}
+\item 
+typedef D\+Gtal\+::\+Z2i\+::\+Digital\+Set \hyperlink{namespaceDIPaCUS_1_1Transform_aa5173fa40d34010f28dfcd617f2fd49b}{D\+I\+Pa\+C\+U\+S\+::\+Transform\+::\+Digital\+Set}
+\item 
+typedef D\+Gtal\+::\+Z2i\+::\+Domain \hyperlink{namespaceDIPaCUS_1_1Transform_a6da009851d50adae6e3e93ce4550cbda}{D\+I\+Pa\+C\+U\+S\+::\+Transform\+::\+Domain}
+\item 
+typedef D\+Gtal\+::\+Image\+Container\+By\+S\+T\+L\+Vector$<$ Domain, unsigned char $>$ \hyperlink{namespaceDIPaCUS_1_1Transform_a73f8942865bc5b3a01401bf07efd3734}{D\+I\+Pa\+C\+U\+S\+::\+Transform\+::\+Image2D}
+\item 
+typedef D\+Gtal\+::\+Z2i\+::\+K\+Space \hyperlink{namespaceDIPaCUS_1_1Transform_a29a1b6c9e9e766045633377156b5a81c}{D\+I\+Pa\+C\+U\+S\+::\+Transform\+::\+K\+Space}
+\item 
+typedef D\+Gtal\+::\+Z2i\+::\+Curve \hyperlink{namespaceDIPaCUS_1_1Transform_ae8200b02a170f9d9f68b8d345924b2c3}{D\+I\+Pa\+C\+U\+S\+::\+Transform\+::\+Curve}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-D\+Gtal\+::\+Z2i\+::\+Digital\+Set \mbox{\hyperlink{namespaceDIPaCUS_1_1Transform_aca979f060a7d9744e2ddecf6f88c1702}{D\+I\+Pa\+C\+U\+S\+::\+Transform\+::\+Bottom\+Left\+Bounding\+Box\+At\+Origin}} (const D\+Gtal\+::\+Z2i\+::\+Digital\+Set \&ds, D\+Gtal\+::\+Z2i\+::\+Point border=D\+Gtal\+::\+Z2i\+::\+Point(10, 10))
+void \hyperlink{namespaceDIPaCUS_1_1Transform_a371002604d1d6ab5c4667b7e37bb9834}{D\+I\+Pa\+C\+U\+S\+::\+Transform\+::resize} (Image2D \&out, const Image2D \&input, double factor)
+\begin{DoxyCompactList}\small\item\em Resize a D\+Gtal Image by a scaling factor. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceDIPaCUS_1_1Transform_a992b6ab60add3a4a2b9580a166ba8a65}{D\+I\+Pa\+C\+U\+S\+::\+Transform\+::invert\+Colors} (Image2D \&output\+Image, const Image2D \&input\+Image)
+\item 
+void \hyperlink{namespaceDIPaCUS_1_1Transform_a92fb5b6ae4eda503db4473c7c041dcf5}{D\+I\+Pa\+C\+U\+S\+::\+Transform\+::add\+Border} (Image2D \&output\+Image, const Image2D \&input\+Image, int border\+Width)
+\item 
+void \hyperlink{namespaceDIPaCUS_1_1Transform_ae6c5a2917a8b570acbc49b7f2e3727ff}{D\+I\+Pa\+C\+U\+S\+::\+Transform\+::eliminate\+Loops} (Curve \&curve\+Out, const K\+Space \&K\+Image, const Curve \&curve\+In)
+\item 
+D\+Gtal\+::\+Z2i\+::\+Digital\+Set \hyperlink{namespaceDIPaCUS_1_1Transform_ab5da680d9da471684a61f0241eab5312}{D\+I\+Pa\+C\+U\+S\+::\+Transform\+::bottom\+Left\+Bounding\+Box\+At\+Origin} (const D\+Gtal\+::\+Z2i\+::\+Digital\+Set \&ds, const D\+Gtal\+::\+Z2i\+::\+Point border=D\+Gtal\+::\+Z2i\+::\+Point(10, 10))
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{namespaceDIPaCUS_1_1Transform_aba84627b64a891dd2fb04151ef8e8b51}{D\+I\+Pa\+C\+U\+S\+::\+Transform\+::\+I\+M\+G\+\_\+\+T\+Y\+PE} = C\+V\+\_\+8\+U\+C1
 \end{DoxyCompactItemize}

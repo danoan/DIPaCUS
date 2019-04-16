@@ -1,9 +1,99 @@
 \hypertarget{namespaceDIPaCUS_1_1SetOperations}{}\section{D\+I\+Pa\+C\+US\+:\+:Set\+Operations Namespace Reference}
 \label{namespaceDIPaCUS_1_1SetOperations}\index{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations@{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations}}
-\subsection*{Classes}
+
+
+Set operations on D\+Gtal digital sets.  
+
+
+\subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{structDIPaCUS_1_1SetOperations_1_1SetDifference}{Set\+Difference}}
+typedef D\+Gtal\+::\+Z2i\+::\+Domain \hyperlink{namespaceDIPaCUS_1_1SetOperations_adf150e3c3201e8eb8b65d3d03b63df69}{Domain}
 \item 
-struct \mbox{\hyperlink{structDIPaCUS_1_1SetOperations_1_1SetIntersection}{Set\+Intersection}}
+typedef D\+Gtal\+::\+Z2i\+::\+Point \hyperlink{namespaceDIPaCUS_1_1SetOperations_aef7c8778c0d7fe3bb3d34608fdef58cc}{Point}
+\item 
+typedef D\+Gtal\+::\+Z2i\+::\+Digital\+Set \hyperlink{namespaceDIPaCUS_1_1SetOperations_a66926bf2c0a8f9e0192373c76f1b75e1}{Digital\+Set}
+\item 
+typedef D\+Gtal\+::\+Digital\+Set\+Inserter$<$ \hyperlink{namespaceDIPaCUS_1_1SetOperations_a66926bf2c0a8f9e0192373c76f1b75e1}{Digital\+Set} $>$ \hyperlink{namespaceDIPaCUS_1_1SetOperations_a543100a4da6a06c13ee32ad5886d7031}{Digital\+Set\+Inserter}
 \end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespaceDIPaCUS_1_1SetOperations_a1ac3bb89ed9eb839006dd5f4af4a2353}{set\+Difference} (\hyperlink{namespaceDIPaCUS_1_1SetOperations_a66926bf2c0a8f9e0192373c76f1b75e1}{Digital\+Set} \&difference\+Set, const \hyperlink{namespaceDIPaCUS_1_1SetOperations_a66926bf2c0a8f9e0192373c76f1b75e1}{Digital\+Set} \&A, const \hyperlink{namespaceDIPaCUS_1_1SetOperations_a66926bf2c0a8f9e0192373c76f1b75e1}{Digital\+Set} \&B)
+\item 
+void \hyperlink{namespaceDIPaCUS_1_1SetOperations_a92fd9567d02bd91848673a235a2b316c}{set\+Intersection} (\hyperlink{namespaceDIPaCUS_1_1SetOperations_a66926bf2c0a8f9e0192373c76f1b75e1}{Digital\+Set} \&digital\+Intersection, const \hyperlink{namespaceDIPaCUS_1_1SetOperations_a66926bf2c0a8f9e0192373c76f1b75e1}{Digital\+Set} \&A, const \hyperlink{namespaceDIPaCUS_1_1SetOperations_a66926bf2c0a8f9e0192373c76f1b75e1}{Digital\+Set} \&B)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Set operations on D\+Gtal digital sets. 
+
+\begin{DoxyAuthor}{Author}
+Daniel Martins Antunes 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2018/08/27 
+\end{DoxyDate}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1SetOperations_a66926bf2c0a8f9e0192373c76f1b75e1}\label{namespaceDIPaCUS_1_1SetOperations_a66926bf2c0a8f9e0192373c76f1b75e1}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations@{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations}!Digital\+Set@{Digital\+Set}}
+\index{Digital\+Set@{Digital\+Set}!D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations@{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations}}
+\subsubsection{\texorpdfstring{Digital\+Set}{DigitalSet}}
+{\footnotesize\ttfamily typedef D\+Gtal\+::\+Z2i\+::\+Digital\+Set \hyperlink{namespaceDIPaCUS_1_1SetOperations_a66926bf2c0a8f9e0192373c76f1b75e1}{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations\+::\+Digital\+Set}}
+
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1SetOperations_a543100a4da6a06c13ee32ad5886d7031}\label{namespaceDIPaCUS_1_1SetOperations_a543100a4da6a06c13ee32ad5886d7031}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations@{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations}!Digital\+Set\+Inserter@{Digital\+Set\+Inserter}}
+\index{Digital\+Set\+Inserter@{Digital\+Set\+Inserter}!D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations@{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations}}
+\subsubsection{\texorpdfstring{Digital\+Set\+Inserter}{DigitalSetInserter}}
+{\footnotesize\ttfamily typedef D\+Gtal\+::\+Digital\+Set\+Inserter$<$\hyperlink{namespaceDIPaCUS_1_1SetOperations_a66926bf2c0a8f9e0192373c76f1b75e1}{Digital\+Set}$>$ \hyperlink{namespaceDIPaCUS_1_1SetOperations_a543100a4da6a06c13ee32ad5886d7031}{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations\+::\+Digital\+Set\+Inserter}}
+
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1SetOperations_adf150e3c3201e8eb8b65d3d03b63df69}\label{namespaceDIPaCUS_1_1SetOperations_adf150e3c3201e8eb8b65d3d03b63df69}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations@{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations}!Domain@{Domain}}
+\index{Domain@{Domain}!D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations@{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations}}
+\subsubsection{\texorpdfstring{Domain}{Domain}}
+{\footnotesize\ttfamily typedef D\+Gtal\+::\+Z2i\+::\+Domain \hyperlink{namespaceDIPaCUS_1_1SetOperations_adf150e3c3201e8eb8b65d3d03b63df69}{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations\+::\+Domain}}
+
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1SetOperations_aef7c8778c0d7fe3bb3d34608fdef58cc}\label{namespaceDIPaCUS_1_1SetOperations_aef7c8778c0d7fe3bb3d34608fdef58cc}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations@{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations}!Point@{Point}}
+\index{Point@{Point}!D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations@{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations}}
+\subsubsection{\texorpdfstring{Point}{Point}}
+{\footnotesize\ttfamily typedef D\+Gtal\+::\+Z2i\+::\+Point \hyperlink{namespaceDIPaCUS_1_1SetOperations_aef7c8778c0d7fe3bb3d34608fdef58cc}{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations\+::\+Point}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1SetOperations_a1ac3bb89ed9eb839006dd5f4af4a2353}\label{namespaceDIPaCUS_1_1SetOperations_a1ac3bb89ed9eb839006dd5f4af4a2353}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations@{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations}!set\+Difference@{set\+Difference}}
+\index{set\+Difference@{set\+Difference}!D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations@{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations}}
+\subsubsection{\texorpdfstring{set\+Difference()}{setDifference()}}
+{\footnotesize\ttfamily void D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations\+::set\+Difference (\begin{DoxyParamCaption}\item[{\hyperlink{namespaceDIPaCUS_1_1SetOperations_a66926bf2c0a8f9e0192373c76f1b75e1}{Digital\+Set} \&}]{difference\+Set,  }\item[{const \hyperlink{namespaceDIPaCUS_1_1SetOperations_a66926bf2c0a8f9e0192373c76f1b75e1}{Digital\+Set} \&}]{A,  }\item[{const \hyperlink{namespaceDIPaCUS_1_1SetOperations_a66926bf2c0a8f9e0192373c76f1b75e1}{Digital\+Set} \&}]{B }\end{DoxyParamCaption})}
+
+Computes the difference set between two digital sets. 
+\begin{DoxyParams}{Parameters}
+{\em difference\+Set} & Difference set A-\/B \\
+\hline
+{\em A} & First set \\
+\hline
+{\em B} & Second set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1SetOperations_a92fd9567d02bd91848673a235a2b316c}\label{namespaceDIPaCUS_1_1SetOperations_a92fd9567d02bd91848673a235a2b316c}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations@{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations}!set\+Intersection@{set\+Intersection}}
+\index{set\+Intersection@{set\+Intersection}!D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations@{D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations}}
+\subsubsection{\texorpdfstring{set\+Intersection()}{setIntersection()}}
+{\footnotesize\ttfamily void D\+I\+Pa\+C\+U\+S\+::\+Set\+Operations\+::set\+Intersection (\begin{DoxyParamCaption}\item[{\hyperlink{namespaceDIPaCUS_1_1SetOperations_a66926bf2c0a8f9e0192373c76f1b75e1}{Digital\+Set} \&}]{digital\+Intersection,  }\item[{const \hyperlink{namespaceDIPaCUS_1_1SetOperations_a66926bf2c0a8f9e0192373c76f1b75e1}{Digital\+Set} \&}]{A,  }\item[{const \hyperlink{namespaceDIPaCUS_1_1SetOperations_a66926bf2c0a8f9e0192373c76f1b75e1}{Digital\+Set} \&}]{B }\end{DoxyParamCaption})}
+
+Computes the intersection set between two digital sets. 
+\begin{DoxyParams}{Parameters}
+{\em digital\+Intersection} & Intersection set of A and B \\
+\hline
+{\em A} & First set \\
+\hline
+{\em B} & Second set \\
+\hline
+\end{DoxyParams}

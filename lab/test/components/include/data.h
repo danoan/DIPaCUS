@@ -2,24 +2,26 @@
 #define DIPACUS_COMPONENTS_TEST_MORPHOLOGY_DATA_H
 
 #include <DGtal/helpers/StdDefs.h>
-#include "utils/utils.h"
 
-namespace Test
+#include "DIPaCUS/base/Shapes.h"
+
+namespace DIPaCUS
 {
-    namespace Morphology
+    namespace Test
     {
-
-        namespace Data
+        namespace Morphology
         {
-            typedef DGtal::Z2i::DigitalSet DigitalSet;
+            namespace Data
+            {
+                typedef DGtal::Z2i::DigitalSet DigitalSet;
 
-            extern DigitalSet square11DS;
-            extern DigitalSet square13DS;
-            extern DigitalSet square15DS;
-            extern DigitalSet square9DS;
-            extern DigitalSet square7DS;
+                extern DigitalSet square11DS;
+                extern DigitalSet square13DS;
+                extern DigitalSet square15DS;
+                extern DigitalSet square9DS;
+                extern DigitalSet square7DS;
+            }
         }
     }
 }
-
 #endif //DIPACUS_COMPONENTS_TEST_MORPHOLOGY_DATA_H

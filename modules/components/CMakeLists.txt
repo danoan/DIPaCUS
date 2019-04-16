@@ -9,7 +9,7 @@ add_library(dipacus-components SHARED
         src/SetOperations.cpp
         src/Transform.cpp
         src/Properties.cpp
-        src/properties/boundingBox.cpp)
+        src/intern/properties/boundingBox/adapter.cpp)
 
 add_dependencies(dipacus-components dipacus-base)
 

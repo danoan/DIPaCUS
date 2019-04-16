@@ -1,7 +1,122 @@
 \hypertarget{namespaceDIPaCUS_1_1Properties}{}\section{D\+I\+Pa\+C\+US\+:\+:Properties Namespace Reference}
 \label{namespaceDIPaCUS_1_1Properties}\index{D\+I\+Pa\+C\+U\+S\+::\+Properties@{D\+I\+Pa\+C\+U\+S\+::\+Properties}}
+
+
+Collection of property gathering functions.  
+
+
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceDIPaCUS_1_1Properties_1_1Intern}{Intern}
+\end{DoxyCompactItemize}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{structDIPaCUS_1_1Properties_1_1CurveBoundingBox}{Curve\+Bounding\+Box}}
+struct \hyperlink{structDIPaCUS_1_1Properties_1_1BoundingBox}{Bounding\+Box}
+\begin{DoxyCompactList}\small\item\em A bounding box is a data structure which represents the lower-\/left and upper-\/right points of a digital set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef D\+Gtal\+::\+Image\+Container\+By\+S\+T\+L\+Vector$<$ D\+Gtal\+::\+Z2i\+::\+Domain, unsigned char $>$ \hyperlink{namespaceDIPaCUS_1_1Properties_aa6a61f89ec9c6c464ab0c0755f92e7fc}{Image2D}
 \end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T\+S\+Cell\+Iterator $>$ }\\void \hyperlink{namespaceDIPaCUS_1_1Properties_a3d38c4947ecda62e133502ef919d76a0}{curve\+Bounding\+Box} (\hyperlink{structDIPaCUS_1_1Properties_1_1BoundingBox}{Bounding\+Box} \&bb, T\+S\+Cell\+Iterator itb, T\+S\+Cell\+Iterator ite)
+\begin{DoxyCompactList}\small\item\em Computes the bounding box of a curve. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceDIPaCUS_1_1Properties_a17d4f21d5117ab744ee1b17f36dd8878}{bounding\+Box} (\hyperlink{structDIPaCUS_1_1Properties_1_1BoundingBox}{Bounding\+Box} \&bb, const \hyperlink{namespaceDIPaCUS_1_1Properties_aa6a61f89ec9c6c464ab0c0755f92e7fc}{Image2D} \&img\+In)
+\begin{DoxyCompactList}\small\item\em Computes bounding box of a Grayscale D\+Gtal Image. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceDIPaCUS_1_1Properties_ad677c27627b57987a2957d3c378d7415}{bounding\+Box} (\hyperlink{structDIPaCUS_1_1Properties_1_1BoundingBox}{Bounding\+Box} \&bb, const cv\+::\+Mat \&cv\+Img\+In)
+\begin{DoxyCompactList}\small\item\em Computes bounding box of a Grayscale open\+CV Image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Collection of property gathering functions. 
+
+\begin{DoxyAuthor}{Author}
+Daniel Martins Antunes 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2018/08/27 
+\end{DoxyDate}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Properties_aa6a61f89ec9c6c464ab0c0755f92e7fc}\label{namespaceDIPaCUS_1_1Properties_aa6a61f89ec9c6c464ab0c0755f92e7fc}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Properties@{D\+I\+Pa\+C\+U\+S\+::\+Properties}!Image2D@{Image2D}}
+\index{Image2D@{Image2D}!D\+I\+Pa\+C\+U\+S\+::\+Properties@{D\+I\+Pa\+C\+U\+S\+::\+Properties}}
+\subsubsection{\texorpdfstring{Image2D}{Image2D}}
+{\footnotesize\ttfamily typedef D\+Gtal\+::\+Image\+Container\+By\+S\+T\+L\+Vector$<$D\+Gtal\+::\+Z2i\+::\+Domain, unsigned char$>$ \hyperlink{namespaceDIPaCUS_1_1Properties_aa6a61f89ec9c6c464ab0c0755f92e7fc}{D\+I\+Pa\+C\+U\+S\+::\+Properties\+::\+Image2D}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Properties_a17d4f21d5117ab744ee1b17f36dd8878}\label{namespaceDIPaCUS_1_1Properties_a17d4f21d5117ab744ee1b17f36dd8878}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Properties@{D\+I\+Pa\+C\+U\+S\+::\+Properties}!bounding\+Box@{bounding\+Box}}
+\index{bounding\+Box@{bounding\+Box}!D\+I\+Pa\+C\+U\+S\+::\+Properties@{D\+I\+Pa\+C\+U\+S\+::\+Properties}}
+\subsubsection{\texorpdfstring{bounding\+Box()}{boundingBox()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void D\+I\+Pa\+C\+U\+S\+::\+Properties\+::bounding\+Box (\begin{DoxyParamCaption}\item[{\hyperlink{structDIPaCUS_1_1Properties_1_1BoundingBox}{Bounding\+Box} \&}]{bb,  }\item[{const \hyperlink{namespaceDIPaCUS_1_1Properties_aa6a61f89ec9c6c464ab0c0755f92e7fc}{Image2D} \&}]{img\+In }\end{DoxyParamCaption})}
+
+
+
+Computes bounding box of a Grayscale D\+Gtal Image. 
+
+Any pixel with intensity value higher than 1 is taken into account for bounding box computation
+
+
+\begin{DoxyParams}{Parameters}
+{\em bb} & \hyperlink{structDIPaCUS_1_1Properties_1_1BoundingBox}{Bounding\+Box} \\
+\hline
+{\em image} & D\+Gtal Image \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Properties_ad677c27627b57987a2957d3c378d7415}\label{namespaceDIPaCUS_1_1Properties_ad677c27627b57987a2957d3c378d7415}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Properties@{D\+I\+Pa\+C\+U\+S\+::\+Properties}!bounding\+Box@{bounding\+Box}}
+\index{bounding\+Box@{bounding\+Box}!D\+I\+Pa\+C\+U\+S\+::\+Properties@{D\+I\+Pa\+C\+U\+S\+::\+Properties}}
+\subsubsection{\texorpdfstring{bounding\+Box()}{boundingBox()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void D\+I\+Pa\+C\+U\+S\+::\+Properties\+::bounding\+Box (\begin{DoxyParamCaption}\item[{\hyperlink{structDIPaCUS_1_1Properties_1_1BoundingBox}{Bounding\+Box} \&}]{bb,  }\item[{const cv\+::\+Mat \&}]{cv\+Img\+In }\end{DoxyParamCaption})}
+
+
+
+Computes bounding box of a Grayscale open\+CV Image. 
+
+Any pixel with intensity value higher than 1 is taken into account for bounding box computation
+
+
+\begin{DoxyParams}{Parameters}
+{\em bb} & \hyperlink{structDIPaCUS_1_1Properties_1_1BoundingBox}{Bounding\+Box} \\
+\hline
+{\em cv\+Img} & open\+CV Image \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceDIPaCUS_1_1Properties_a3d38c4947ecda62e133502ef919d76a0}\label{namespaceDIPaCUS_1_1Properties_a3d38c4947ecda62e133502ef919d76a0}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Properties@{D\+I\+Pa\+C\+U\+S\+::\+Properties}!curve\+Bounding\+Box@{curve\+Bounding\+Box}}
+\index{curve\+Bounding\+Box@{curve\+Bounding\+Box}!D\+I\+Pa\+C\+U\+S\+::\+Properties@{D\+I\+Pa\+C\+U\+S\+::\+Properties}}
+\subsubsection{\texorpdfstring{curve\+Bounding\+Box()}{curveBoundingBox()}}
+{\footnotesize\ttfamily template$<$class T\+S\+Cell\+Iterator $>$ \\
+void D\+I\+Pa\+C\+U\+S\+::\+Properties\+::curve\+Bounding\+Box (\begin{DoxyParamCaption}\item[{\hyperlink{structDIPaCUS_1_1Properties_1_1BoundingBox}{Bounding\+Box} \&}]{bb,  }\item[{T\+S\+Cell\+Iterator}]{itb,  }\item[{T\+S\+Cell\+Iterator}]{ite }\end{DoxyParamCaption})}
+
+
+
+Computes the bounding box of a curve. 
+
+Bounding Box is given in terms of incident pixel coordinates (recall that S\+Cells lies in Khalimsky Space).
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T\+S\+Cell\+Iterator} & It must be an iterator on D\+Gtal S\+Cells \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em bb} & \hyperlink{structDIPaCUS_1_1Properties_1_1BoundingBox}{Bounding\+Box} struct \\
+\hline
+{\em itb} & Begin iterator \\
+\hline
+{\em ite} & End iterator \\
+\hline
+\end{DoxyParams}

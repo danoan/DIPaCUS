@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['eightneighborhoodpredicate',['EightNeighborhoodPredicate',['../classDIPaCUS_1_1Neighborhood_1_1EightNeighborhoodPredicate.html',1,'DIPaCUS::Neighborhood']]],
-  ['eliminateloops',['EliminateLoops',['../structDIPaCUS_1_1Transform_1_1EliminateLoops.html',1,'DIPaCUS::Transform']]]
+  ['fillinterior',['FillInterior',['../structDIPaCUS_1_1Misc_1_1FillInterior.html',1,'DIPaCUS::Misc']]],
+  ['findipnis',['FindIPNIS',['../structDIPaCUS_1_1Misc_1_1FindIPNIS.html',1,'DIPaCUS::Misc']]],
+  ['fourneighborhoodpredicate',['FourNeighborhoodPredicate',['../classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate.html',1,'DIPaCUS::Neighborhood']]]
 ];

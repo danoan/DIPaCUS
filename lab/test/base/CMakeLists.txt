@@ -7,7 +7,7 @@ add_executable(test-base
 		src/Representation/data.cpp
 		src/Shapes/testShapes.cpp)
 
-add_dependencies(test-base test-dipacus-utils dipacus-base)
+add_dependencies(test-base logger dipacus-base)
 
 set_target_properties(test-base PROPERTIES COMPILE_FEATURES "cxx_generic_lambdas" COMPILE_FLAGS -fext-numeric-literals)
 
@@ -16,12 +16,13 @@ target_compile_definitions(test-base PRIVATE -DPROJECT_DIR=\"${PROJECT_SOURCE_DI
 target_include_directories(test-base PRIVATE
 		include
 		${CMAKE_SOURCE_DIR}/modules/base/include
-		${CMAKE_SOURCE_DIR}/lab/test/utils/include
+		${CMAKE_SOURCE_DIR}/modules/components/include
+		${CMAKE_SOURCE_DIR}/lab/test/logger/include
         ${DGTAL_INCLUDE_DIRS})
 
 target_link_libraries(test-base
+		-llogger
 		-ldipacus-base
-		-ltest-dipacus-utils
         -lboost_system
         -lboost_filesystem
 		${DGTAL_LIBRARIES}

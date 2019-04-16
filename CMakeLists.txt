@@ -20,7 +20,6 @@ set(BUILD_TESTS OFF CACHE BOOL "Build tests.")
 link_directories(${CMAKE_BINARY_DIR}/modules/base 
         ${CMAKE_BINARY_DIR}/modules/components
         ${CMAKE_BINARY_DIR}/modules/derivates
-        ${CMAKE_BINARY_DIR}/lab/test/utils
         ${BOOST_LIBS_DIR})
 
 

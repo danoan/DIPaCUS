@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['noholes',['NoHoles',['../structDIPaCUS_1_1Misc_1_1NoHoles.html',1,'DIPaCUS::Misc']]]
+  ['pointfilter',['PointFilter',['../structDIPaCUS_1_1Properties_1_1Intern_1_1PointFilter.html',1,'DIPaCUS::Properties::Intern']]]
 ];

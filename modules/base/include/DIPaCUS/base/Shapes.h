@@ -1,7 +1,7 @@
 #ifndef DIPACUS_BASE_SHAPES_H
 #define DIPACUS_BASE_SHAPES_H
 
-#include "boost/assert.hpp"
+#include <boost/assert.hpp>
 
 #include <DGtal/helpers/StdDefs.h>
 
@@ -123,7 +123,7 @@ namespace DIPaCUS
                           int x0=0,
                           int y0=0,
                           double radius=10,
-                          double smallradius=5,
+                          double smallRadius=5,
                           int k=3,
                           double rotation=0);
     }

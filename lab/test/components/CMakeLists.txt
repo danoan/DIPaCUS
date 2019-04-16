@@ -11,10 +11,9 @@ add_executable(test-components
         src/testNeighborhood.cpp
         src/testProperties.cpp
         src/testSetOperations.cpp
-        src/testTransform.cpp
-        ${CMAKE_SOURCE_DIR}/lab/test/utils/src/utils.cpp)
+        src/testTransform.cpp)
 
-add_dependencies(test-components test-dipacus-utils dipacus-base dipacus-components dipacus-derivates)
+add_dependencies(test-components logger dipacus-base dipacus-components dipacus-derivates)
 
 target_compile_definitions(test-components PRIVATE -DPROJECT_DIR=\"${CMAKE_SOURCE_DIR}\")
 
@@ -22,12 +21,16 @@ target_include_directories(test-components PRIVATE
         include
         ${CMAKE_SOURCE_DIR}/modules/base/include
         ${CMAKE_SOURCE_DIR}/modules/components/include
-        ${CMAKE_SOURCE_DIR}/lab/test/utils/include
+        ${CMAKE_SOURCE_DIR}/modules/derivates/include
+        ${CMAKE_SOURCE_DIR}/lab/test/logger/include
         ${DGTAL_INCLUDE_DIRS})
 
 target_link_libraries(test-components PRIVATE
-        -ltest-dipacus-utils
+        -llogger
+        -ldipacus-derivates
         -ldipacus-components
         -ldipacus-base
+        -lboost_filesystem
+        -lboost_system
         ${DGTAL_LIBRARIES}
         ${OpenCV_LIBS})

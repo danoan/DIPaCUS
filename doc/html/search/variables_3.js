@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['size',['size',['../structDIPaCUS_1_1Morphology_1_1StructuringElement.html#ade1c5c9095630d3f404a75b97f1ae825',1,'DIPaCUS::Morphology::StructuringElement']]]
+  ['point',['point',['../structDIPaCUS_1_1Properties_1_1Intern_1_1PointFilter.html#aaddaca8a703b09775b837911028a5e1b',1,'DIPaCUS::Properties::Intern::PointFilter']]]
 ];

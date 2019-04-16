@@ -1,19 +1,18 @@
-#include "boundingBox.h"
+#include "DIPaCUS/components/intern/properties/boundingBox/adapter.h"
 
-namespace DIPaCUS{ namespace Properties{
-
+namespace DIPaCUS{ namespace Properties{ namespace Intern{
 
     template<typename TPointFilterIterator>
-    void Intern::boundingBox(BoundingBox& bb,
-                             TPointFilterIterator itb,
-                             TPointFilterIterator ite)
+    void boundingBox(BoundingBox& bb,
+                     TPointFilterIterator itb,
+                     TPointFilterIterator ite)
     {
         TPointFilterIterator it = itb;
         while(!itb->valid) ++itb;
 
         if(itb->valid)
         {
-            Point currP = itb->point;
+            BoundingBox::Point currP = itb->point;
             bb.lb = currP;
             bb.ub = currP;
 
@@ -34,10 +33,10 @@ namespace DIPaCUS{ namespace Properties{
         }
         else
         {
-            bb.lb = Point(0,0);
-            bb.ub = Point(0,0);
+            bb.lb = BoundingBox::Point(0,0);
+            bb.ub = BoundingBox::Point(0,0);
         }
 
     }
 
-}}
+}}}

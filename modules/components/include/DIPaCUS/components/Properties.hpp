@@ -1,4 +1,4 @@
-#include "Properties.h"
+#include "DIPaCUS/components/Properties.h"
 
 using namespace DIPaCUS;
 
@@ -8,7 +8,7 @@ void Properties::curveBoundingBox(BoundingBox& bb,
                                   TSCellIterator ite)
 {
     TSCellIterator it = itb;
-    Point currP;
+    BoundingBox::Point currP;
     bb.lb = it->preCell().coordinates;
     bb.ub = bb.lb;
     do{

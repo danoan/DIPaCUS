@@ -1,23 +1,41 @@
 #include "testNeighborhood.h"
 
-namespace Test {namespace Neighborhood{
+namespace DIPaCUS{ namespace Test {namespace Neighborhood{
 
-    void testFourOnBall()
+    bool testFourOnBall(Logger& logger)
     {
+        logger < Logger::HeaderTwo < "Test FourNeighborhood on a Ball" < Logger::Normal;
+
         typedef DIPaCUS::Neighborhood::FourNeighborhoodPredicate FNP;
         DigitalSet boundary = Internal::digitalBoundary<FNP>(DIPaCUS::Shapes::ball());
-        assert(boundary.size()==76);
+
+        logger < Logger::LoggableObject<DigitalSet>(boundary,"fourN-ball.eps");
+
+        bool t1 = boundary.size()==76;
+        logger < "Passed: " < t1 < "\n";
+
+        return t1;
     }
 
-    void testEightOnBall()
+    bool testEightOnBall(Logger& logger)
     {
+        logger < Logger::HeaderTwo < "Test EightNeighborhood on a Ball" < Logger::Normal;
+
         typedef DIPaCUS::Neighborhood::EightNeighborhoodPredicate ENP;
         DigitalSet boundary = Internal::digitalBoundary<ENP>(DIPaCUS::Shapes::ball());
-        assert(boundary.size()==56);
+
+        logger < Logger::LoggableObject<DigitalSet>(boundary,"eigthN-ball.eps");
+
+        bool t1 = boundary.size()==56;
+        logger < "Passed: " < t1 < "\n";
+
+        return t1;
     }
 
-    void testComplementEquivalence()
+    bool testComplementEquivalence(Logger& logger)
     {
+        logger < Logger::HeaderTwo < "Test ComplementEquivalence on a Ball" < Logger::Normal;
+
         typedef DIPaCUS::Neighborhood::FourNeighborhoodPredicate FNP;
         typedef DIPaCUS::Neighborhood::EightNeighborhoodPredicate ENP;
 
@@ -44,8 +62,9 @@ namespace Test {namespace Neighborhood{
         DGtal::Z2i::KSpace KSpace;
         DGtal::Z2i::Curve curve;
 
+        bool t1=true;
         KSpace.init(ball.domain().lowerBound(),ball.domain().upperBound(),true);
-        Utils::computeBoundaryCurve(ball,curve);
+        DIPaCUS::Misc::computeBoundaryCurve(curve,ball);
         for(auto it=curve.begin();it!=curve.end();++it)
         {
             DGtal::Z2i::SCells pixels = KSpace.sUpperIncident(*it);
@@ -53,16 +72,31 @@ namespace Test {namespace Neighborhood{
             for(auto itp=pixels.begin();itp!=pixels.end();++itp)
             {
 
-                assert(fourBoundaryBall(KSpace.sCoords(*itp)) ||
-                       eightBoundaryBallComplement(KSpace.sCoords(*itp)) );
+                t1 = t1 && (fourBoundaryBall(KSpace.sCoords(*itp)) ||
+                        eightBoundaryBallComplement(KSpace.sCoords(*itp)) );
             }
         }
 
+        logger < "Passed: " < t1 < "\n";
 
+        return t1;
     }
-}}
 
-namespace Test {namespace Neighborhood { namespace Internal{
+    bool runTest(std::ostream& os, const std::string& outputFolder, bool exportObjectsFlag)
+    {
+        Logger logger(os,outputFolder,exportObjectsFlag);
+        logger < Logger::HeaderOne < "Neighborhood Tests" < Logger::Normal;
+
+        bool flag = true;
+        flag = flag && testFourOnBall(logger);
+        flag = flag && testEightOnBall(logger);
+        flag = flag && testComplementEquivalence(logger);
+
+        return flag;
+    }
+}}}
+
+namespace DIPaCUS{ namespace Test {namespace Neighborhood { namespace Internal{
 
     DigitalSet digitalComplement(const DigitalSet& ds)
     {
@@ -83,4 +117,4 @@ namespace Test {namespace Neighborhood { namespace Internal{
         return dsComplement;
     }
 
-}}}
+}}}}

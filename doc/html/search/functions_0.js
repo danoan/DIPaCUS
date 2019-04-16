@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['addborder',['AddBorder',['../structDIPaCUS_1_1Transform_1_1AddBorder.html#a920374f7331bc108bf8d5e1cabe3c83d',1,'DIPaCUS::Transform::AddBorder']]]
+  ['addborder',['addBorder',['../namespaceDIPaCUS_1_1Transform.html#a92fb5b6ae4eda503db4473c7c041dcf5',1,'DIPaCUS::Transform']]]
 ];

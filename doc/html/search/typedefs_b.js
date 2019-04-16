@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['thresholdvalue',['ThresholdValue',['../namespaceDIPaCUS_1_1Representation.html#a85996f90f0c4186ddae15b4f372bf875',1,'DIPaCUS::Representation']]],
-  ['threshpredicate',['ThreshPredicate',['../structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve.html#af7d6bf815acb40e8ae7e99c418d94b30',1,'DIPaCUS::Misc::ComputeBoundaryCurve']]]
+  ['thresholdvalue',['ThresholdValue',['../structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve.html#a31db1fa680bce958cccb412fac81fe14',1,'DIPaCUS::Misc::ComputeBoundaryCurve::ThresholdValue()'],['../namespaceDIPaCUS_1_1Representation.html#a85996f90f0c4186ddae15b4f372bf875',1,'DIPaCUS::Representation::ThresholdValue()'],['../namespaceDIPaCUS_1_1Properties_1_1Intern.html#a1d46869eb67bee5268ea8fcc98f7ca79',1,'DIPaCUS::Properties::Intern::ThresholdValue()']]]
 ];

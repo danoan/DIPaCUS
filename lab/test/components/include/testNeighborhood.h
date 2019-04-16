@@ -1,38 +1,46 @@
-#ifndef DIPACUS_TESTNEIGHBORHOOD_H
-#define DIPACUS_TESTNEIGHBORHOOD_H
+#ifndef DIPACUS_TEST_COMPONENTS_NEIGHBORHOOD_H
+#define DIPACUS_TEST_COMPONENTS_NEIGHBORHOOD_H
 
 #include <DGtal/images/SimpleThresholdForegroundPredicate.h>
-#include <DIPaCUS/base/Representation.h>
 
-#include <DIPaCUS/components/Neighborhood.h>
-#include <DIPaCUS/base/Shapes.h>
+#include "DIPaCUS/base/Representation.h"
+#include "DIPaCUS/base/Shapes.h"
 
-#include <utils/utils.h>
+#include "DIPaCUS/components/Neighborhood.h"
 
-namespace Test
+#include "DIPaCUS/derivates/Misc.h"
+
+#include "logger/logger.h"
+
+namespace DIPaCUS
 {
-    namespace Neighborhood
+    namespace Test
     {
-        typedef DGtal::Z2i::DigitalSet DigitalSet;
-
-        void testFourOnBall();
-        void testEightOnBall();
-
-        void testComplementEquivalence();
-
-        namespace Internal
+        namespace Neighborhood
         {
-            typedef DGtal::Z2i::Curve Curve;
+            typedef DGtal::Z2i::DigitalSet DigitalSet;
 
-            template<typename TPredicate>
-            DigitalSet digitalBoundary(const DigitalSet& ds);
+            bool testFourOnBall(Logger& logger);
+            bool testEightOnBall(Logger& logger);
+            bool testComplementEquivalence(Logger& logger);
 
-            DigitalSet digitalComplement(const DigitalSet& ds);
+            bool runTest(std::ostream& os, const std::string& outputFolder, bool exportObjectsFlag=false);
 
+
+
+            namespace Internal
+            {
+                typedef DGtal::Z2i::Curve Curve;
+
+                template<typename TPredicate>
+                DigitalSet digitalBoundary(const DigitalSet& ds);
+
+                DigitalSet digitalComplement(const DigitalSet& ds);
+
+            }
         }
     }
 }
-
 #include "testNeighborhood.hpp"
 
-#endif //DIPACUS_TESTNEIGHBORHOOD_H
+#endif //DIPACUS_TEST_COMPONENTS_NEIGHBORHOOD_H

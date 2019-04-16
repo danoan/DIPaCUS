@@ -4,12 +4,12 @@
 #include <iostream>
 
 #include <DGtal/helpers/StdDefs.h>
-#include "DGtal/base/Common.h"
-#include "DGtal/images/CConstImage.h"
-#include "DGtal/base/ConstAlias.h"
+#include <DGtal/base/Common.h>
+#include <DGtal/images/CConstImage.h>
+#include <DGtal/base/ConstAlias.h>
 
-#include "boost/concept/assert.hpp"
-#include "boost/assert.hpp"
+#include <boost/concept/assert.hpp>
+#include <boost/assert.hpp>
 
 namespace DIPaCUS
 {

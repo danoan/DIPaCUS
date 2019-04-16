@@ -1,4 +1,4 @@
-#include "Shapes.h"
+#include "DIPaCUS/base/Shapes.h"
 
 namespace DIPaCUS
 {

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['boundingbox',['BoundingBox',['../structDIPaCUS_1_1Properties_1_1CurveBoundingBox_1_1BoundingBox.html',1,'DIPaCUS::Properties::CurveBoundingBox']]]
+  ['compactsetfromclosedcurve',['CompactSetFromClosedCurve',['../structDIPaCUS_1_1Misc_1_1CompactSetFromClosedCurve.html',1,'DIPaCUS::Misc']]],
+  ['computeboundarycurve',['ComputeBoundaryCurve',['../structDIPaCUS_1_1Misc_1_1ComputeBoundaryCurve.html',1,'DIPaCUS::Misc']]]
 ];

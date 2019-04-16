@@ -3,7 +3,7 @@
 
 
 #include <DGtal/helpers/StdDefs.h>
-#include "DGtal/kernel/sets/DigitalSetInserter.h"
+#include <DGtal/kernel/sets/DigitalSetInserter.h>
 
 namespace DIPaCUS
 {

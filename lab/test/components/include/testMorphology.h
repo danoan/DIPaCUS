@@ -1,36 +1,46 @@
-#ifndef DIPACUS_TESTMORPHOLOGY_H
-#define DIPACUS_TESTMORPHOLOGY_H
+#ifndef DIPACUS_TEST_COMPONENTS_MORPHOLOGY_H
+#define DIPACUS_TEST_COMPONENTS_MORPHOLOGY_H
 
 #include "DIPaCUS/components/Morphology.h"
+#include "logger/logger.h"
 
-namespace Test
+namespace DIPaCUS
 {
-    namespace Morphology
+    namespace Test
     {
-        typedef DGtal::Z2i::Domain Domain;
-        typedef DGtal::Z2i::Point Point;
-        typedef DGtal::Z2i::DigitalSet DigitalSet;
+        namespace Morphology
+        {
+            typedef DGtal::Z2i::Domain Domain;
+            typedef DGtal::Z2i::Point Point;
+            typedef DGtal::Z2i::DigitalSet DigitalSet;
 
-        bool equalBoundingBoxes(const DigitalSet& ds1, const DigitalSet& ds2);
+            bool equalBoundingBoxes(const DigitalSet& ds1, const DigitalSet& ds2);
 
-        void testDilate(int iterations,
-                        int elementSize,
-                        const DigitalSet& dsInput,
-                        const DigitalSet& dsCompare);
+            bool testDilate(int iterations,
+                            int elementSize,
+                            const DigitalSet& dsInput,
+                            const DigitalSet& dsCompare,
+                            Logger& logger);
 
-        void testErosion(int iterations,
-                         int elementSize,
-                         const DigitalSet& dsInput,
-                         const DigitalSet& dsCompare);
+            bool testErosion(int iterations,
+                             int elementSize,
+                             const DigitalSet& dsInput,
+                             const DigitalSet& dsCompare,
+                             Logger& logger);
 
-        void testOpening(int iterations,
-                         int elementSize,
-                         const DigitalSet& dsInput);
+            bool testOpening(int iterations,
+                             int elementSize,
+                             const DigitalSet& dsInput,
+                             Logger& logger);
 
-        void testClosing(int iterations,
-                         int elementSize,
-                         const DigitalSet& dsInput);
+            bool testClosing(int iterations,
+                             int elementSize,
+                             const DigitalSet& dsInput,
+                             Logger& logger);
+
+            bool runTest(std::ostream& os, const std::string& outputFolder, bool exportObjects=false);
+        }
     }
 }
 
-#endif //DIPACUS_TESTMORPHOLOGY_H
+#endif //DIPACUS_TEST_COMPONENTS_MORPHOLOGY_H

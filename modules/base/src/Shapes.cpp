@@ -46,12 +46,12 @@ namespace DIPaCUS
                                       int x0,
                                       int y0,
                                       double radius,
-                                      double smallradius,
+                                      double smallRadius,
                                       int k,
                                       double rotation)
     {
         typedef DGtal::Z2i::Space Space;
-        DGtal::AccFlower2D<Space> flower(x0,y0,radius,smallradius,k,rotation);
+        DGtal::AccFlower2D<Space> flower(x0,y0,radius,smallRadius,k,rotation);
         return digitizeShape(flower,h);
     }
 }

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lb',['lb',['../structDIPaCUS_1_1Properties_1_1CurveBoundingBox_1_1BoundingBox.html#af43802e9df071ae721b7f97d7e05a125',1,'DIPaCUS::Properties::CurveBoundingBox::BoundingBox']]]
+  ['lb',['lb',['../structDIPaCUS_1_1Properties_1_1BoundingBox.html#a7bcb7c61abd01bb66d370e1b5b9174e7',1,'DIPaCUS::Properties::BoundingBox']]]
 ];

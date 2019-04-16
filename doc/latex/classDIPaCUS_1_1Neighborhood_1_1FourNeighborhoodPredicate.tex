@@ -1,5 +1,10 @@
-\hypertarget{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate}{}\section{D\+I\+Pa\+C\+US\+:\+:Neighborhood\+:\+:Four\+Neighborhood\+Predicate$<$ Digital\+Set $>$ Class Template Reference}
-\label{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate}\index{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate$<$ Digital\+Set $>$@{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate$<$ Digital\+Set $>$}}
+\hypertarget{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate}{}\section{D\+I\+Pa\+C\+US\+:\+:Neighborhood\+:\+:Four\+Neighborhood\+Predicate Class Reference}
+\label{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate}\index{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate@{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate}}
+
+
+Predicate to identify 4-\/connected points in a digital set.  
+
+
 
 
 {\ttfamily \#include $<$Neighborhood.\+h$>$}
@@ -7,78 +12,115 @@
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-typedef D\+Gtal\+::\+Z2i\+::\+Domain \mbox{\hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_acf2e866035c770ff120fa4ef6ee841f2}{Domain}}
+typedef D\+Gtal\+::\+Z2i\+::\+Domain \hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_ad97cfd55062b2f95323031bd7c2b1860}{Domain}
 \item 
-typedef D\+Gtal\+::\+Z2i\+::\+Point \mbox{\hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_abc0e0bbbb71884290b4b61935c296230}{Point}}
+typedef D\+Gtal\+::\+Z2i\+::\+Point \hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a5b162b7df8bf69ab1255dbee48de3298}{Point}
+\item 
+typedef D\+Gtal\+::\+Z2i\+::\+Digital\+Set \hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a9f81af73dae8303b1142e9ca6930c332}{Digital\+Set}
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a090626c4ebc27a08542a209a575cc46e}{Four\+Neighborhood\+Predicate}} (const Digital\+Set \&DS)
-\item 
-bool \mbox{\hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_aa3d6c31fc2de78e8194268eda1c3e1ed}{operator()}} (const \mbox{\hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_abc0e0bbbb71884290b4b61935c296230}{Point}} \&a\+Point) const
-\item 
-bool \mbox{\hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a3f260d0a56da41b157a98be21c0bb0f7}{operator()}} (const Domain\+::\+Const\+Iterator \&it) const
-\end{DoxyCompactItemize}
-\subsection*{Protected Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a7dc107e1ed2f9aaf59d4d0a76d266feb}{Four\+Neighborhood\+Predicate}} ()
-\end{DoxyCompactItemize}
+\hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a97e3418e93f5bb89fcc5fd331c8f6bc6}{Four\+Neighborhood\+Predicate} (const \hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a9f81af73dae8303b1142e9ca6930c332}{Digital\+Set} \&digital\+Set)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_ab5532db7f4278ee6b107d2ee4eeb385f}{operator()} (const \hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a5b162b7df8bf69ab1255dbee48de3298}{Point} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Test if point is 4-\/connected in digital\+Set. \end{DoxyCompactList}\item 
+bool \hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a77275b997027b69409b86cff2bd36279}{operator()} (const Domain\+::\+Const\+Iterator \&it) const
+\begin{DoxyCompactList}\small\item\em Test if point is 4-\/connected in digital\+Set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Predicate to identify 4-\/connected points in a digital set. 
+
+\begin{DoxyAuthor}{Author}
+Daniel Martins Antunes 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2018/08/27 
+\end{DoxyDate}
 
 
 \subsection{Member Typedef Documentation}
-\mbox{\Hypertarget{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_acf2e866035c770ff120fa4ef6ee841f2}\label{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_acf2e866035c770ff120fa4ef6ee841f2}} 
+\mbox{\Hypertarget{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a9f81af73dae8303b1142e9ca6930c332}\label{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a9f81af73dae8303b1142e9ca6930c332}} 
+\index{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate@{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate}!Digital\+Set@{Digital\+Set}}
+\index{Digital\+Set@{Digital\+Set}!D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate@{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate}}
+\subsubsection{\texorpdfstring{Digital\+Set}{DigitalSet}}
+{\footnotesize\ttfamily typedef D\+Gtal\+::\+Z2i\+::\+Digital\+Set \hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a9f81af73dae8303b1142e9ca6930c332}{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate\+::\+Digital\+Set}}
+
+\mbox{\Hypertarget{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_ad97cfd55062b2f95323031bd7c2b1860}\label{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_ad97cfd55062b2f95323031bd7c2b1860}} 
 \index{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate@{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate}!Domain@{Domain}}
 \index{Domain@{Domain}!D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate@{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate}}
 \subsubsection{\texorpdfstring{Domain}{Domain}}
-{\footnotesize\ttfamily template$<$typename Digital\+Set $>$ \\
-typedef D\+Gtal\+::\+Z2i\+::\+Domain \mbox{\hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate}{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate}}$<$ Digital\+Set $>$\+::\mbox{\hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_acf2e866035c770ff120fa4ef6ee841f2}{Domain}}}
+{\footnotesize\ttfamily typedef D\+Gtal\+::\+Z2i\+::\+Domain \hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_ad97cfd55062b2f95323031bd7c2b1860}{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate\+::\+Domain}}
 
-\mbox{\Hypertarget{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_abc0e0bbbb71884290b4b61935c296230}\label{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_abc0e0bbbb71884290b4b61935c296230}} 
+\mbox{\Hypertarget{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a5b162b7df8bf69ab1255dbee48de3298}\label{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a5b162b7df8bf69ab1255dbee48de3298}} 
 \index{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate@{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate}!Point@{Point}}
 \index{Point@{Point}!D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate@{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate}}
 \subsubsection{\texorpdfstring{Point}{Point}}
-{\footnotesize\ttfamily template$<$typename Digital\+Set $>$ \\
-typedef D\+Gtal\+::\+Z2i\+::\+Point \mbox{\hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate}{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate}}$<$ Digital\+Set $>$\+::\mbox{\hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_abc0e0bbbb71884290b4b61935c296230}{Point}}}
+{\footnotesize\ttfamily typedef D\+Gtal\+::\+Z2i\+::\+Point \hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a5b162b7df8bf69ab1255dbee48de3298}{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate\+::\+Point}}
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a090626c4ebc27a08542a209a575cc46e}\label{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a090626c4ebc27a08542a209a575cc46e}} 
+\mbox{\Hypertarget{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a97e3418e93f5bb89fcc5fd331c8f6bc6}\label{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a97e3418e93f5bb89fcc5fd331c8f6bc6}} 
 \index{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate@{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate}!Four\+Neighborhood\+Predicate@{Four\+Neighborhood\+Predicate}}
 \index{Four\+Neighborhood\+Predicate@{Four\+Neighborhood\+Predicate}!D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate@{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate}}
-\subsubsection{\texorpdfstring{Four\+Neighborhood\+Predicate()}{FourNeighborhoodPredicate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename Digital\+Set $>$ \\
-Four\+Neighborhood\+Predicate\+::\+Four\+Neighborhood\+Predicate (\begin{DoxyParamCaption}\item[{const Digital\+Set \&}]{DS }\end{DoxyParamCaption})}
+\subsubsection{\texorpdfstring{Four\+Neighborhood\+Predicate()}{FourNeighborhoodPredicate()}}
+{\footnotesize\ttfamily D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate\+::\+Four\+Neighborhood\+Predicate (\begin{DoxyParamCaption}\item[{const \hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a9f81af73dae8303b1142e9ca6930c332}{Digital\+Set} \&}]{digital\+Set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-\mbox{\Hypertarget{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a7dc107e1ed2f9aaf59d4d0a76d266feb}\label{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a7dc107e1ed2f9aaf59d4d0a76d266feb}} 
-\index{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate@{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate}!Four\+Neighborhood\+Predicate@{Four\+Neighborhood\+Predicate}}
-\index{Four\+Neighborhood\+Predicate@{Four\+Neighborhood\+Predicate}!D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate@{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate}}
-\subsubsection{\texorpdfstring{Four\+Neighborhood\+Predicate()}{FourNeighborhoodPredicate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename Digital\+Set $>$ \\
-\mbox{\hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate}{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate}}$<$ Digital\+Set $>$\+::\mbox{\hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate}{Four\+Neighborhood\+Predicate}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em digital\+Set} & D\+Gtal Digital\+Set in which the predicate is evaluated. \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_aa3d6c31fc2de78e8194268eda1c3e1ed}\label{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_aa3d6c31fc2de78e8194268eda1c3e1ed}} 
+\mbox{\Hypertarget{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_ab5532db7f4278ee6b107d2ee4eeb385f}\label{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_ab5532db7f4278ee6b107d2ee4eeb385f}} 
 \index{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate@{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate}!operator()@{operator()}}
 \index{operator()@{operator()}!D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate@{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate}}
 \subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename Digital\+Set $>$ \\
-bool Four\+Neighborhood\+Predicate\+::operator() (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_abc0e0bbbb71884290b4b61935c296230}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily bool D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate\+::operator() (\begin{DoxyParamCaption}\item[{const \hyperlink{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a5b162b7df8bf69ab1255dbee48de3298}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a3f260d0a56da41b157a98be21c0bb0f7}\label{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a3f260d0a56da41b157a98be21c0bb0f7}} 
+
+
+Test if point is 4-\/connected in digital\+Set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Point} & Point belonging to digital set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a\+Point is 4-\/connected. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a77275b997027b69409b86cff2bd36279}\label{classDIPaCUS_1_1Neighborhood_1_1FourNeighborhoodPredicate_a77275b997027b69409b86cff2bd36279}} 
 \index{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate@{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate}!operator()@{operator()}}
 \index{operator()@{operator()}!D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate@{D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate}}
 \subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename Digital\+Set $>$ \\
-bool Four\+Neighborhood\+Predicate\+::operator() (\begin{DoxyParamCaption}\item[{const Domain\+::\+Const\+Iterator \&}]{it }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily bool D\+I\+Pa\+C\+U\+S\+::\+Neighborhood\+::\+Four\+Neighborhood\+Predicate\+::operator() (\begin{DoxyParamCaption}\item[{const Domain\+::\+Const\+Iterator \&}]{it }\end{DoxyParamCaption}) const}
 
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+Test if point is 4-\/connected in digital\+Set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em it} & Const\+Iterator from the digital\+Set domain. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if dereferenced iterator is 4-\/connected point in digital\+Set. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-modules/components/include/\+D\+I\+Pa\+C\+U\+S/components/\mbox{\hyperlink{Neighborhood_8h}{Neighborhood.\+h}}\item 
-modules/components/include/\+D\+I\+Pa\+C\+U\+S/components/\mbox{\hyperlink{Neighborhood_8hpp}{Neighborhood.\+hpp}}\end{DoxyCompactItemize}
+modules/components/include/\+D\+I\+Pa\+C\+U\+S/components/\hyperlink{Neighborhood_8h}{Neighborhood.\+h}\end{DoxyCompactItemize}

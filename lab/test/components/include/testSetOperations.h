@@ -1,19 +1,27 @@
-#ifndef DIPACUS_TESTSETOPERATIONS_H
-#define DIPACUS_TESTSETOPERATIONS_H
+#ifndef DIPACUS_TEST_COMPONENTS_SETOPERATIONS_H
+#define DIPACUS_TEST_COMPONENTS_SETOPERATIONS_H
 
 #include <DGtal/helpers/StdDefs.h>
 
-#include <DIPaCUS/components/SetOperations.h>
-#include <DIPaCUS/base/Shapes.h>
+#include "DIPaCUS/components/SetOperations.h"
+#include "DIPaCUS/base/Shapes.h"
 
-namespace Test
+#include "logger/logger.h"
+
+namespace DIPaCUS
 {
-    namespace SetOperations
+    namespace Test
     {
-        typedef DGtal::Z2i::DigitalSet DigitalSet;
+        namespace SetOperations
+        {
+            typedef DGtal::Z2i::DigitalSet DigitalSet;
 
-        void testExecution();
+            bool testSetDifference(Logger& logger);
+            bool testSetIntersection(Logger& logger);
+
+            bool runTest(std::ostream& os, const std::string& outputFolder, bool exportObjectsFlag=false);
+        }
     }
 }
 
-#endif //DIPACUS_TESTSETOPERATIONS_H
+#endif //DIPACUS_TEST_COMPONENTS_SETOPERATIONS_H

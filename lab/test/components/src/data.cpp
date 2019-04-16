@@ -1,18 +1,19 @@
 #include "data.h"
 
-using namespace Test::Morphology;
-
-namespace Test
+namespace DIPaCUS
 {
-    namespace Morphology
+    namespace Test
     {
-        namespace Data
+        namespace Morphology
         {
-            DigitalSet square11DS = Test::Utils::createSquareDS(11);
-            DigitalSet square13DS = Test::Utils::createSquareDS(13);
-            DigitalSet square15DS = Test::Utils::createSquareDS(15);
-            DigitalSet square9DS = Test::Utils::createSquareDS(9);
-            DigitalSet square7DS = Test::Utils::createSquareDS(7);
+            namespace Data
+            {
+                DigitalSet square11DS = DIPaCUS::Shapes::square(1.0,0,0, 11/2.0*sqrt(2));
+                DigitalSet square13DS = DIPaCUS::Shapes::square(1.0,0,0, 13/2.0*sqrt(2));
+                DigitalSet square15DS = DIPaCUS::Shapes::square(1.0,0,0, 15/2.0*sqrt(2));
+                DigitalSet square9DS = DIPaCUS::Shapes::square(1.0,0,0, 9/2.0*sqrt(2));
+                DigitalSet square7DS = DIPaCUS::Shapes::square(1.0,0,0, 7/2.0*sqrt(2));
+            }
         }
     }
 }
