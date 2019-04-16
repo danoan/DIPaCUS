@@ -3,21 +3,23 @@
 using namespace DIPaCUS;
 
 void Properties::boundingBox(BoundingBox& bb,
-                             const Image2D& image)
+                             const Image2D& imgIn)
 {
-    Intern::ImageAdapter imgBegin = Intern::imageAdapter(image,image.domain().begin(),1);
-    Intern::ImageAdapter imgEnd = Intern::imageAdapter(image,image.domain().end(),1);
+    Intern::ImageAdapter imgBegin = Intern::imageAdapter(imgIn,imgIn.domain().begin(),1);
+    Intern::ImageAdapter imgEnd = Intern::imageAdapter(imgIn,imgIn.domain().end(),1);
 
     Intern::boundingBox(bb,imgBegin,imgEnd);
 }
 
 void Properties::boundingBox(BoundingBox& bb,
-                             const cv::Mat& cvImg)
+                             const cv::Mat& cvImgIn)
 {
-    Domain domain(Point(0,0),Point(cvImg.cols-1,cvImg.rows-1) );
+    typedef BoundingBox::Point Point;
 
-    Intern::CVImageAdapter cvImgBegin = Intern::cvImageAdapter(cvImg,domain.begin(),1);
-    Intern::CVImageAdapter cvImgEnd = Intern::cvImageAdapter(cvImg,domain.end(),1);
+    DGtal::Z2i::Domain domain(Point(0,0),Point(cvImgIn.cols-1,cvImgIn.rows-1) );
+
+    Intern::CVImageAdapter cvImgBegin = Intern::cvImageAdapter(cvImgIn,domain.begin(),1);
+    Intern::CVImageAdapter cvImgEnd = Intern::cvImageAdapter(cvImgIn,domain.end(),1);
 
     Intern::boundingBox(bb,cvImgBegin,cvImgEnd);
 }

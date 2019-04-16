@@ -1,35 +1,80 @@
 #include <boost/filesystem/path.hpp>
 #include <boost/filesystem/operations.hpp>
 
-#include "testComputeBoundaryCurve.h"
-#include "testCompactSetFromClosedCurve.h"
+#include "testMisc.h"
 
 namespace DIPaCUS
 {
     namespace Test
     {
         std::string projectDir = std::string(PROJECT_DIR);
-
         std::string IMAGE_INPUT_PATH = projectDir + "/input_images";
-        std::string IMAGE_OUTPUT_PATH = projectDir + "/output_images";
-
-        bool verbose  = true;
-        bool visualOutput = true;
     }
 }
 
-using namespace DIPaCUS::Test;
-
-int main()
+struct InputData
 {
-    std::cout << "Project Directory: " << projectDir << std::endl;
-    boost::filesystem::path p (IMAGE_OUTPUT_PATH);
-    boost::filesystem::create_directories(p);
+    InputData()
+    {
+        outputFolder="";
+        exportObjectsFlag=false;
+    }
 
-    std::cout << "Test ComputeBoundaryCurve" << std::endl;
-    Derivates::TestComputeBoundaryCurve();
+    std::string outputFolder;
+    bool exportObjectsFlag;
+};
 
-    std::cout << "Test CompactSetFromClosedCurve" << std::endl;
-    Derivates::TestCompactSetFromClosedCurve();
+void printUsage()
+{
+    std::cerr << "Usage: ./testDerivates OutputFolder\n"
+              << "[-e Export objects flag]\n";
+    exit(1);
+}
+
+InputData readInput(int argc, char* argv[])
+{
+    InputData in;
+
+    if(argc<3) printUsage();
+
+    int opt;
+    while( (opt=getopt(argc,argv,"e"))!=-1 )
+    {
+        switch(opt)
+        {
+            case 'e':
+            {
+                in.exportObjectsFlag = true;
+                break;
+            }
+            default:
+            {
+                printUsage();
+            }
+        }
+    }
+    in.outputFolder = argv[optind];
+
+    return in;
+}
+
+using namespace DIPaCUS;
+
+int main(int argc, char* argv[])
+{
+    InputData in = readInput(argc,argv);
+
+    std::string baseFolder = in.outputFolder + "/test/derivates";
+    boost::filesystem::create_directories(baseFolder);
+
+    std::ofstream ofs(baseFolder + "/log.txt");
+
+    bool flag = Test::Misc::runTest(ofs,baseFolder + "/Misc",in.exportObjectsFlag);
+
+    ofs.flush();
+    ofs.close();
+
+    assert(flag);
+
     return 0;
 }

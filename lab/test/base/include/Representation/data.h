@@ -1,37 +1,42 @@
 #ifndef DIPACUS_TEST_BASE_REPRESENTATION_DATA_H
 #define DIPACUS_TEST_BASE_REPRESENTATION_DATA_H
 
+#include <string>
+
 #include <DGtal/helpers/StdDefs.h>
-#include "string"
 
-#include "DGtal/shapes/ShapeFactory.h"
-#include "DGtal/shapes/GaussDigitizer.h"
+#include <DGtal/shapes/ShapeFactory.h>
+#include <DGtal/shapes/GaussDigitizer.h>
 
-namespace Test
+#include "DIPaCUS/base/Shapes.h"
+
+namespace DIPaCUS
 {
-    extern std::string IMAGE_INPUT_PATH;
-
-    namespace Representation
+    namespace Test
     {
-        typedef DGtal::Z2i::DigitalSet DigitalSet;
+        extern std::string IMAGE_INPUT_PATH;
 
-        namespace Intern
+        namespace Representation
         {
-            typedef DGtal::Z2i::Space Space;
-            typedef DGtal::Z2i::Domain Domain;
-            typedef DGtal::NGon2D<Space> NGon2D;
+            typedef DGtal::Z2i::DigitalSet DigitalSet;
 
-            DigitalSet createSquareDS();
+            namespace Intern
+            {
+                typedef DGtal::Z2i::Space Space;
+                typedef DGtal::Z2i::Domain Domain;
+                typedef DGtal::NGon2D<Space> NGon2D;
+
+                DigitalSet createSquareDS();
+            }
+
+
+            namespace Data
+            {
+                extern std::string giSquare;
+                extern DigitalSet dsSquare;
+            }
+
         }
-
-
-        namespace Data
-        {
-            extern std::string giSquare;
-            extern DigitalSet dsSquare;
-        }
-
     }
 }
-
 #endif //DIPACUS_TEST_BASE_REPRESENTATION_DATA_H

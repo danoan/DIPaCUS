@@ -1,18 +1,18 @@
 #ifndef DIPACUS_COMPONENTS_MORPHOLOGY_H
 #define DIPACUS_COMPONENTS_MORPHOLOGY_H
 
-#include "DGtal/helpers/StdDefs.h"
+#include <DGtal/helpers/StdDefs.h>
 
-#include "DGtal/images/ImageContainerBySTLVector.h"
+#include <DGtal/images/ImageContainerBySTLVector.h>
 
-#include "opencv2/imgproc.hpp"
-#include "opencv2/imgcodecs.hpp"
+#include <opencv2/imgproc.hpp>
+#include <opencv2/imgcodecs.hpp>
 
 #include "DIPaCUS/base/Representation.h"
 
 namespace DIPaCUS {
     /**
-     * \brief Basic morpholigcal operations over DGtal DigitalSet models.
+     * \brief Basic morphological operations over DGtal DigitalSet models.
      *
      * It operates on grayscale images only.
      * \author Daniel Martins Antunes
@@ -42,8 +42,8 @@ namespace DIPaCUS {
         const int IMG_TYPE = CV_8UC1;   //Limited to grayscale images only.
 
         /**
-         * /brief Dilate DGtal digital set model and output a grayscale
-         * DGtal image model.
+         * \brief Morphological dilation of digital set model. Outputs a
+         * grayscale image model.
          * @param imgOut Grayscale DGtal image model output.
          * @param dsIn DGtal digital set model input.
          * @param se Structuring element used for dilation.
@@ -55,8 +55,7 @@ namespace DIPaCUS {
                     const NumberIterations it=1);
 
         /**
-         * /brief Dilate DGtal digital set model and output a DGtal
-         * digital set model.
+         * \brief Morphological dilation of digital set model.
          * @param dsOut DGtal digital set model output.
          * @param dsIn DGtal digital set model input.
          * @param se Structuring element used for dilation.
@@ -69,8 +68,8 @@ namespace DIPaCUS {
 
 
         /**
-         * /brief Erode DGtal digital set model and output a grayscale
-         * DGtal image model.
+         * \brief Morphological erosion of digital set model. Outputs a
+         * grayscale image.
          * @param imgOut Grayscale DGtal image model output.
          * @param dsIn DGtal digital set model input.
          * @param se Structuring element used for erosion.
@@ -83,8 +82,7 @@ namespace DIPaCUS {
 
 
         /**
-         * /brief Erode DGtal digital set model and output a DGtal
-         * digital set model.
+         * \brief Morphological erosion of digital set model.
          * @param dsOut DGtal digital set model output.
          * @param dsIn DGtal digital set model input.
          * @param se Structuring element used for erosion.
@@ -98,8 +96,8 @@ namespace DIPaCUS {
 
 
         /**
-         * /brief Opening DGtal digital set model and output a grayscale
-         * DGtal image model.
+         * \brief Morphological opening of digital set model. Outputs
+         * a grayscale image.
          * @param imgOut Grayscale DGtal image model output.
          * @param dsIn DGtal digital set model input.
          * @param se Structuring element used for opening.
@@ -112,8 +110,7 @@ namespace DIPaCUS {
 
 
         /**
-         * /brief Opening DGtal digital set model and output a DGtal
-         * digital set model.
+         * \brief Morphological opening of digital set model.
          * @param dsOut DGtal digital set model output.
          * @param dsIn DGtal digital set model input.
          * @param se Structuring element used for opening.
@@ -126,8 +123,8 @@ namespace DIPaCUS {
 
 
         /**
-         * /brief Closing DGtal digital set model and output a grayscale
-         * DGtal image model.
+         * \brief Morphological closing of digital set model.
+         * Outputs a grayscale image.
          * @param imgOut Grayscale DGtal image model output.
          * @param dsIn DGtal digital set model input.
          * @param se Structuring element used for closing.
@@ -139,14 +136,13 @@ namespace DIPaCUS {
                      NumberIterations it = 1);
 
         /**
-         * /brief Closing DGtal digital set model and output a DGtal
-         * digital set model.
+         * \brief Morphological closing of digital set model.
          * @param dsOut DGtal digital set model output.
          * @param dsIn DGtal digital set model input.
          * @param se Structuring element used for closing.
          * @param it Number of closing execution.
          */
-        void closing(DigitalSet &dgtalSetOut,
+        void closing(DigitalSet &dsOut,
                      const DigitalSet &dsIn,
                      const StructuringElement se,
                      NumberIterations it = 1);

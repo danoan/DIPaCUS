@@ -6,14 +6,14 @@ void Transform::resize(Image2D &out,
                        const Image2D &input,
                        double factor)
 {
-    int rIn = input.domain().upperBound()[1] + 1;
-    int cIn = input.domain().upperBound()[0] + 1;
+    Point dimSizeIn = input.domain().upperBound() - input.domain().lowerBound() + Point(1,1);
+    Point dimSizeOut = out.domain().upperBound() - out.domain().lowerBound() + Point(1,1);
 
-    int rOut = out.domain().upperBound()[1] + 1;
-    int cOut = out.domain().upperBound()[0] + 1;
+    assert(dimSizeOut>=dimSizeIn*factor);
 
-    cv::Mat cvInput(rIn, cIn, IMG_TYPE);
-    cv::Mat cvOut(rOut, cOut, IMG_TYPE);
+    cv::Mat cvInput(dimSizeIn(1), dimSizeIn(0), IMG_TYPE);
+    cv::Mat cvOut(dimSizeOut(1), dimSizeOut(0), IMG_TYPE);
+
 
     DIPaCUS::Representation::imageToCVMat(cvInput, input);
     cv::resize(cvInput, cvOut, cvOut.size(), factor, factor, cv::INTER_NEAREST);
@@ -24,39 +24,43 @@ void Transform::resize(Image2D &out,
 void Transform::invertColors(Image2D &outputImage,
                              const Image2D &inputImage)
 {
-    int r = inputImage.domain().upperBound()[1] + 1;
-    int c = inputImage.domain().upperBound()[0] + 1;
+    Point dimSizeIn = inputImage.domain().upperBound() - inputImage.domain().lowerBound() + Point(1,1);
+    Point dimSizeOut = outputImage.domain().upperBound() - outputImage.domain().lowerBound() + Point(1,1);
 
-    cv::Mat cvIn(r, c, IMG_TYPE);
+    assert(dimSizeOut>=dimSizeIn);
 
-    DIPaCUS::Representation::imageToCVMat(cvIn, inputImage);
+    cv::Mat cvOut(dimSizeOut(1), dimSizeOut(0), IMG_TYPE);
 
-    auto begin = cvIn.begin<unsigned char>();
-    auto end = cvIn.end<unsigned char>();
+    DIPaCUS::Representation::imageToCVMat(cvOut, inputImage);
+
+    auto begin = cvOut.begin<unsigned char>();
+    auto end = cvOut.end<unsigned char>();
     for (auto it = begin; it != end; ++it) {
         *it = *it == 255 ? 0 : 255;
     }
 
-    DIPaCUS::Representation::CVMatToImage(outputImage, cvIn);
+    DIPaCUS::Representation::CVMatToImage(outputImage, cvOut);
 }
 
 void Transform::addBorder(Image2D &outputImage,
                           const Image2D &inputImage,
                           int borderWidth)
 {
-    int r = inputImage.domain().upperBound()[1] + 1;
-    int c = inputImage.domain().upperBound()[0] + 1;
+    Point dimSizeIn = inputImage.domain().upperBound() - inputImage.domain().lowerBound() + Point(1,1);
+    Point dimSizeOut = outputImage.domain().upperBound() - outputImage.domain().lowerBound() + Point(1,1);
 
-    cv::Mat cvIn(r, c, IMG_TYPE);
+    assert(dimSizeOut>=dimSizeIn+Point(borderWidth,borderWidth)*2);
 
-    DIPaCUS::Representation::imageToCVMat(cvIn,
+
+    cv::Mat cvOut(dimSizeIn(1), dimSizeIn(0), IMG_TYPE); //sizeIn because copyMakeBorder changes cv::Mat size
+    DIPaCUS::Representation::imageToCVMat(cvOut,
                                           inputImage);
 
-    cv::copyMakeBorder(cvIn, cvIn, borderWidth, borderWidth, borderWidth, borderWidth,
+    cv::copyMakeBorder(cvOut, cvOut, borderWidth, borderWidth, borderWidth, borderWidth,
                        CV_HAL_BORDER_CONSTANT, 0);
 
     DIPaCUS::Representation::CVMatToImage(outputImage,
-                                          cvIn);
+                                          cvOut);
 }
 
 
@@ -97,7 +101,6 @@ void Transform::eliminateLoops(Curve &curveOut,
 DGtal::Z2i::DigitalSet Transform::bottomLeftBoundingBoxAtOrigin(const DGtal::Z2i::DigitalSet& ds,
                                                                 const DGtal::Z2i::Point border)
 {
-    using namespace DGtal::Z2i;
     assert(ds.size()>0);
 
     Point lb,ub;

@@ -64,10 +64,11 @@ void Representation::imageToCVMat(cv::Mat &cvImgOut,
     assert(cvImgOut.rows >= dimSize(1) );
     assert(cvImgOut.cols >= dimSize(0) );
 
+    Point t = Point(0,0) - domain.lowerBound();
     int ubY = cvImgOut.rows - 1;
 
     for (auto it = imgIn.domain().begin(); it != imgIn.domain().end(); ++it) {
-        Point p = *it;
+        Point p = *it + t;
         unsigned char v(imgIn(*it));
         cvImgOut.at<unsigned char>((ubY - p[1]), p[0]) = v;
     }
@@ -85,11 +86,14 @@ void Representation::CVMatToImage(Image2D &imgOut,
     assert(dimSize(1)>=cvImgIn.rows);
     assert(dimSize(0)>=cvImgIn.cols);
 
+    Point t = imgOut.domain().lowerBound();
+
     int ubY = cvImgIn.rows - 1;
     for (int i = 0; i < cvImgIn.rows; i++) {
         for (int j = 0; j < cvImgIn.cols; j++) {
             unsigned char v(cvImgIn.at<unsigned char>(i, j));
-            imgOut.setValue(Point(j, ubY - i), v);
+
+            imgOut.setValue(Point(j+t(0), ubY - i + t(1)), v);
         }
     }
 }
@@ -139,7 +143,7 @@ void Representation::CVMatToDigitalSet(DigitalSet &dsOut,
     for (int i = 0; i < cvImgIn.rows; i++) {
         for (int j = 0; j < cvImgIn.cols; j++) {
             unsigned char v(cvImgIn.at<unsigned char>(i, j));
-            if(v>tv) dsOut.insert( Point(j+sx, ubY - i + sy ) );
+            if(v>tv) dsOut.insert( Point(j+sx, ubY - i  + sy ) );
         }
     }
 }

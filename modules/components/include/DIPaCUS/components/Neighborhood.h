@@ -4,19 +4,19 @@
 #include <iostream>
 
 #include <DGtal/helpers/StdDefs.h>
-#include "DGtal/base/Common.h"
-#include "DGtal/images/CConstImage.h"
-#include "DGtal/base/ConstAlias.h"
+#include <DGtal/base/Common.h>
+#include <DGtal/images/CConstImage.h>
+#include <DGtal/base/ConstAlias.h>
 
-#include "boost/concept/assert.hpp"
-#include "boost/assert.hpp"
+#include <boost/concept/assert.hpp>
+#include <boost/assert.hpp>
 
 namespace DIPaCUS
 {
     namespace Neighborhood {
 
         /**
-        * \brief Predicate to identify points in a 8-connected boundary.
+        * \brief Predicate to identify 8-connected points in a digital set.
         * \author Daniel Martins Antunes
         * \version 0.1
         * \date 2018/08/27
@@ -29,22 +29,22 @@ namespace DIPaCUS
 
             /**
              * \brief Constructor.
-             * @param digitalSet DGtal DigitalSet in which the precidate is evaluated.
+             * @param digitalSet DGtal DigitalSet in which the predicate is evaluated.
              */
             explicit EightNeighborhoodPredicate(const DigitalSet &digitalSet);
 
             /**
-             * \brief Test if a point belongs to the 8-connected boundary of digitalSet.
+             * \brief Test if point is 8-connected in digitalSet.
              * @param aPoint Point belonging to digital set.
-             * @return True if aPoint belongs to the 8-connected boundary of digitalSet.
+             * @return True if aPoint is 8-connected.
              */
             bool operator()(const Point &aPoint) const;
 
 
             /**
-             * \brief Test if a point belongs to the 8-connected boundary of digitalSet.
-             * @param it ConstIterator from a digitalSet domain.
-             * @return True if aPoint belongs to the 8-connected boundary of digitalSet.
+             * \brief Test if point is 8-connected in digitalSet.
+             * @param it ConstIterator from the digitalSet domain.
+             * @return True if dereferenced iterator is 8-connected point in digitalSet.
              */
             bool operator()(const Domain::ConstIterator &it) const;
 
@@ -60,7 +60,7 @@ namespace DIPaCUS
 
 
         /**
-        * \brief Predicate to identify points in a 4-connected boundary.
+        * \brief Predicate to identify 4-connected points in a digital set.
         * \author Daniel Martins Antunes
         * \version 0.1
         * \date 2018/08/27
@@ -73,22 +73,22 @@ namespace DIPaCUS
 
             /**
              * \brief Constructor.
-             * @param digitalSet DGtal DigitalSet in which the precidate is evaluated.
+             * @param digitalSet DGtal DigitalSet in which the predicate is evaluated.
              */
             explicit FourNeighborhoodPredicate(const DigitalSet &digitalSet);
 
             /**
-             * \brief Test if a point belongs to the 4-connected boundary of digitalSet.
+             * \brief Test if point is 4-connected in digitalSet.
              * @param aPoint Point belonging to digital set.
-             * @return True if aPoint belongs to the 4-connected boundary of digitalSet.
+             * @return True if aPoint is 4-connected.
              */
             bool operator()(const Point &aPoint) const;
 
 
             /**
-             * \brief Test if a point belongs to the 4-connected boundary of digitalSet.
-             * @param it ConstIterator from a digitalSet domain.
-             * @return True if aPoint belongs to the 4-connected boundary of digitalSet.
+             * \brief Test if point is 4-connected in digitalSet.
+             * @param it ConstIterator from the digitalSet domain.
+             * @return True if dereferenced iterator is 4-connected point in digitalSet.
              */
             bool operator()(const Domain::ConstIterator &it) const;
 

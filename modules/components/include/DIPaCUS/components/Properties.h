@@ -1,8 +1,13 @@
 #ifndef DIPACUS_COMPONENTS_PROPERTIES_H
 #define DIPACUS_COMPONENTS_PROPERTIES_H
 
+#include <opencv2/core/mat.hpp>
+
 #include <DGtal/helpers/StdDefs.h>
-#include <DIPaCUS/components/properties/boundingBox.h>
+#include <DGtal/images/ImageContainerBySTLVector.h>
+
+#include "DIPaCUS/components/auxiliar/properties/boundingBox.h"
+#include "DIPaCUS/components/intern/properties/boundingBox/adapter.h"
 
 namespace DIPaCUS
 {
@@ -14,13 +19,14 @@ namespace DIPaCUS
     */
     namespace Properties
     {
-        typedef DGtal::Z2i::Point Point;
+        typedef DGtal::ImageContainerBySTLVector<DGtal::Z2i::Domain, unsigned char> Image2D;
 
         /**
          * \brief Computes the bounding box of a curve.
          *
-         * Computed Bounding Box is given in pixel coordinates (recall
-         * that SCells lies in Khalimsky Space).
+         * Bounding Box is given in terms of incident pixel coordinates
+         * (recall that SCells lies in Khalimsky Space). Returned
+         * bounding box is not guarenteed to be tight.
          *
          * @tparam TSCellIterator It must be an iterator on DGtal SCells
          * @param bb BoundingBox struct
@@ -32,20 +38,28 @@ namespace DIPaCUS
 
 
         /**
-         * \brief Computes bounding box of a DGtal Image.
+         * \brief Computes bounding box of a Grayscale DGtal Image.
+         *
+         * Any pixel with intensity value higher than 1 is taken
+         * into account for bounding box computation
+         *
          * @param bb BoundingBox
          * @param image DGtal Image
          */
         void boundingBox(BoundingBox& bb,
-                         const Image2D& image);
+                         const Image2D& imgIn);
 
         /**
-         * \brief Computes bounding box of an openCV Image.
+         * \brief Computes bounding box of a Grayscale openCV Image.
+         *
+         * Any pixel with intensity value higher than 1 is taken
+         * into account for bounding box computation
+         *
          * @param bb BoundingBox
          * @param cvImg openCV Image
          */
         void boundingBox(BoundingBox& bb,
-                         const cv::Mat& cvImg);
+                         const cv::Mat& cvImgIn);
     }
 
 }

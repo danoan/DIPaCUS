@@ -1,12 +1,14 @@
 #ifndef DIPACUS_COMPONENTS_TRANSFORM_H
 #define DIPACUS_COMPONENTS_TRANSFORM_H
 
+#include <opencv2/imgproc.hpp>
+#include <opencv2/imgcodecs.hpp>
+
 #include <DGtal/helpers/StdDefs.h>
 #include <DGtal/images/ImageContainerBySTLVector.h>
+
 #include "DIPaCUS/base/Representation.h"
 
-#include "opencv2/imgproc.hpp"
-#include "opencv2/imgcodecs.hpp"
 
 namespace DIPaCUS
 {
@@ -20,8 +22,13 @@ namespace DIPaCUS
      */
     namespace Transform
     {
+        typedef DGtal::Z2i::Point Point;
+        typedef DGtal::Z2i::DigitalSet DigitalSet;
         typedef DGtal::Z2i::Domain Domain;
         typedef DGtal::ImageContainerBySTLVector<Domain, unsigned char> Image2D;
+
+        typedef DGtal::Z2i::KSpace KSpace;
+        typedef DGtal::Z2i::Curve Curve;
 
         const int IMG_TYPE = CV_8UC1;   //Limited to grayscale images only.
 
@@ -57,9 +64,6 @@ namespace DIPaCUS
                        const Image2D &inputImage,
                        int borderWidth);
 
-
-        typedef DGtal::Z2i::KSpace KSpace;
-        typedef DGtal::Z2i::Curve Curve;
 
         /**
          * /brief Eliminate loops from self-intersected curves.

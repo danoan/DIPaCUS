@@ -2,7 +2,9 @@ cmake_minimum_required(VERSION 3.2)
 project(lib-dipacus-base)
 
 #SHARED LIBRARY
-add_library(dipacus-base SHARED src/Representation.cpp)
+add_library(dipacus-base SHARED
+        src/Representation.cpp
+        src/Shapes.cpp)
 
 target_include_directories(dipacus-base PRIVATE
         include
@@ -23,6 +25,6 @@ install(DIRECTORY include
         DESTINATION ${CMAKE_INSTALL_PREFIX})
 
 install(TARGETS dipacus-base
-        DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
+        LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
 
 

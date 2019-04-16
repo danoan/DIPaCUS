@@ -2,13 +2,13 @@
 #define DIPACUS_BASE_REPRESENTATION_H
 
 #include <DGtal/helpers/StdDefs.h>
-#include "DGtal/images/ImageContainerBySTLVector.h"
-#include "DGtal/kernel/sets/DigitalSetInserter.h"
-#include "DGtal/io/readers/GenericReader.h"
-#include "DGtal/images/ImageHelper.h"
+#include <DGtal/images/ImageContainerBySTLVector.h>
+#include <DGtal/kernel/sets/DigitalSetInserter.h>
+#include <DGtal/io/readers/GenericReader.h>
+#include <DGtal/images/ImageHelper.h>
 
-#include "opencv2/imgproc.hpp"
-#include "opencv2/imgcodecs.hpp"
+#include <opencv2/imgproc.hpp>
+#include <opencv2/imgcodecs.hpp>
 
 namespace DIPaCUS {
     /**

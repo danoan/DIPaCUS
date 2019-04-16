@@ -1,29 +1,102 @@
-#include <data.h>
+#include <unistd.h>
+
+#include "data.h"
+#include "testNeighborhood.h"
+#include "testProperties.h"
+#include "testSetOperations.h"
+#include "testTransform.h"
 #include "testMorphology.h"
 
-using namespace Test;
-
-int main()
+struct OutputFolders
 {
-    Morphology::testDilate(1,1,Test::Morphology::Data::square11DS,Test::Morphology::Data::square13DS);
-    Morphology::testDilate(2,1,Test::Morphology::Data::square9DS,Test::Morphology::Data::square13DS);
-    Morphology::testDilate(1,2,Test::Morphology::Data::square9DS,Test::Morphology::Data::square13DS);
+    std::string morphology;
+    std::string neighborhood;
+    std::string properties;
+    std::string setOperations;
+    std::string transform;
+};
 
+struct InputData
+{
+    InputData()
+    {
+        outputFolder="";
+        exportObjectsFlag=false;
+    }
 
-    Morphology::testErosion(1,1,Test::Morphology::Data::square11DS,Test::Morphology::Data::square9DS);
-    Morphology::testErosion(2,1,Test::Morphology::Data::square13DS,Test::Morphology::Data::square9DS);
-    Morphology::testErosion(1,2,Test::Morphology::Data::square13DS,Test::Morphology::Data::square9DS);
+    std::string outputFolder;
+    bool exportObjectsFlag;
+};
 
-    Morphology::testOpening(1,1,Test::Morphology::Data::square11DS);
-    Morphology::testOpening(2,1,Test::Morphology::Data::square11DS);
-    Morphology::testOpening(1,2,Test::Morphology::Data::square11DS);
-    Morphology::testOpening(1,5,Test::Morphology::Data::square11DS);
+InputData readInput(int argc, char* argv[])
+{
+    InputData in;
 
+    if(argc<2)
+    {
+        std::cerr << "Output folder expected!\n";
+        exit(1);
+    }
 
-    Morphology::testClosing(1,1,Test::Morphology::Data::square11DS);
-    Morphology::testClosing(2,1,Test::Morphology::Data::square11DS);
-    Morphology::testClosing(1,2,Test::Morphology::Data::square11DS);
-    Morphology::testClosing(1,5,Test::Morphology::Data::square11DS);
+    int opt;
+    while( (opt=getopt(argc,argv,"e") )!=-1 )
+    {
+        switch(opt)
+        {
+            case 'e':
+            {
+                in.exportObjectsFlag=true;
+                break;
+            }
+            default:
+            {
+                std::cerr << "Usage: ./testComponents OutputFolder "
+                          << "[-e Export Objects]\n";
+                exit(1);
+            }
+        }
+    }
+
+    in.outputFolder = argv[optind];
+
+    return in;
+}
+
+OutputFolders createDirectories(const std::string& baseFolder)
+{
+    OutputFolders OF;
+    OF.morphology = baseFolder + "/morphology";
+    OF.neighborhood = baseFolder + "/neighborhood";
+    OF.properties = baseFolder + "/properties";
+    OF.setOperations = baseFolder + "/setOperations";
+    OF.transform = baseFolder + "/transform";
+
+    return OF;
+}
+
+using namespace DIPaCUS;
+
+int main(int argc, char* argv[])
+{
+    InputData in = readInput(argc,argv);
+
+    std::string baseFolder = in.outputFolder;
+    baseFolder += "/test/components";
+    OutputFolders OF = createDirectories(baseFolder);
+
+    std::ofstream ofs(baseFolder+"/log.txt");
+
+    bool flag = true;
+    flag = flag && Test::Morphology::runTest(ofs,OF.morphology,in.exportObjectsFlag);
+    flag = flag && Test::Neighborhood::runTest(ofs,OF.neighborhood,in.exportObjectsFlag);
+    flag = flag && Test::Properties::runTest(ofs,OF.properties,in.exportObjectsFlag);
+    flag = flag && Test::SetOperations::runTest(ofs,OF.setOperations,in.exportObjectsFlag);
+    flag = flag && Test::Transform::runTest(ofs,OF.transform,in.exportObjectsFlag);
+
+    ofs.flush();
+    ofs.close();
+
+    assert(flag);
 
     return 0;
 }

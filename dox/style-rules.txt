@@ -1,0 +1,46 @@
+Functions
+	- Output (input) complex types must specify its nature by the suffix out (in).
+		Ex: dilate( DigitalSet& dsOut, const DigitalSet& dsIn )
+	- Parameters must have short names. If a short name causes confusion, a typedef
+	  must be created.
+		Ex: typedef unsigned int ThresholdValue;
+		imageToDigitalSet( DigitalSet& dsOut, const Image2D& imgIn, ThresholdValue tv);
+
+	- Input complex types must always be declared as const references when appropriated.
+
+	- Output parameters come first.
+
+
+Code structure
+	- Encapsulate the code around namespaces.
+	- Typedefs, if defined, should be for (member) functions paramaters.
+
+Directory hierarchy
+	- Public headers must be in the include directory.
+	- The location of a header in the include directory must reflect its module
+	and the project itself.
+		Ex: include/DIPaCUS/base/Representation.h
+	
+
+Formatting
+	- Do not use tabulation. Use spaces instead.
+	- Keep a maximum line length of 80 characters.
+
+Include Files
+	- Use "" for internal include files.
+	- Use <> for external include files.
+	- Implement include guards.
+	- The number of inclusions must be minimized in order to reduce compile time.
+	
+Documentation and tests
+	- All header files must be commented.
+	- When appropriated, tests must be created.
+		- For each test: 	Generate log file
+					If appropriated, save visual output (e.g. images)
+
+
+References
+
+	- Programming in C++: Rules and Recommendations.
+	- GNU Coding Standards.
+	- C++ Core Guidelines.
