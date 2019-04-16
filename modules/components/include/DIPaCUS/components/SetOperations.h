@@ -24,7 +24,7 @@ namespace DIPaCUS
 
 
         /**
-         * Computes the difference set between two digital sets.
+         * \brief Computes the difference set between two digital sets.
          * @param differenceSet Difference set A-B
          * @param A First set
          * @param B Second set
@@ -34,7 +34,7 @@ namespace DIPaCUS
                            const DigitalSet &B);
 
         /**
-         * Computes the intersection set between two digital sets.
+         * \brief Computes the intersection set between two digital sets.
          * @param digitalIntersection Intersection set of A and B
          * @param A First set
          * @param B Second set

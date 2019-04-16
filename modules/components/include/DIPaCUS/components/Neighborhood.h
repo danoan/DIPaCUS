@@ -13,6 +13,13 @@
 
 namespace DIPaCUS
 {
+    /**
+     * \brief Collection of connectedeness predicates
+     *
+     * \author Daniel Martins Antunes
+     * \version 0.1
+     * \date 2018/08/27
+     */
     namespace Neighborhood {
 
         /**
