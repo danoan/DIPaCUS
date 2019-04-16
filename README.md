@@ -1,4 +1,4 @@
-#Presentation
+# Presentation
 DIPaCUS is a collection of digital image processing 
 functions built on the top of the DGtal library.
 
@@ -14,7 +14,7 @@ many other common tasks.
 3. **Derivates**: Collection of complex tasks that
 demands one or more components' function.
 
-#Dependencies
+# Dependencies
 
 1. DGtal (>=0.8)
 2. OpenCV (4.0.1)
@@ -22,7 +22,7 @@ demands one or more components' function.
 4. boost (>=1.69)
 5. ccmake (>= 3.2)
 
-#Installation
+# Installation
 ```
 mkdir build
 cd build
