@@ -124,22 +124,14 @@ namespace DIPaCUS
                           const Point &pt,
                           const DigitalSet &boundIn);
 
-        /**
-         * \brief Eliminate holes on a digital set.
-         * @param dsOut Simply connected digital set
-         * @param dsIn Any digital set
-         */
-        void simplyConnected(DigitalSet &dsOut,
-                             const DigitalSet &dsIn);
-
 
         /**
-         * \brief Adds a border of given thickness around the digital set
-         * @param dsOut Digital set with border
+         * \brief Returns a border of given thickness around the digital set
+         * @param dsOut Border of the digital set
          * @param dsIn Digital set input
          * @param t Thickness of border in number of pixels
          */
-        void addBorder(DigitalSet &dsOut,
+        void getBorder(DigitalSet &dsOut,
                        const DigitalSet &dsIn,
                        Thickness t);
 

@@ -23,6 +23,10 @@ namespace DIPaCUS
             typedef DGtal::ImageContainerBySTLVector<DGtal::Z2i::Domain, unsigned char> Image2D;
 
             bool testDigitalBallIntersection(Logger& logger);
+            bool testDigitalBoundaryAndFillInterior(Logger& logger);
+
+            bool testGetBorder(Logger& logger);
+            bool testInvertCurve(Logger& logger);
 
             bool testComputeBoundaryCurve(const Image2D& imgIn,
                                           const std::string& name,

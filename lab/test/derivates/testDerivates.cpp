@@ -69,7 +69,7 @@ int main(int argc, char* argv[])
 
     std::ofstream ofs(baseFolder + "/log.txt");
 
-    bool flag = Test::Misc::runTest(ofs,baseFolder,in.exportObjectsFlag);
+    bool flag = Test::Misc::runTest(ofs,baseFolder + "/Misc",in.exportObjectsFlag);
 
     ofs.flush();
     ofs.close();

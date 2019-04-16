@@ -22,6 +22,92 @@ namespace DIPaCUS{ namespace Test{ namespace Misc{
         return t1;
     }
 
+    bool testDigitalBoundaryAndFillInterior(Logger& logger)
+    {
+        typedef DGtal::Z2i::Point Point;
+
+        logger < Logger::HeaderTwo < "Test digitalBoundary and fillInterior" < Logger::Normal;
+
+        DigitalSet flower = DIPaCUS::Shapes::flower(1.0,0,0,30,10,3);
+
+        DigitalSet boundary(flower.domain());
+        DIPaCUS::Misc::digitalBoundary<DIPaCUS::Neighborhood::FourNeighborhoodPredicate>(boundary,flower);
+
+        DigitalSet interior(flower.domain());
+        DIPaCUS::SetOperations::setDifference(interior,flower,boundary);
+        Point interiorPoint = *interior.begin();
+
+        DigitalSet reconstructed(flower.domain());
+        DIPaCUS::Misc::fillInterior(reconstructed,interiorPoint,boundary);
+
+        logger < Logger::LoggableObject<DigitalSet>(boundary,"flower-four-boundary.eps");
+
+        bool t1 = reconstructed.size()==flower.size();
+        logger < "Passed: " < t1 < "\n";
+
+        return t1;
+    }
+
+    bool testGetBorder(Logger& logger)
+    {
+        logger < Logger::HeaderTwo < "Test getBorder" < Logger::Normal;
+
+        DigitalSet square = DIPaCUS::Shapes::square(1.0,0,0,10);
+        DigitalSet border(square.domain());
+
+        DigitalSet bound1(square.domain());
+        DIPaCUS::Misc::digitalBoundary<DIPaCUS::Neighborhood::FourNeighborhoodPredicate>(bound1,square);
+
+        DigitalSet partialSquare(square.domain());
+        DIPaCUS::SetOperations::setDifference(partialSquare,square,bound1);
+
+        DigitalSet bound2(square.domain());
+        DIPaCUS::Misc::digitalBoundary<DIPaCUS::Neighborhood::FourNeighborhoodPredicate>(bound2,partialSquare);
+
+        DigitalSet compare(square.domain());
+        compare.insert(bound1.begin(),bound1.end());
+        compare.insert(bound2.begin(),bound2.end());
+
+        DIPaCUS::Misc::getBorder(border,square,2);
+
+        logger < Logger::LoggableObject<DigitalSet>(border,"square-border-tick2.eps");
+
+        bool t1 = compare.size()==border.size();
+        logger < "Passed: " < t1 < "\n";
+
+        return t1;
+    }
+
+    bool testInvertCurve(Logger& logger)
+    {
+        typedef DGtal::Z2i::Curve Curve;
+        typedef DGtal::Z2i::KSpace KSpace;
+        typedef DGtal::Z2i::Domain Domain;
+
+        logger < Logger::HeaderTwo < "Test invertCurve" < Logger::Normal;
+
+        DigitalSet ball = DIPaCUS::Shapes::ball();
+        const Domain& domain = ball.domain();
+
+        Curve curve;
+        DIPaCUS::Misc::computeBoundaryCurve(curve,ball);
+
+        KSpace KImage;
+        KImage.init(domain.lowerBound(),domain.upperBound(),true);
+
+        Curve invertedCurve;
+        DIPaCUS::Misc::invertCurve(invertedCurve,KImage,curve.begin(),curve.end());
+
+        DigitalSet compactSet(domain);
+        DIPaCUS::Misc::compactSetFromClosedCurve(compactSet,invertedCurve.begin(),invertedCurve.end(),false);
+
+        logger < Logger::LoggableObject<DigitalSet>(compactSet,"invertCurve-compact-set.eps");
+
+        bool t1 = compactSet.size() == ball.size();
+        logger < "Passed: " < t1 < "\n";
+
+        return t1;
+    }
 
     bool testComputeBoundaryCurve(const Image2D& imgIn, const std::string& name, Logger& logger)
     {
@@ -91,6 +177,10 @@ namespace DIPaCUS{ namespace Test{ namespace Misc{
         logger < Logger::HeaderOne < "Test Misc" < Logger::Normal;
 
         bool flag = testDigitalBallIntersection(logger);
+        flag = flag && testDigitalBoundaryAndFillInterior(logger);
+        flag = flag && testGetBorder(logger);
+        flag = flag && testInvertCurve(logger);
+
         flag = flag && testComputeBoundaryCurve(Data::square,"square",logger);
         flag = flag && testComputeBoundaryCurve(Data::squareConcavity,"square-concavity",logger);
         flag = flag && testComputeBoundaryCurve(Data::squareHole,"square-hole",logger);
@@ -98,7 +188,7 @@ namespace DIPaCUS{ namespace Test{ namespace Misc{
 
         flag = flag && testComputeBoundaryCurve(logger);
 
-        flag = testCompactSetFromClosedCurve(logger);
+        flag = flag && testCompactSetFromClosedCurve(logger);
 
 
         return flag;

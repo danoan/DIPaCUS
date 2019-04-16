@@ -59,23 +59,7 @@ namespace DIPaCUS{ namespace Misc{
     }
 
 
-    void simplyConnected(DigitalSet &dsOut,
-                         const DigitalSet &dsIn)
-    {
-        Domain domain = dsIn.domain();
-
-        DigitalSet boundary(dsIn.domain());
-        digitalBoundary<Neighborhood::FourNeighborhoodPredicate>(boundary, dsIn);
-
-        auto it = dsIn.begin();
-        while( boundary(*it) ) ++it;
-        Point interiorPoint = *it;
-
-        fillInterior(dsOut, interiorPoint, boundary);
-    }
-
-
-    void addBorder(DigitalSet &dsOut,
+    void getBorder(DigitalSet &dsOut,
                    const DigitalSet &dsIn,
                    Thickness t)
     {
