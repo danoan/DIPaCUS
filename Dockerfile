@@ -6,5 +6,5 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app
 COPY . /app
 
-RUN chmod +x /app/scripts/*
-RUN /app/scripts/test-dipacus.sh
+RUN chmod +x /app/.travis/*
+RUN /app/.travis/test-dipacus.sh
