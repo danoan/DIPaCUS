@@ -11,4 +11,6 @@ services:
 before_install:
   - docker pull danoan/dipacus:env
   - docker build . -t dipacus:build
-  - docker run dipacus:build /bin/sh -c scripts/test-dipacus.sh
+  
+script:
+  - docker run dipacus:build /bin/sh -c /app/.travis/test-dipacus.sh
