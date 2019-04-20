@@ -1,4 +1,6 @@
+#include <iostream>
 #include <unistd.h>
+#include <ctime>
 
 #include "data.h"
 #include "testNeighborhood.h"
@@ -82,16 +84,28 @@ int main(int argc, char* argv[])
 
     std::string baseFolder = in.outputFolder;
     baseFolder += "/test/components";
+    boost::filesystem::create_directories(baseFolder);
+
     OutputFolders OF = createDirectories(baseFolder);
 
     std::ofstream ofs(baseFolder+"/log.txt");
+    time_t now = time(0);
+    ofs << ctime(&now) << "\n";
 
     bool flag = true;
-    flag = flag && Test::Morphology::runTest(ofs,OF.morphology,in.exportObjectsFlag);
-    flag = flag && Test::Neighborhood::runTest(ofs,OF.neighborhood,in.exportObjectsFlag);
-    flag = flag && Test::Properties::runTest(ofs,OF.properties,in.exportObjectsFlag);
-    flag = flag && Test::SetOperations::runTest(ofs,OF.setOperations,in.exportObjectsFlag);
-    flag = flag && Test::Transform::runTest(ofs,OF.transform,in.exportObjectsFlag);
+
+    try
+    {
+        flag = flag && Test::Morphology::runTest(ofs,OF.morphology,in.exportObjectsFlag);
+        flag = flag && Test::Neighborhood::runTest(ofs,OF.neighborhood,in.exportObjectsFlag);
+        flag = flag && Test::Properties::runTest(ofs,OF.properties,in.exportObjectsFlag);
+        flag = flag && Test::SetOperations::runTest(ofs,OF.setOperations,in.exportObjectsFlag);
+        flag = flag && Test::Transform::runTest(ofs,OF.transform,in.exportObjectsFlag);
+    }catch(const std::exception& e)
+    {
+        flag = false;
+        ofs << e.what() << "\n";
+    }
 
     ofs.flush();
     ofs.close();

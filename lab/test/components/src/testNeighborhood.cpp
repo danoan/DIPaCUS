@@ -68,7 +68,7 @@ namespace DIPaCUS{ namespace Test {namespace Neighborhood{
         for(auto it=curve.begin();it!=curve.end();++it)
         {
             DGtal::Z2i::SCells pixels = KSpace.sUpperIncident(*it);
-            assert( pixels.size()==2 );
+            assert( pixels.size()<=2 );
             for(auto itp=pixels.begin();itp!=pixels.end();++itp)
             {
 

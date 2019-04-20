@@ -13,7 +13,7 @@
 namespace DIPaCUS
 {
     /**
-     * Collection of transform operations on DGtal Image, Curve and
+     * \brief Collection of transform operations on DGtal Image, Curve and
      * DigitalSet
      *
      * \author Daniel Martins Antunes
@@ -44,7 +44,7 @@ namespace DIPaCUS
 
 
         /**
-         * /brief Swap white and black pixels.
+         * \brief Swap white and black pixels.
          * @param outputImage Swapped DGtal Image
          * @param inputImage Original DGtal Image
          */
@@ -53,7 +53,7 @@ namespace DIPaCUS
 
 
         /**
-         * /brief Include a border of a given width. Domain scaling
+         * \brief Include a border of a given width. Domain scaling
          * follows appropriately.
          *
          * @param outputImage DGtal image with border
@@ -66,7 +66,7 @@ namespace DIPaCUS
 
 
         /**
-         * /brief Eliminate loops from self-intersected curves.
+         * \brief Eliminate loops from self-intersected curves.
          *
          * Sequentially visits the linels. If a linel is visited twice before the end
          * of the curve, remove all the linels between the first and second appearance of
@@ -81,7 +81,7 @@ namespace DIPaCUS
 
 
         /**
-         * /brief Changes the domain of a digital set.
+         * \brief Changes the domain of a digital set.
          *
          * The new domain has its origin set at point (0,0) and
          * dimension Length(BoundingBox(ds))+2*border. The lower
