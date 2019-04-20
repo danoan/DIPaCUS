@@ -1,4 +1,6 @@
 #include <iostream>
+#include <unistd.h>
+#include <ctime>
 
 #include <boost/filesystem.hpp>
 
@@ -71,16 +73,27 @@ int main(int argc, char* argv[])
     boost::filesystem::create_directories(baseFolder);
 
     std::ofstream ofs (baseFolder + "/log.txt");
+    time_t now = time(0);
+    ofs << ctime(&now) << "\n";
 
     bool flag=true;
 
-    flag = flag && Representation::runTest(ofs,baseFolder+"/representation",in.exportObjectsFlag);
-    flag = flag && Shapes::runTest(ofs,baseFolder+"/shapes",in.exportObjectsFlag);
+    try{
+        flag = flag && Representation::runTest(ofs,baseFolder+"/representation",in.exportObjectsFlag);
+        flag = flag && Shapes::runTest(ofs,baseFolder+"/shapes",in.exportObjectsFlag);
+    }catch(const std::exception& e)
+    {
+        flag=false;
 
-    assert(flag);
+        ofs << e.what() << "\n";
+    }
 
     ofs.flush();
     ofs.close();
+
+    assert(flag);
+
+
 
     return 0;
 }

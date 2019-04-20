@@ -1,3 +1,8 @@
+#include <iostream>
+#include <unistd.h>
+#include <ctime>
+
+
 #include <boost/filesystem/path.hpp>
 #include <boost/filesystem/operations.hpp>
 
@@ -68,8 +73,18 @@ int main(int argc, char* argv[])
     boost::filesystem::create_directories(baseFolder);
 
     std::ofstream ofs(baseFolder + "/log.txt");
+    time_t now = time(0);
+    ofs << ctime(&now) << "\n";
 
-    bool flag = Test::Misc::runTest(ofs,baseFolder + "/Misc",in.exportObjectsFlag);
+    bool flag = true;
+    try
+    {
+        flag = flag && Test::Misc::runTest(ofs,baseFolder + "/Misc",in.exportObjectsFlag);
+    }catch(const std::exception& e)
+    {
+        flag = false;
+        ofs << e.what() << "\n";
+    }
 
     ofs.flush();
     ofs.close();
