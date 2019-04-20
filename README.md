@@ -1,4 +1,5 @@
-# Presentation
+# Presentation ![Continuous integration](https://travis-ci.com/danoan/DIPaCUS.svg?branch=master)
+
 DIPaCUS is a collection of digital image processing 
 functions built on the top of the DGtal library.
 
@@ -18,9 +19,8 @@ demands one or more components' function.
 
 1. DGtal (>=0.8)
 2. OpenCV (4.0.1)
-3. Magick++ (>=6.0)
-4. boost (>=1.69)
-5. ccmake (>= 3.2)
+3. boost (>=1.69)
+4. ccmake (>= 3.2)
 
 # Installation
 ```
