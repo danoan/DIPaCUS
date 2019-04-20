@@ -35,7 +35,7 @@ InputData readInput(int argc, char* argv[])
 {
     InputData in;
 
-    if(argc<3) printUsage();
+    if(argc<2) printUsage();
 
     int opt;
     while( (opt=getopt(argc,argv,"e"))!=-1 )

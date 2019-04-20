@@ -82,6 +82,8 @@ int main(int argc, char* argv[])
 
     std::string baseFolder = in.outputFolder;
     baseFolder += "/test/components";
+    boost::filesystem::create_directories(baseFolder);
+
     OutputFolders OF = createDirectories(baseFolder);
 
     std::ofstream ofs(baseFolder+"/log.txt");
