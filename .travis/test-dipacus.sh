@@ -6,7 +6,7 @@ $SCRIPT_DIR/build-dipacus.sh
 ls build -la
 ./build/lab/test/base/test-base output
 ./build/lab/test/components/test-components output
-./build/lab/test/derivates/test-derivates output -e
+./build/lab/test/derivates/test-derivates output
 
 
 cat output/test/base/log.txt
