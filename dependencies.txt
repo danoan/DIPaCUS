@@ -1,0 +1,17 @@
+#From package repositories
+linux-headers-4.15.0-46
+gcc
+g++
+gfortran
+zlib1g-dev
+wget
+git
+cmake
+doxygen 
+graphviz
+
+#From source and specific build parameters
+eigen
+boost
+opencv
+dgtal
