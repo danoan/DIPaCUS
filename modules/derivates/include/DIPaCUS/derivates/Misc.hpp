@@ -13,7 +13,7 @@ namespace DIPaCUS{ namespace Misc{
 
         std::remove_copy_if(originalDS.begin(), originalDS.end(), inserter, NP);
     }
-    
+
     template<typename TSCellIterator>
     void invertCurve(Curve& cOut,
                      const KSpace& KImage,
@@ -41,7 +41,7 @@ namespace DIPaCUS{ namespace Misc{
 
         cOut.initFromSCellsVector(newSCells);
     }
-        
+
     template<class TSCellIterator>
     void compactSetFromClosedCurve(DigitalSet& dsOut,
                                    TSCellIterator itb,
@@ -65,7 +65,7 @@ namespace DIPaCUS{ namespace Misc{
             boundaryPixel = KImage.sIndirectIncident(*itb, KImage.sOrthDir(*itb));
 
         DigitalSet fakeBoundary(extDomain);
-        SCellIterator it = itb;
+        TSCellIterator it = itb;
         do
         {
             if(ccw)
@@ -78,7 +78,7 @@ namespace DIPaCUS{ namespace Misc{
         fillInterior(dsOut,KImage.sCoords(boundaryPixel),fakeBoundary);
         for(auto it=fakeBoundary.begin();it!=fakeBoundary.end();++it)
             dsOut.erase(*it);
-    }    
+    }
 
 
 }}
