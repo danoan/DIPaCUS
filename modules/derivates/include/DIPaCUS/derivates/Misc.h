@@ -93,6 +93,7 @@ namespace DIPaCUS
 
         private:
             Radius _r;
+            DigitalSet _ball;
             const DigitalSet _ds;
             const Domain _extDomain;
         };

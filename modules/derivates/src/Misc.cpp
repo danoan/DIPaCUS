@@ -20,16 +20,14 @@ namespace DIPaCUS{ namespace Misc{
     DigitalBallIntersection::DigitalBallIntersection(Radius r,
                                                      const DigitalSet &intersectWith) : _r(r),
                                                                                         _extDomain(extendDomain(intersectWith,_r)),
-                                                                                        _ds(extendDS(intersectWith,_r))
+                                                                                        _ds(extendDS(intersectWith,_r)),
+                                                                                        _ball(DIPaCUS::Shapes::ball(1.0,0,0,r))
     {}
 
     void DigitalBallIntersection::operator()(DigitalSet &intersectionSet,
                                              Point center)
     {
-        DigitalSet db(_extDomain);
-        db = DIPaCUS::Shapes::ball(1.0,center[0],center[1],_r);
-
-        DIPaCUS::SetOperations::setIntersection(intersectionSet, db, _ds);
+        DIPaCUS::SetOperations::setIntersection(intersectionSet, _ball, _ds, center);
     }
 
 

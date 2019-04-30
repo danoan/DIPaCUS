@@ -31,7 +31,7 @@ namespace DIPaCUS{ namespace Test{ namespace SetOperations{
         DigitalSet intersection(ball.domain());
         DIPaCUS::SetOperations::setIntersection(intersection,ball,square);
 
-        logger < Logger::LoggableObject<DigitalSet>(intersection,"ball-intersects-ball.eps");
+        logger < Logger::LoggableObject<DigitalSet>(intersection,"ball-intersects-square.eps");
 
         bool t1 = intersection.size()==225;
 
