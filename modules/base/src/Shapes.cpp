@@ -54,5 +54,17 @@ namespace DIPaCUS
         DGtal::AccFlower2D<Space> flower(x0,y0,radius,smallRadius,k,rotation);
         return digitizeShape(flower,h);
     }
+
+    Shapes::DigitalSet Shapes::ellipse(double h,
+                                       int x0,
+                                       int y0,
+                                       double largerRadius,
+                                       double smallerRadius,
+                                       double rotation)
+    {
+        typedef DGtal::Z2i::Space Space;
+        DGtal::Ellipse2D<Space> ellipse(x0,y0,largerRadius,smallerRadius,rotation);
+        return digitizeShape(ellipse,h);
+    }
 }
 

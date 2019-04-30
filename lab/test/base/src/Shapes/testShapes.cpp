@@ -67,6 +67,19 @@ namespace DIPaCUS
         return t1;
     }
 
+    bool Test::Shapes::testEllipse(Logger& logger)
+    {
+        logger < Logger::HeaderTwo < "Test Ellipse" < Logger::Normal;
+
+        DigitalSet ellipse = DIPaCUS::Shapes::ellipse(1.0,0,0,20,5,0);
+        logger < Logger::LoggableObject<DigitalSet>(ellipse,"ellipse.eps");
+
+        bool t1 = ellipse.size()==305;
+        logger < "Passed: " < t1 < "\n";
+
+        return t1;
+    }
+
     bool Test::Shapes::runTest(std::ostream& os, const std::string& outputFolder, bool exportObjectsFlag)
     {
         Logger logger(os,outputFolder,exportObjectsFlag);
@@ -79,6 +92,7 @@ namespace DIPaCUS
         flag = flag && testBall(logger);
         flag = flag && testFlower(logger);
         flag = flag && testNGon(logger);
+        flag = flag && testEllipse(logger);
 
         return flag;
     }

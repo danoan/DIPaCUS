@@ -10,6 +10,7 @@
 #include <DGtal/shapes/parametric/NGon2D.h>
 #include <DGtal/shapes/parametric/Ball2D.h>
 #include <DGtal/shapes/parametric/AccFlower2D.h>
+#include <DGtal/shapes/parametric/Ellipse2D.h>
 
 namespace DIPaCUS
 {
@@ -58,7 +59,7 @@ namespace DIPaCUS
                         int y0,
                         double radius,
                         int sides,
-                        double rotation);
+                        double rotation=0);
 
 
         /**
@@ -126,6 +127,24 @@ namespace DIPaCUS
                           double smallRadius=5,
                           int k=3,
                           double rotation=0);
+
+        /**
+         * /brief Ellipse digitization
+         *
+         * @param h Grid Step
+         * @param x0 Circumscribed circle center x-coordinate
+         * @param y0 Circumscribed circle center y-coordinate
+         * @param larger radius
+         * @param smaller radius
+         * @param rotation
+         * @return Ellipse digitization
+         */
+        DigitalSet ellipse(double h=1.0,
+                          int x0=0,
+                          int y0=0,
+                          double largerRadius=10,
+                          double smallerRadius=5,
+                          double rotation=0);        
     }
 }
 
