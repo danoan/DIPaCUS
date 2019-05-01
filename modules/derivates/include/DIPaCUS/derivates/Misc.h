@@ -93,6 +93,7 @@ namespace DIPaCUS
 
         private:
             Radius _r;
+            DigitalSet _ball;
             const DigitalSet _ds;
             const Domain _extDomain;
         };
@@ -167,11 +168,13 @@ namespace DIPaCUS
          * @param begin Curve iterator begin
          * @param end Curve iterator end
          * @param cOut Output curve
+         * @tparam TSCellIterator An iterator which value type is a SCell
          */
+        template<class TSCellIterator>
         void invertCurve(Curve& cOut,
                          const KSpace& KImage,
-                         SCellIterator begin,
-                         SCellIterator end);
+                         TSCellIterator begin,
+                         TSCellIterator end);
 
         /**
          * \brief Given an oriented curve, it returns a compact set.
@@ -180,10 +183,12 @@ namespace DIPaCUS
          * @param itb Curve iterator begin
          * @param ite Curve iterator end
          * @param ccw True if curve is oriented counterclock-wise
+         * @tparam TSCellIterator An iterator which value type is a SCell
          */
+        template<class TSCellIterator>
         void compactSetFromClosedCurve(DigitalSet& dsOut,
-                                       SCellIterator itb,
-                                       SCellIterator ite,
+                                       TSCellIterator itb,
+                                       TSCellIterator ite,
                                        bool ccw=true);
 
     }

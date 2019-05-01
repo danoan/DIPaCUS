@@ -42,6 +42,19 @@ namespace DIPaCUS
         void setIntersection(DigitalSet &digitalIntersection,
                              const DigitalSet &A,
                              const DigitalSet &B);
+
+
+        /**
+         * \brief Computes the intersection set between two digital sets.
+         * @param digitalIntersection Intersection set of A and B
+         * @param A First set
+         * @param B Second set
+         * @param translation Every point of A will be translated of it
+         */
+        void setIntersection(DigitalSet &digitalIntersection,
+                             const DigitalSet &A,
+                             const DigitalSet &B, 
+                             const Point& p);        
     }
 }
 

@@ -38,3 +38,16 @@ void SetOperations::setIntersection(DigitalSet &digitalIntersection,
     }
 }
 
+void SetOperations::setIntersection(DigitalSet &digitalIntersection,
+                                    const DigitalSet &A,
+                                    const DigitalSet &B,
+                                    const Point& translation)
+{
+    Point tp;
+    for (auto it = A.begin(); it != A.end(); ++it)
+    {
+        tp = *it + translation;
+        if (B(tp)) digitalIntersection.insert(tp);
+    }
+}
+
