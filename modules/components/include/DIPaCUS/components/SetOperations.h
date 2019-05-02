@@ -22,7 +22,6 @@ namespace DIPaCUS
         typedef DGtal::Z2i::DigitalSet DigitalSet;
         typedef DGtal::DigitalSetInserter<DigitalSet> DigitalSetInserter;
 
-
         /**
          * \brief Computes the difference set between two digital sets.
          * @param differenceSet Difference set A-B
