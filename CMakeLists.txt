@@ -15,6 +15,8 @@ find_package(OpenCV REQUIRED)
 
 set(BOOST_INCLUDE_DIRS /usr/local/include/boost CACHE PATH "Boost include location path." )
 set(BUILD_TESTS OFF CACHE BOOL "Build tests.")
+set(CREATE_SHARED_LIBRARIES OFF CACHE BOOL "Create shared libraries. If off, create static libraries.")
+
 
 
 link_directories(${CMAKE_BINARY_DIR}/modules/base 

@@ -1,9 +1,12 @@
 cmake_minimum_required(VERSION 3.2)
 project(lib-dipacus-components)
 
+set(LIBRARY_ACTION "STATIC")
+if(${CREATE_SHARED_LIBRARIES})
+    set(LIBRARY_ACTION "SHARED")
+endif()
 
-#SHARED LIBRARY
-add_library(dipacus-components SHARED
+add_library(dipacus-components ${LIBRARY_ACTION}
         src/Morphology.cpp
         src/Neighborhood.cpp
         src/SetOperations.cpp
@@ -32,4 +35,5 @@ install(DIRECTORY include
         DESTINATION ${CMAKE_INSTALL_PREFIX})
 
 install(TARGETS dipacus-components
-        LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
+        LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
+        ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)

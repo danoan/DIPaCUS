@@ -1,9 +1,12 @@
 cmake_minimum_required(VERSION 3.2)
 project(lib-dipacus-derivates)
 
+set(LIBRARY_ACTION "STATIC")
+if(${CREATE_SHARED_LIBRARIES})
+    set(LIBRARY_ACTION "SHARED")
+endif()
 
-#SHARED LIBRARY
-add_library(dipacus-derivates SHARED src/Misc.cpp)
+add_library(dipacus-derivates ${LIBRARY_ACTION} src/Misc.cpp)
 
 add_dependencies(dipacus-derivates dipacus-base dipacus-components)
 
@@ -29,6 +32,7 @@ install(DIRECTORY include
         DESTINATION ${CMAKE_INSTALL_PREFIX})
 
 install(TARGETS dipacus-derivates
-        LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
+        LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
+        ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
 
 
