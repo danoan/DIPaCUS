@@ -34,8 +34,8 @@ void Representation::digitalSetToImage(Image2D &imgOut,
 {
     typedef DGtal::Z2i::Point Point;
 
-    assert(imgOut.domain().lowerBound() <= imgOut.domain().lowerBound());
-    assert(imgOut.domain().upperBound() >= imgOut.domain().upperBound() );
+    assert(imgOut.domain().lowerBound() <= dsIn.domain().lowerBound());
+    assert(imgOut.domain().upperBound() >= dsIn.domain().upperBound() );
 
     int ubY = dsIn.domain().upperBound()[1];
 
