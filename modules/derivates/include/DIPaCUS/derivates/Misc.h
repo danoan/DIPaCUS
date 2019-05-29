@@ -91,6 +91,8 @@ namespace DIPaCUS
             void operator()(DigitalSet &intersectionSet,
                             Point center);
 
+            const Domain& domain(){ return _extDomain; }
+
         private:
             Radius _r;
             DigitalSet _ball;
