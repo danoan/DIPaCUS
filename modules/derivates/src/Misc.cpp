@@ -23,14 +23,7 @@ namespace DIPaCUS{ namespace Misc{
                                                                                         _ds(extendDS(intersectWith,_r)),
                                                                                         _ball(DIPaCUS::Shapes::ball(1.0,0,0,r))
     {}
-
-    void DigitalBallIntersection::operator()(DigitalSet &intersectionSet,
-                                             Point center)
-    {
-        DIPaCUS::SetOperations::setIntersection(intersectionSet, _ball, _ds, center);
-    }
-
-
+        
     void fillInterior(DigitalSet &dsOut,
                       const Point &pt,
                       const DigitalSet &boundIn)

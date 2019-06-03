@@ -88,8 +88,12 @@ namespace DIPaCUS
             DigitalBallIntersection(Radius r,
                                     const DigitalSet &intersectWith);
 
-            void operator()(DigitalSet &intersectionSet,
-                            Point center);
+            template<class TPointSet>
+            void operator()(TPointSet &intersectionSet,
+                            Point center)
+            {
+                DIPaCUS::SetOperations::setIntersection(intersectionSet, _ball, _ds, center);
+            }
 
             const Domain& domain(){ return _extDomain; }
 
