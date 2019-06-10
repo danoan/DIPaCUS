@@ -60,10 +60,10 @@ namespace DIPaCUS
          */
         void boundingBox(BoundingBox& bb,
                          const cv::Mat& cvImgIn);
+
+        #include "Properties.hpp"
     }
 
 }
-
-#include "Properties.hpp"
 
 #endif //DIPACUS_COMPONENTS_PROPERTIES_H

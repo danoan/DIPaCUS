@@ -1,9 +1,7 @@
 #include "DIPaCUS/components/Properties.h"
 
-using namespace DIPaCUS;
-
 template<class TSCellIterator>
-void Properties::curveBoundingBox(BoundingBox& bb,
+void curveBoundingBox(BoundingBox& bb,
                                   TSCellIterator itb,
                                   TSCellIterator ite)
 {
