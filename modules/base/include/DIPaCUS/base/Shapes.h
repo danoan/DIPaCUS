@@ -160,10 +160,11 @@ namespace DIPaCUS
          * @param minHeight Controls the thickness of the shape
          * @return Wave shape digitization
          */
-        DigitalSet wave(double h,
-                        double maxWidth,
-                        double maxHeight,
-                        double minHeight);
+        DigitalSet wave(double h=1.0,
+                        double maxX=1200,
+                        double maxWidth=200,
+                        double maxHeight=300,
+                        double minHeight=0.01);
     }
 }
 

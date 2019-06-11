@@ -4,12 +4,13 @@ namespace DIPaCUS
 {
     namespace Shapes
     {
-        WaveShape::WaveShape(double maxWidth, double maxHeight, double minHeight)
+        WaveShape::WaveShape(double maxX,double maxWidth, double maxHeight, double minHeight)
         {
             lb = Point(20,-maxHeight);
             ub = Point(maxWidth,maxHeight);
 
-            yRMap = linearMap(0,maxHeight,0,1+minHeight);
+            xMap = linearMap(0,maxWidth,0,maxX);
+            yMap = linearMap(0,maxHeight,0,1+minHeight);
             this->minHeight = minHeight;
         }
 
@@ -20,10 +21,10 @@ namespace DIPaCUS
 
             if(y<0) y=-y;
 
-            if( yRMap(y) < f(x,minHeight) )
+            if( yMap(y) < f(xMap(x),minHeight) )
             {
                 return DGtal::Orientation::INSIDE;
-            }else if (yRMap(y) > f(x,minHeight))
+            }else if (yMap(y) > f(xMap(x),minHeight))
             {
                 return DGtal::Orientation::OUTSIDE;
             }else

@@ -84,10 +84,10 @@ namespace DIPaCUS
     {
         logger < Logger::HeaderTwo < "Test Wave" < Logger::Normal;
 
-        DigitalSet wave = DIPaCUS::Shapes::wave(2.0,200,50,0.1);
+        DigitalSet wave = DIPaCUS::Shapes::wave(1.0,1200,50,100,0.05);
         logger < Logger::LoggableObject<DigitalSet>(wave,"wave.eps");
 
-        bool t1 = wave.size()==861;
+        bool t1 = wave.size()==495;
         logger < "Passed: " < t1 < "\n";
 
         return t1;

@@ -21,7 +21,7 @@ namespace DIPaCUS
             typedef std::function<double(double)> LinearMap;
 
         public:
-            WaveShape(double maxWidth, double maxHeight, double minHeight);
+            WaveShape(double maxX,double maxWidth, double maxHeight, double minHeight);
 
             DGtal::Orientation orientation(const RealPoint& aPoint) const;
 
@@ -36,7 +36,8 @@ namespace DIPaCUS
         private:
             Point lb,ub;
             double minHeight;
-            LinearMap yRMap;
+            LinearMap yMap;
+            LinearMap xMap;
 
         };
     }

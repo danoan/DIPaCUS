@@ -68,11 +68,12 @@ namespace DIPaCUS
     }
 
     Shapes::DigitalSet Shapes::wave(double h,
+                                    double maxX,
                                     double maxWidth,
                                     double maxHeight,
                                     double minHeight)
     {
-        WaveShape wave(maxWidth,maxHeight,minHeight);
+        WaveShape wave(maxX,maxWidth,maxHeight,minHeight);
         return digitizeShape(wave,h);
     }
 }
