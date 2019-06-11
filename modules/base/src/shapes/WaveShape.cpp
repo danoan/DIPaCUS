@@ -6,11 +6,15 @@ namespace DIPaCUS
     {
         WaveShape::WaveShape(double maxX,double maxWidth, double maxHeight, double minHeight)
         {
-            lb = Point(20,-maxHeight);
-            ub = Point(maxWidth,maxHeight);
-
             xMap = linearMap(0,maxWidth,0,maxX);
             yMap = linearMap(0,maxHeight,0,1+minHeight);
+
+            LinearMap RyMap = linearMap(0,1+minHeight,0,maxHeight);
+
+            int maxY = (int) std::ceil( RyMap( f( xMap(20),minHeight) ) );
+            lb = Point(20,-maxY);
+            ub = Point(maxWidth,maxY);
+
             this->minHeight = minHeight;
         }
 

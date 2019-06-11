@@ -4,7 +4,13 @@ project(logger)
 find_package(OpenCV  REQUIRED)
 find_package(DGtal REQUIRED)
 
-add_library(logger src/logger.cpp)
+set(LIBRARY_ACTION "STATIC")
+if(${CREATE_SHARED_LIBRARIES})
+    set(LIBRARY_ACTION "SHARED")
+endif()
+
+add_library(logger ${LIBRARY_ACTION}
+        src/logger.cpp )
 
 target_include_directories(logger PRIVATE
         include
