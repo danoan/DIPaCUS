@@ -19,6 +19,7 @@ namespace DIPaCUS
             bool testNGon(Logger& logger);
             bool testBall(Logger& logger);
             bool testEllipse(Logger& logger);
+            bool testWave(Logger& logger);
 
             bool runTest(std::ostream& os, const std::string& outputFolder, bool exportObjectsFlag=false );
         }
