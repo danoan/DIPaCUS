@@ -110,4 +110,39 @@ namespace DIPaCUS{ namespace Misc{
         DIPaCUS::Transform::eliminateLoops(boundOut,KImage,boundOut);
     }
 
+    void getConnectedComponents( std::vector<ConnectedComponent>& vcc, const DigitalSet& ds)
+    {
+        PointMarker markers;
+        for(auto it=ds.begin();it!=ds.end();++it)
+        {
+            Point p = *it;
+            if(markers.find(p)!=markers.end()) continue;
+
+            vcc.push_back(std::set<Point>());
+            exploreComponent(vcc[vcc.size()-1],p, markers,ds);
+        }
+    }
+
+    void exploreComponent(ConnectedComponent& cc,Point& p, PointMarker& markers, const DigitalSet& ds)
+    {
+        Point neigh[4]={Point(0,1),Point(1,0),Point(-1,0),Point(0,-1)};
+        std::stack<Point> s;
+        s.push(p);
+        while(!s.empty())
+        {
+            Point p = s.top(); s.pop();
+            if(markers.find(p)!=markers.end()) continue;
+            markers.insert(p);
+            cc.insert(p);
+
+            for(int i=0;i<4;++i)
+            {
+                Point np = p+neigh[i];
+                if(!ds(np)) continue;
+                if(markers.find(np)!=markers.end()) continue;
+                s.push(np);
+            }
+        }
+    }
+
 }}

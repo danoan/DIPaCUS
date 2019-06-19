@@ -46,6 +46,9 @@ namespace DIPaCUS
 
         typedef Curve::ConstIterator SCellIterator;
 
+        typedef std::set<Point> ConnectedComponent;
+        typedef std::set<Point> PointMarker;
+
         /**
          * \brief Computes intersection of any digital object with a
          * given digital ball.
@@ -196,6 +199,25 @@ namespace DIPaCUS
                                        TSCellIterator itb,
                                        TSCellIterator ite,
                                        bool ccw=true);
+
+        /**
+         * \brief Return all the 4-connected components in a digital set
+         *
+         * @param vcc Vector of ConnectedComponent
+         * @param ds Digital Set
+         */
+
+        void getConnectedComponents( std::vector<ConnectedComponent>& vcc, const DigitalSet& ds);
+
+        /**
+         * \brief Marks all points in the same connected component than p and return such ConnectedComponent
+         * @param cc ConnectedComponent
+         * @param p Point p inside the connected component
+         * @param markers Set of marked points
+         * @param ds DigitalSet
+         */
+        void exploreComponent(ConnectedComponent& cc,Point& p, PointMarker& markers, const DigitalSet& ds);
+
 
     }
 }

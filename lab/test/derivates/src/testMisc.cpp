@@ -169,6 +169,30 @@ namespace DIPaCUS{ namespace Test{ namespace Misc{
         return t1;
     }
 
+    bool testConnectedComponents(Logger& logger)
+    {
+        logger < Logger::HeaderTwo < "Test getConnectedComponents" < Logger::Normal;
+
+        DigitalSet square1 = DIPaCUS::Shapes::square(1.0,0,0,20,0);
+        DigitalSet square2 = DIPaCUS::Shapes::square(1.0,0,0,15,0);
+        DigitalSet square3 = DIPaCUS::Shapes::square(1.0,0,0,10,0);
+
+        DigitalSet diff(square1.domain());
+        DIPaCUS::SetOperations::setDifference(diff,square1,square2);
+        square3.insert(diff.begin(),diff.end());
+
+        std::vector< DIPaCUS::Misc::ConnectedComponent > vcc1;
+        DIPaCUS::Misc::getConnectedComponents(vcc1,square1);
+
+        std::vector< DIPaCUS::Misc::ConnectedComponent > vcc3;
+        DIPaCUS::Misc::getConnectedComponents(vcc3,square3);
+
+        bool t1 = vcc1.size()==1 && vcc3.size()==2;
+        logger < "Passed: " < t1 < "\n";
+
+        return t1;
+    }
+
     bool runTest(std::ostream& os,
                  const std::string& outputFolder,
                  bool exportObjectsFlag)
@@ -189,6 +213,7 @@ namespace DIPaCUS{ namespace Test{ namespace Misc{
         flag = flag && testComputeBoundaryCurve(logger);
 
         flag = flag && testCompactSetFromClosedCurve(logger);
+        flag = flag && testConnectedComponents(logger);
 
 
         return flag;
