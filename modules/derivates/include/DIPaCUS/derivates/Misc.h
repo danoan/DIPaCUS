@@ -114,11 +114,13 @@ namespace DIPaCUS
          *
          * @tparam TNeighborhood Connectedeness predicate. \refitem Neighborhood
          * @param dsOut Pixel boundary output
-         * @param dsIn Digital set input
+         * @param dsIn Digital set input\
+         * @param t Thickness of contour
          */
         template<typename TNeighborhood>
         void digitalBoundary(DigitalSet &dsOut,
-                             const DigitalSet &dsIn);
+                             const DigitalSet &dsIn,
+                             Thickness t=1);
 
 
         /**
