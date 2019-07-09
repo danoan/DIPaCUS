@@ -12,6 +12,8 @@
 #include <DGtal/shapes/parametric/AccFlower2D.h>
 #include <DGtal/shapes/parametric/Ellipse2D.h>
 
+#include "DIPaCUS/base/shapes/WaveShape.h"
+
 namespace DIPaCUS
 {
     /**
@@ -144,7 +146,25 @@ namespace DIPaCUS
                           int y0=0,
                           double largerRadius=10,
                           double smallerRadius=5,
-                          double rotation=0);        
+                          double rotation=0);
+
+
+        /**
+         * /brief Wave shape digitization
+         * The wave shape is defined by a sinus function. It has various degrees of
+         * convexity and non-convex regions.
+         *
+         * @param h Grid Step
+         * @param maxWidth Domain width (also maximum value of x in function evaluation)
+         * @param maxHeight Domain height
+         * @param minHeight Controls the thickness of the shape
+         * @return Wave shape digitization
+         */
+        DigitalSet wave(double h=1.0,
+                        double maxX=1200,
+                        double maxWidth=200,
+                        double maxHeight=300,
+                        double minHeight=0.01);
     }
 }
 

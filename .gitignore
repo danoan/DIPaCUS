@@ -1,4 +1,6 @@
 doc/*
 .idea/*
 cmake-build-debug/*
+output
+build-release
 

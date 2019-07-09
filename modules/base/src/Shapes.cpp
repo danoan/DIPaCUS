@@ -66,5 +66,15 @@ namespace DIPaCUS
         DGtal::Ellipse2D<Space> ellipse(x0,y0,largerRadius,smallerRadius,rotation);
         return digitizeShape(ellipse,h);
     }
+
+    Shapes::DigitalSet Shapes::wave(double h,
+                                    double maxX,
+                                    double maxWidth,
+                                    double maxHeight,
+                                    double minHeight)
+    {
+        WaveShape wave(maxX,maxWidth,maxHeight,minHeight);
+        return digitizeShape(wave,h);
+    }
 }
 

@@ -35,6 +35,8 @@ namespace DIPaCUS
             bool testComputeBoundaryCurve(Logger& logger);
             bool testCompactSetFromClosedCurve(Logger& logger);
 
+            bool testConnectedComponents(Logger& logger);
+
             bool runTest(std::ostream& os,
                          const std::string& outputFolder,
                          bool exportObjectsFlag=false);

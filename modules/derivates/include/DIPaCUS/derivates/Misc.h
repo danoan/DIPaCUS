@@ -46,6 +46,9 @@ namespace DIPaCUS
 
         typedef Curve::ConstIterator SCellIterator;
 
+        typedef std::set<Point> ConnectedComponent;
+        typedef std::set<Point> PointMarker;
+
         /**
          * \brief Computes intersection of any digital object with a
          * given digital ball.
@@ -88,8 +91,14 @@ namespace DIPaCUS
             DigitalBallIntersection(Radius r,
                                     const DigitalSet &intersectWith);
 
-            void operator()(DigitalSet &intersectionSet,
-                            Point center);
+            template<class TPointSet>
+            void operator()(TPointSet &intersectionSet,
+                            Point center)
+            {
+                DIPaCUS::SetOperations::setIntersection(intersectionSet, _ball, _ds, center);
+            }
+
+            const Domain& domain(){ return _extDomain; }
 
         private:
             Radius _r;
@@ -105,11 +114,13 @@ namespace DIPaCUS
          *
          * @tparam TNeighborhood Connectedeness predicate. \refitem Neighborhood
          * @param dsOut Pixel boundary output
-         * @param dsIn Digital set input
+         * @param dsIn Digital set input\
+         * @param t Thickness of contour
          */
         template<typename TNeighborhood>
         void digitalBoundary(DigitalSet &dsOut,
-                             const DigitalSet &dsIn);
+                             const DigitalSet &dsIn,
+                             Thickness t=1);
 
 
         /**
@@ -190,6 +201,25 @@ namespace DIPaCUS
                                        TSCellIterator itb,
                                        TSCellIterator ite,
                                        bool ccw=true);
+
+        /**
+         * \brief Return all the 4-connected components in a digital set
+         *
+         * @param vcc Vector of ConnectedComponent
+         * @param ds Digital Set
+         */
+
+        void getConnectedComponents( std::vector<ConnectedComponent>& vcc, const DigitalSet& ds);
+
+        /**
+         * \brief Marks all points in the same connected component than p and return such ConnectedComponent
+         * @param cc ConnectedComponent
+         * @param p Point p inside the connected component
+         * @param markers Set of marked points
+         * @param ds DigitalSet
+         */
+        void exploreComponent(ConnectedComponent& cc,Point& p, PointMarker& markers, const DigitalSet& ds);
+
 
     }
 }

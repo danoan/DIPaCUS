@@ -22,7 +22,6 @@ namespace DIPaCUS
         typedef DGtal::Z2i::DigitalSet DigitalSet;
         typedef DGtal::DigitalSetInserter<DigitalSet> DigitalSetInserter;
 
-
         /**
          * \brief Computes the difference set between two digital sets.
          * @param differenceSet Difference set A-B
@@ -39,9 +38,16 @@ namespace DIPaCUS
          * @param A First set
          * @param B Second set
          */
-        void setIntersection(DigitalSet &digitalIntersection,
+        template<class TPointSet>
+        void setIntersection(TPointSet &digitalIntersection,
                              const DigitalSet &A,
-                             const DigitalSet &B);
+                             const DigitalSet &B)
+        {
+            for (auto it = A.begin(); it != A.end(); ++it)
+            {
+                if (B(*it)) digitalIntersection.insert(*it);
+            }
+        }
 
 
         /**
@@ -51,10 +57,20 @@ namespace DIPaCUS
          * @param B Second set
          * @param translation Every point of A will be translated of it
          */
-        void setIntersection(DigitalSet &digitalIntersection,
+        template<class TPointSet>
+        void setIntersection(TPointSet &digitalIntersection,
                              const DigitalSet &A,
                              const DigitalSet &B, 
-                             const Point& p);        
+                             const Point& translation)
+        {
+            Point tp;
+            for (auto it = A.begin(); it != A.end(); ++it)
+            {
+                tp = *it + translation;
+                if (B(tp)) digitalIntersection.insert(tp);
+            }
+        }
+
     }
 }
 

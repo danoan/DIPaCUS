@@ -3,15 +3,28 @@
 namespace DIPaCUS{ namespace Misc{
     template<typename TNeighborhood>
     void digitalBoundary(DigitalSet &boundaryDS,
-                         const DigitalSet &originalDS)
+                         const DigitalSet &originalDS,
+                         Thickness thickness)
     {
         typedef TNeighborhood NeighborhoodPredicate;
         typedef DGtal::DigitalSetInserter<DigitalSet> DigitalSetInserter;
 
-        NeighborhoodPredicate NP(originalDS);
-        DigitalSetInserter inserter(boundaryDS);
+        DigitalSet workingSet = originalDS;
+        DigitalSet lastInclusion(workingSet.domain());
 
-        std::remove_copy_if(originalDS.begin(), originalDS.end(), inserter, NP);
+        DigitalSetInserter inserter(lastInclusion);
+        while(thickness>0)
+        {
+            NeighborhoodPredicate NP(workingSet);
+            std::remove_copy_if(originalDS.begin(), originalDS.end(), inserter, NP);
+
+            for(auto it=lastInclusion.begin();it!=lastInclusion.end();++it) workingSet.erase(*it);
+            boundaryDS.insert(lastInclusion.begin(),lastInclusion.end());
+            lastInclusion.clear();
+
+
+            --thickness;
+        }
     }
 
     template<typename TSCellIterator>
