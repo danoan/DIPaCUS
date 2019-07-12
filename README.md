@@ -1,7 +1,10 @@
 # Presentation ![Continuous integration](https://travis-ci.com/danoan/DIPaCUS.svg?branch=master)
 
 DIPaCUS is a collection of digital image processing 
-functions built on the top of the DGtal library.
+functions built on the top of the DGtal library. 
+This library is part
+of the project [BTools](https://github.com/danoan/BTools), developped to
+support the publication [1].
 
 DIPaCUS is composed of three modules. Each model 
 depends only of those above it.
@@ -14,6 +17,13 @@ functions to work with Morphology, SetOperations and
 many other common tasks.
 3. **Derivates**: Collection of complex tasks that
 demands one or more components' function.
+
+
+[1] Antunes, D., Lachaud, J.O., Talbot H.: Digital 
+ curvature evolution model for image segmentation. In:
+ Couprie, M., Cousty, J., Kenmochi, Y., Mustafa, N. (eds.) 
+ Discrete Geometry for Computer Imagery. pp 15-26. Springer
+ International Publishing, Cham (2019).
 
 # Dependencies
 
