@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.2)
 project(test-dipacus-derivates)
 
 find_package(DGtal REQUIRED)

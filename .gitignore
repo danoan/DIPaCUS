@@ -3,4 +3,5 @@ doc/*
 cmake-build-debug/*
 output
 build-release
+local
 

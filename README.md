@@ -17,10 +17,10 @@ demands one or more components' function.
 
 # Dependencies
 
-1. DGtal (>=0.8)
-2. OpenCV (4.0.1)
-3. boost (>=1.69)
-4. ccmake (>= 3.2)
+1. [libboost1.66.0-dev](https://www.boost.org/users/history/version_1_66_0.html)
+2. [opencv-3.3.0](https://opencv.org/releases.html)
+3. [eigen-3.36](http://eigen.tuxfamily.org/index.php?title=Main_Page)
+4. [DGtal0.9](https://dgtal.org/download/)
 
 # Installation
 ```

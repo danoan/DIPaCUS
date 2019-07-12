@@ -1,9 +1,13 @@
-cmake_minimum_required(VERSION 3.0)
-project(DIPaCUS)
+cmake_minimum_required(VERSION 3.2)
 
-#CMAKE_INSTALL_PREFIX: install location
-set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
-set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/install" CACHE PATH "DIPaCUS binaries and libraries install location." )
+set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}")
+
+set(BOOST_INCLUDE_DIRS /usr/local/include/boost CACHE PATH "Boost include location path." )
+set(BUILD_TESTS OFF CACHE BOOL "Build tests.")
+set(CREATE_SHARED_LIBRARIES ON CACHE BOOL "Create shared libraries. If off, create static libraries.")
+
+project(DIPaCUS)
 
 
 message("Project Root Dir: ${CMAKE_SOURCE_DIR}")
@@ -12,11 +16,6 @@ message("Installation at: ${CMAKE_INSTALL_PREFIX}")
 
 find_package(DGtal REQUIRED)
 find_package(OpenCV REQUIRED)
-
-set(BOOST_INCLUDE_DIRS /usr/local/include/boost CACHE PATH "Boost include location path." )
-set(BUILD_TESTS OFF CACHE BOOL "Build tests.")
-set(CREATE_SHARED_LIBRARIES OFF CACHE BOOL "Create shared libraries. If off, create static libraries.")
-
 
 
 link_directories(${CMAKE_BINARY_DIR}/modules/base 
