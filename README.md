@@ -30,3 +30,6 @@ cmake ..
 (ccmake ..) - environment variables configuration
 make install
 ```
+
+# How to use
+Check the code in lab/test
