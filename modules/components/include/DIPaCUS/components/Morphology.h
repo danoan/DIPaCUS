@@ -28,7 +28,7 @@ namespace DIPaCUS {
         struct StructuringElement
         {
             typedef unsigned char Size;
-            enum Type{RECT = cv::MORPH_RECT, CROSS = cv::MORPH_CROSS};
+            enum Type{RECT = cv::MORPH_RECT, CROSS = cv::MORPH_CROSS, CIRCLE = cv::MORPH_ELLIPSE};
 
             StructuringElement(Type type, Size size):type(type),
                                                      size(size)
