@@ -25,6 +25,7 @@ set_target_properties(dipacus-base
         PROPERTIES
         COMPILE_FEATURES "cxx_generic_lambdas"
         COMPILE_FLAGS -fext-numeric-literals
+        VERSION ${VERSION_DIPACUS_BASE}
         )
 
 install(DIRECTORY include

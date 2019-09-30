@@ -18,7 +18,8 @@ add_dependencies(dipacus-components dipacus-base)
 
 set_target_properties(dipacus-components PROPERTIES
         COMPILE_FEATURES cxx_generic_lambdas
-        COMPILE_FLAGS -fext-numeric-literals)
+        COMPILE_FLAGS -fext-numeric-literals
+        VERSION ${VERSION_DIPACUS_COMPONENTS})
 
 target_include_directories(dipacus-components PRIVATE
         include

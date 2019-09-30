@@ -26,7 +26,8 @@ target_link_libraries(dipacus-derivates
 
 set_target_properties(dipacus-derivates PROPERTIES
         COMPILE_FEATURES cxx_generic_lambdas
-        COMPILE_FLAGS -fext-numeric-literals)
+        COMPILE_FLAGS -fext-numeric-literals
+        VERSION ${VERSION_DIPACUS_DERIVATES})
 
 install(DIRECTORY include
         DESTINATION ${CMAKE_INSTALL_PREFIX})

@@ -10,6 +10,10 @@ set(CREATE_SHARED_LIBRARIES ON CACHE BOOL "Create shared libraries. If off, crea
 
 project(DIPaCUS)
 
+set(VERSION_DIPACUS_BASE master)
+set(VERSION_DIPACUS_COMPONENTS master)
+set(VERSION_DIPACUS_DERIVATES master)
+
 
 message("Project Root Dir: ${CMAKE_SOURCE_DIR}")
 message("Build files at: ${CMAKE_BINARY_DIR}")
