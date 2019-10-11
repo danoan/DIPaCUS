@@ -20,7 +20,7 @@ namespace DIPaCUS
             typedef std::function<bool(const RealPoint& p)> CirclePredicate;
 
         public:
-            BeanShape(const RealPoint& center, double curvature);
+            BeanShape(const double x, const double y, double curvature);
 
             DGtal::Orientation orientation(const RealPoint& aPoint) const;
 

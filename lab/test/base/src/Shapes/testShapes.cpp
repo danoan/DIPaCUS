@@ -93,6 +93,19 @@ namespace DIPaCUS
         return t1;
     }
 
+    bool Test::Shapes::testBean(Logger& logger)
+    {
+	logger < Logger::HeaderTwo < "Test Bean" < Logger::Normal;
+
+	DigitalSet bean  = DIPaCUS::Shapes::bean(0.5,0,0,0.1);
+	logger < Logger::LoggableObject<DigitalSet>(bean,"bean.eps");
+
+	bool t1 = bean.size()==6278;
+	logger < "Passed: " < bean.size() < "\n";
+
+	return t1;
+    }
+
     bool Test::Shapes::runTest(std::ostream& os, const std::string& outputFolder, bool exportObjectsFlag)
     {
         Logger logger(os,outputFolder,exportObjectsFlag);
@@ -107,6 +120,7 @@ namespace DIPaCUS
         flag = flag && testNGon(logger);
         flag = flag && testEllipse(logger);
         flag = flag && testWave(logger);
+	flag = flag && testBean(logger);
 
         return flag;
     }

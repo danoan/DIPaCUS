@@ -4,9 +4,9 @@ namespace DIPaCUS
 {
     namespace Shapes
     {
-        BeanShape::BeanShape(const RealPoint& center, double curvature)
+        BeanShape::BeanShape(const double x, const double y, double curvature)
         {
-		this->center = center;
+		this->center = RealPoint(x,y);
 		this->r1 = 1.0/curvature;
 		
 		this->a1 = center - RealPoint(3*this->r1,0);
@@ -39,33 +39,33 @@ namespace DIPaCUS
 	BeanShape::CirclePredicate BeanShape::circle(const RealPoint& center, const double radius, const bool aboveYCenter)
 	{
 		double sign = aboveYCenter?1.0:-1.0;
-		return [sign,center,radius](const RealPoint& p){ return ( pow(center.at(0) - p.at(0),2) + pow(center.at(1)-p.at(1),2) - pow(radius,2) ) <= 0 && sign*p.at(1)>=sign*center.at(1);  };
+		return [sign,center,radius](const RealPoint& p){ return ( pow(center[0] - p[0],2) + pow(center[1]-p[1],2) - pow(radius,2) ) <= 0 && sign*p[1]>=sign*center[1];  };
 	}
 
 	BeanShape::CirclePredicate BeanShape::outerCircle(const RealPoint& center, const double radius)
 	{
-		return [center,radius](const RealPoint& p){return ( pow(center.at(0) - p.at(0),2) + pow(center.at(1)-p.at(1),2) - pow(radius,2) ) >= 0 && p.at(1) <=center.at(1);};
+		return [center,radius](const RealPoint& p){return ( pow(center[0] - p[0],2) + pow(center[1]-p[1],2) - pow(radius,2) ) >= 0 && p[1] <=center[1];};
 	}
 
         DGtal::Orientation BeanShape::orientation(const RealPoint& aPoint) const
         {
-	        double x = aPoint.at(0);
-            	double y = aPoint.at(1);
+	        double x = aPoint[0];
+            	double y = aPoint[1];
 
 		bool decisionFlag;
 		bool bottomFlag = this->f4(aPoint);
 
-		if(x>=this->a1.at(0) && x< this->b1.at(0))
+		if(x>=this->a1[0] && x< this->b1[0])
 		{
-			decisionFlag = ( this->f1(aPoint) && y>=this->center.at(1) )  || ( bottomFlag && y <=this->center.at(1) );
+			decisionFlag = ( this->f1(aPoint) && y>=this->center[1] )  || ( bottomFlag && y <=this->center[1] );
 		}
-		else if(x>=this->a2.at(0) && x < this->b2.at(0))
+		else if(x>=this->a2[0] && x < this->b2[0])
 		{
 			decisionFlag = this->f2(aPoint) && bottomFlag;
 		}
-		else if(x>=this->a3.at(0) && x < this->b3.at(0))
+		else if(x>=this->a3[0] && x < this->b3[0])
 		{
-			decisionFlag = ( this->f3(aPoint) && y>=this->center.at(1) ) || ( bottomFlag && y <=this->center.at(1));
+			decisionFlag = ( this->f3(aPoint) && y>=this->center[1] ) || ( bottomFlag && y <=this->center[1]);
 		}
 		else
 		{

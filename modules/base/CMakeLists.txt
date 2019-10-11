@@ -10,7 +10,8 @@ endif()
 add_library(dipacus-base ${LIBRARY_ACTION}
         src/Representation.cpp
         src/Shapes.cpp
-        src/shapes/WaveShape.cpp)
+        src/shapes/WaveShape.cpp
+	src/shapes/BeanShape.cpp)
 
 target_include_directories(dipacus-base PRIVATE
         include

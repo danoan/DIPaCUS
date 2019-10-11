@@ -76,5 +76,11 @@ namespace DIPaCUS
         WaveShape wave(maxX,maxWidth,maxHeight,minHeight);
         return digitizeShape(wave,h);
     }
+
+    Shapes::DigitalSet Shapes::bean(double h, double x, double y, double k)
+    {
+   	BeanShape bean(x,y,k);
+	return digitizeShape(bean,h);
+    }
 }
 

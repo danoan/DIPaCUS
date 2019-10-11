@@ -13,6 +13,7 @@
 #include <DGtal/shapes/parametric/Ellipse2D.h>
 
 #include "DIPaCUS/base/shapes/WaveShape.h"
+#include "DIPaCUS/base/shapes/BeanShape.h"
 
 namespace DIPaCUS
 {
@@ -165,6 +166,19 @@ namespace DIPaCUS
                         double maxWidth=200,
                         double maxHeight=300,
                         double minHeight=0.01);
+
+	/**
+	 * /brief Bean shape digitization
+	 * The bean shape is defined as a mix of four disks equations. The curvature
+	 * inverse is the radius of three of those disks, while the greater one has
+	 * radius three times greater than the others.
+	 *
+	 * @param h Grid Step
+	 * @param x X-coordinate of the center
+	 * @param y Y-coordinate of the center
+	 * @param k Curvature of smaller disks
+	*/
+	DigitalSet bean(double h=1.0, double x=0, double y=0, double k=0.1);
     }
 }
 
