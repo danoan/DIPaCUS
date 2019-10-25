@@ -9,13 +9,14 @@ namespace DIPaCUS
 
         typedef DGtal::Z2i::Space Space;
         typedef DGtal::Z2i::Domain Domain;
+        typedef DGtal::Z2i::Point Point;
 
 
         DGtal::GaussDigitizer<Space,TShape> gd;
         gd.attach(shape);
         gd.init(shape.getLowerBound(), shape.getUpperBound(),h);
 
-        Domain domain(gd.getDomain().lowerBound(),gd.getDomain().upperBound());
+        Domain domain(gd.getDomain().lowerBound() - Point(1,1),gd.getDomain().upperBound() + Point(1,1));
         DigitalSet output(domain);
         DGtal::Shapes<Domain>::digitalShaper(output,gd);
 
@@ -23,4 +24,3 @@ namespace DIPaCUS
 
     }
 }
-

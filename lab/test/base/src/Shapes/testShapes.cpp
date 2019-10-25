@@ -101,7 +101,7 @@ namespace DIPaCUS
 	logger < Logger::LoggableObject<DigitalSet>(bean,"bean.eps");
 
 	bool t1 = bean.size()==6278;
-	logger < "Passed: " < bean.size() < "\n";
+	logger < "Passed: " < t1 < "\n";
 
 	return t1;
     }
