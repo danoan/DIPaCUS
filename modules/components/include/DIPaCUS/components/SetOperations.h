@@ -18,6 +18,7 @@ namespace DIPaCUS
     {
         typedef DGtal::Z2i::Domain Domain;
         typedef DGtal::Z2i::Point Point;
+        typedef DGtal::PointVector<2,double> RealPoint;
 
         typedef DGtal::Z2i::DigitalSet DigitalSet;
         typedef DGtal::DigitalSetInserter<DigitalSet> DigitalSetInserter;

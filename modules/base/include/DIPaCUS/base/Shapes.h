@@ -58,8 +58,8 @@ namespace DIPaCUS
          * @return Polygon digitization.
          */
         DigitalSet NGon(double h,
-                        int x0,
-                        int y0,
+                        double x0,
+                        double y0,
                         double radius,
                         int sides,
                         double rotation=0);
@@ -76,8 +76,8 @@ namespace DIPaCUS
          * @return Triangle digitization
          */
         DigitalSet triangle(double h=1.0,
-                            int x0=0,
-                            int y0=0,
+                            double x0=0,
+                            double y0=0,
                             double radius=10,
                             double rotation=7*PI/6);
 
@@ -92,8 +92,8 @@ namespace DIPaCUS
          * @return Square digitization
          */
         DigitalSet square(double h=1.0,
-                          int x0=0,
-                          int y0=0,
+                          double x0=0,
+                          double y0=0,
                           double radius=10,
                           double rotation=PI/4.0);
 
@@ -107,8 +107,8 @@ namespace DIPaCUS
          * @return Ball digitization
          */
         DigitalSet ball(double h=1.0,
-                        int x0=0,
-                        int y0=0,
+                        double x0=0,
+                        double y0=0,
                         double radius=10);
 
         /**
@@ -124,8 +124,8 @@ namespace DIPaCUS
          * @return Flower digitization
          */
         DigitalSet flower(double h=1.0,
-                          int x0=0,
-                          int y0=0,
+                          double x0=0,
+                          double y0=0,
                           double radius=10,
                           double smallRadius=5,
                           int k=3,
@@ -143,8 +143,8 @@ namespace DIPaCUS
          * @return Ellipse digitization
          */
         DigitalSet ellipse(double h=1.0,
-                          int x0=0,
-                          int y0=0,
+                           double x0=0,
+                           double y0=0,
                           double largerRadius=10,
                           double smallerRadius=5,
                           double rotation=0);

@@ -3,8 +3,8 @@
 namespace DIPaCUS
 {
     Shapes::DigitalSet Shapes::NGon(double h,
-                                    int x0,
-                                    int y0,
+                                    double x0,
+                                    double y0,
                                     double radius,
                                     int sides,
                                     double rotation)
@@ -15,8 +15,8 @@ namespace DIPaCUS
     }
 
     Shapes::DigitalSet Shapes::square(double h,
-                                      int x0,
-                                      int y0,
+                                      double x0,
+                                      double y0,
                                       double radius,
                                       double rotation)
     {
@@ -24,8 +24,8 @@ namespace DIPaCUS
     }
 
     Shapes::DigitalSet Shapes::triangle(double h,
-                                        int x0,
-                                        int y0,
+                                        double x0,
+                                        double y0,
                                         double radius,
                                         double rotation)
     {
@@ -33,8 +33,8 @@ namespace DIPaCUS
     }
 
     Shapes::DigitalSet Shapes::ball(double h,
-                                    int x0,
-                                    int y0,
+                                    double x0,
+                                    double y0,
                                     double radius)
     {
         typedef DGtal::Z2i::Space Space;
@@ -43,8 +43,8 @@ namespace DIPaCUS
     }
 
     Shapes::DigitalSet Shapes::flower(double h,
-                                      int x0,
-                                      int y0,
+                                      double x0,
+                                      double y0,
                                       double radius,
                                       double smallRadius,
                                       int k,
@@ -56,8 +56,8 @@ namespace DIPaCUS
     }
 
     Shapes::DigitalSet Shapes::ellipse(double h,
-                                       int x0,
-                                       int y0,
+                                       double x0,
+                                       double y0,
                                        double largerRadius,
                                        double smallerRadius,
                                        double rotation)
