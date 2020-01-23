@@ -12,6 +12,10 @@ add_library(dipacus-base ${LIBRARY_ACTION}
         src/Shapes.cpp
         src/shapes/WaveShape.cpp)
 
+set_target_properties(dipacus-base
+        PROPERTIES
+        VERSION ${VERSION_DIPACUS_BASE})
+
 target_include_directories(dipacus-base PRIVATE
         include
         ${DGTAL_INCLUDE_DIRS}

@@ -10,6 +10,10 @@ add_library(dipacus-derivates ${LIBRARY_ACTION} src/Misc.cpp)
 
 add_dependencies(dipacus-derivates dipacus-base dipacus-components)
 
+set_target_properties(dipacus-derivates
+        PROPERTIES
+        VERSION ${VERSION_DIPACUS_DERIVATES})
+
 target_include_directories(dipacus-derivates PRIVATE
         include
         ${CMAKE_SOURCE_DIR}/modules/base/include

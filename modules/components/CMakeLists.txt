@@ -14,6 +14,10 @@ add_library(dipacus-components ${LIBRARY_ACTION}
         src/Properties.cpp
         src/intern/properties/boundingBox/adapter.cpp)
 
+set_target_properties(dipacus-components
+        PROPERTIES
+        VERSION ${VERSION_DIPACUS_COMPONENTS})
+
 add_dependencies(dipacus-components dipacus-base)
 
 set_target_properties(dipacus-components PROPERTIES

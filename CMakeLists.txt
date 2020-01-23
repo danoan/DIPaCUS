@@ -9,6 +9,9 @@ set(BUILD_TESTS OFF CACHE BOOL "Build tests.")
 set(CREATE_SHARED_LIBRARIES ON CACHE BOOL "Create shared libraries. If off, create static libraries.")
 
 project(DIPaCUS)
+set(VERSION_DIPACUS_BASE v0.1)
+set(VERSION_DIPACUS_COMPONENTS v0.1)
+set(VERSION_DIPACUS_DERIVATES v0.1)
 
 
 message("Project Root Dir: ${CMAKE_SOURCE_DIR}")
