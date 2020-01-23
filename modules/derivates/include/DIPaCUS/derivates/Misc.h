@@ -220,6 +220,13 @@ namespace DIPaCUS
          */
         void exploreComponent(ConnectedComponent& cc,Point& p, PointMarker& markers, const DigitalSet& ds);
 
+        /**
+         * \brief Eliminate all connected components different from the maximal. Eliminate all single pixel
+         * holes.
+         * @param ds DigitalSet
+         */
+        DigitalSet cleanSet(const DigitalSet& ds);
+
 
     }
 }

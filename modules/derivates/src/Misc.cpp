@@ -145,4 +145,39 @@ namespace DIPaCUS{ namespace Misc{
         }
     }
 
+    DigitalSet cleanSet(const DigitalSet& ds)
+    {
+        std::vector<ConnectedComponent> cc;
+        DIPaCUS::Misc::getConnectedComponents(cc,ds);
+        std::sort(cc.begin(),cc.end(),[](const ConnectedComponent& s1, const ConnectedComponent& s2){ return s1.size() > s2.size(); });
+
+        DigitalSet dsOut(ds.domain());
+        dsOut.insert(cc[0].begin(),cc[0].end());
+
+        Point lb,ub;
+        dsOut.computeBoundingBox(lb,ub);
+        Domain domain(lb,ub);
+
+        DigitalSet dsInversion(domain);
+        dsInversion.clear();
+        dsInversion.assignFromComplement(dsOut);
+
+        DGtal::Z2i::Point np4[4]={Point(0,1),Point(1,0),Point(-1,0),Point(0,-1)};
+        for(auto p:dsInversion)
+        {
+            bool fill=true;
+            for(auto n:np4)
+            {
+                if(dsInversion(p+n))
+                {
+                    fill=false;
+                    break;
+                }
+            }
+            if(fill) dsOut.insert(p);
+        }
+
+        return dsOut;
+    }
+
 }}
