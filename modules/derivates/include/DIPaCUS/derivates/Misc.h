@@ -99,6 +99,7 @@ namespace DIPaCUS
             }
 
             const Domain& domain(){ return _extDomain; }
+            const DigitalSet& digitalBall(){ return _ball; }
 
         private:
             Radius _r;
