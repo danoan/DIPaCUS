@@ -15,7 +15,9 @@ bool EightNeighborhoodPredicate::operator()(const Point &aPoint) const
 {
     Point np;
     int s = 0;
-    int ceil=4;
+    int ceil=5;
+
+    s+=myDigitalSet(aPoint);
     for (int i = 0; i < 4; ++i) {
         np = aPoint + filter[i];
         if (np[0] < lowerBound[0] || np[1] < lowerBound[1])
@@ -56,7 +58,9 @@ bool FourNeighborhoodPredicate::operator()(const Point &aPoint) const
 {
     Point np;
     int s = 0;
-    int ceil=8;
+    int ceil=9;
+
+    s+=myDigitalSet(aPoint);
     for (int i = 0; i < 8; ++i) {
         np = aPoint + filter[i];
         if (np[0] < lowerBound[0] || np[1] < lowerBound[1])
