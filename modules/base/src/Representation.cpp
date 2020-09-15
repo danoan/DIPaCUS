@@ -101,7 +101,9 @@ void Representation::CVMatToImage(Image2D &imgOut,
 
 
 void Representation::digitalSetToCVMat(cv::Mat &cvImgOut,
-                       const DigitalSet &dsIn)
+                       const DigitalSet &dsIn,
+                       const ShiftValue sx,
+                       const ShiftValue sy)
 {
     typedef DGtal::Z2i::Point Point;
     typedef DGtal::Z2i::Domain Domain;
@@ -121,7 +123,7 @@ void Representation::digitalSetToCVMat(cv::Mat &cvImgOut,
     for (auto it = dsIn.begin(); it != dsIn.end(); ++it) {
         Point p = *it + t;
         unsigned char v = (unsigned char) (dsIn(*it)) ? 255 : 0;
-        cvImgOut.at<unsigned char>((ubY - p[1]), p[0]) = v;
+        cvImgOut.at<unsigned char>((ubY - (p[1]+sy) ), p[0]+sx) = v;
     }
 }
 

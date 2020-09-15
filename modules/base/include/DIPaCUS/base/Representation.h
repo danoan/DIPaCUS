@@ -97,9 +97,13 @@ namespace DIPaCUS {
          * \brief Creates grayscale openCV image model from DigitalSet model.
          * @param cvImgOut Grayscale openCV image model output.
          * @param dsIn DigitalSet model input.
+         * @param sx Axis x translation.
+         * @param sy Axis y translation.
          */
         void digitalSetToCVMat(cv::Mat &cvImgOut,
-                               const DigitalSet &dsIn);
+                               const DigitalSet &dsIn,
+                               const ShiftValue sx=0,
+                               const ShiftValue sy=0);
 
 
 
@@ -117,8 +121,8 @@ namespace DIPaCUS {
         void CVMatToDigitalSet(DigitalSet &dsOut,
                                const cv::Mat &cvImgIn,
                                const ThresholdValue tv=100,
-                               ShiftValue sx=0,
-                               ShiftValue sy=0);
+                               const ShiftValue sx=0,
+                               const ShiftValue sy=0);
     }
 }
 
